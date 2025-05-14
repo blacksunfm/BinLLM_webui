@@ -1,0 +1,17 @@
+[
+  {
+    "creation_time": "2025-04-24T14:59:51.960742Z",
+    "model": "dify2",
+    "conversation_id": "20250424_2_b197d6bb",
+    "dify_conversation_id": null,
+    "custom_name": "聊天助手123"
+  },
+  {
+    "id": "temp-user-1747144496795",
+    "role": "user",
+    "text": "你好",
+    "sender": "user",
+    "timestamp": "2025-05-13T13:54:56.795Z",
+    "model": "dify2"
+  }
+]

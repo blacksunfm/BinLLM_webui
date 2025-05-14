@@ -1,0 +1,36 @@
+[
+  {
+    "creation_time": "2025-04-28T11:34:29.895625Z",
+    "model": "dify1",
+    "conversation_id": "20250428_1_c795ee0a",
+    "dify_conversation_id": "dc5d9872-2992-49af-a8c4-23917f9da7a9",
+    "custom_name": "聊天助手2"
+  },
+  {
+    "id": "temp-user-1745840074589",
+    "role": "user",
+    "text": "我上传了 1 个文件。 [包含1个文件]",
+    "sender": "user",
+    "timestamp": "2025-04-28T11:34:34.589Z",
+    "fileIds": [
+      "571c9fb4-1885-4130-8e34-a47fe1fef066"
+    ],
+    "model": "dify1"
+  },
+  {
+    "id": "temp-ai-1745840614735",
+    "role": "assistant",
+    "text": "您上传的文件内容似乎是一个不完整的列表或大纲，只包含三个部分：  \n\n1. **一．**（未提供具体内容）  \n2. **二．发包**（可能涉及发包流程或发包管理）  \n3. **三．**（未提供具体内容）  \n\n由于文件内容较为简略，如果您有具体问题（例如关于“发包”的具体含义、文件用途或需要补充的内容），请提供更多背景信息或具体要求，我将尽力为您解答！",
+    "sender": "assistant",
+    "timestamp": "2025-04-28T11:43:34.735Z",
+    "model": "dify1"
+  },
+  {
+    "id": "temp-user-1747052208419",
+    "role": "user",
+    "text": "你好",
+    "sender": "user",
+    "timestamp": "2025-05-12T12:16:48.419Z",
+    "model": "dify1"
+  }
+]
