@@ -4,8 +4,8 @@
 
 // 根据当前主机动态确定后端URL
 export const BACKEND_URL = location.hostname === 'localhost' 
-  ? 'http://localhost:5001' 
-  : `http://${location.hostname}:5001`;
+  ? 'http://localhost:5002' 
+  : `http://${location.hostname}:5002`;
 
 /**
  * 统一处理 API 响应
