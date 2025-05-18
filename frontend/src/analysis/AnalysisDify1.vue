@@ -31,9 +31,7 @@ const assemblyLines = ref([
   'jmp 0x140003762'
 ]);
 
-const decompiledCode = ref(`if (accountBalance < 0) {
-  printf("账户余额不足，请及时充值");
-}`);
+const decompiledCode = ref(`源代码`);
 
 const explanation = ref({
   zh: "根据英文函数语义搜索，如：python",

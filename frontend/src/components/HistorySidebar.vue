@@ -162,8 +162,8 @@ const chatAssistantIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 
 
 <style scoped>
 .history-sidebar-component {
-  flex: 2; /* 增加比例从1.5到2 */
-  min-width: 260px; /* 从240px增加到260px */
+  flex: 1; /* 增加比例从1.5到2 */
+  min-width: 200px; /* 从240px增加到260px */
   max-width: 380px; /* 从350px增加到380px */
   background-color: #202123; /* Darker sidebar */
   border-right: 1px solid #444;

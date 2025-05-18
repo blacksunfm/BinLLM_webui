@@ -57,7 +57,8 @@ const assistantIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 2
   display: flex;
   align-items: flex-start; /* Changed from center for better bubble alignment */
   margin-bottom: 15px;
-  max-width: 85%;
+  max-width: 80%;
+  flex-shrink: 0;
 }
 
 /* 使用 role 进行样式选择 */
@@ -110,6 +111,7 @@ const assistantIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 2
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   position: relative;
   max-width: calc(100% - 48px); /* Adjusted max-width considering margin */
+  overflow-y: auto;  /* 允许滚动 */
 }
 
 /* 用户气泡 */

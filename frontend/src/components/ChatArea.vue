@@ -19,8 +19,14 @@ const props = defineProps({
   }
 });
 
-const emit = defineEmits(['send-message', 'stop-generating']);
+const emit = defineEmits(['send-message', 'stop-generating', 'resize']);
 const messagesContainer = ref(null);
+
+//拖拽宽度
+const isResizing = ref(false);
+const startX = ref(0);
+const startWidth = ref(0);
+const chatWidth = ref(50);
 
 function handleSendMessage(message, fileIds) {
   emit('send-message', message, fileIds);
@@ -28,6 +34,31 @@ function handleSendMessage(message, fileIds) {
 
 function handleStopGenerating() {
   emit('stop-generating');
+}
+
+function startResize(e){
+  isResizing.value = true;
+  startX.value = e.clientX;
+  startWidth.value = chatWidth.value;
+  document.addEventListener('mousemove', handleResize);
+  document.addEventListener('mouseup',stopResize);
+  document.body.classList.add('resizing');
+  e.preventDefault();
+}
+
+function handleResize(e) {
+  if (!isResizing.value) return;
+  const deltaX = e.clientX - startX.value;
+  const newWidth = Math.min(Math.max(startWidth.value + deltaX, 200), 800);
+  emit('resize', newWidth);
+  e.preventDefault();
+}
+
+function stopResize() {
+  isResizing.value = false;
+  document.removeEventListener('mousemove', handleResize);
+  document.removeEventListener('mouseup', stopResize);
+  document.body.classList.remove('resizing');
 }
 
 watch(() => props.messages, async () => {
@@ -41,6 +72,12 @@ watch(() => props.messages, async () => {
 
 <template>
   <div class="chat-area-component">
+    <div 
+      class="resize-handle left"
+      @mousedown="startResize"
+      title="拖拽调整宽度"
+    ></div>
+
     <div v-if="isLoading" class="loading-indicator">加载历史记录...</div>
     
     <div class="messages" ref="messagesContainer">
@@ -62,12 +99,33 @@ watch(() => props.messages, async () => {
 
 <style scoped>
 .chat-area-component {
-  flex: 4;
+  flex:4;
   display: flex;
   flex-direction: column;
   height: 100%;
   background-color: #1a1a1e;
   position: relative;
+}
+
+.resize-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: transparent;
+  cursor: col-resize;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+
+.resize-handle.left {
+  left: -2px;
+}
+
+.resize-handle:hover,
+.resize-handle:active {
+  background: #2563eb;
 }
 
 .loading-indicator {
@@ -104,4 +162,13 @@ watch(() => props.messages, async () => {
 .messages::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
 </style> 
+
+<style>
+/* 全局拖拽样式 */
+body.resizing {
+  cursor: col-resize !important;
+  user-select: none !important;
+}
+</style>

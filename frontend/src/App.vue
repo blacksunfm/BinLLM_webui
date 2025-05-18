@@ -9,8 +9,14 @@ import AnalysisArea from './components/AnalysisArea.vue';
 // 导入存储
 import store from './store';
 
+const chatWidth = ref(50); // 默认50%宽度
+
 // 添加定时刷新会话列表的功能
 let refreshInterval = null;
+
+const handleChatResize = (width) => {
+  chatWidth.value = width;
+};
 
 // 事件处理
 const handleModelChange = async (modelId) => {
@@ -102,6 +108,7 @@ onBeforeUnmount(() => {
       :isGenerating="store.isCurrentConversationSending.value"
       @send-message="handleSendMessage"
       @stop-generating="handleStopGenerating"
+      @resize="handleChatResize"
       :style="{ width: chatWidth + '%' }"
     />
 
@@ -119,8 +126,12 @@ onBeforeUnmount(() => {
   display: flex;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
   background-color: #1e1e1e; /* Dark background */
   color: #e0e0e0; /* Default light text */
+  min-width: 0;
+}
+
+.main-layout > * {
+  flex-shrink: 0;
 }
 </style>

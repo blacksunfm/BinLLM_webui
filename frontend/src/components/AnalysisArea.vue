@@ -74,7 +74,7 @@ function startResize(e) {
 function handleResize(e) {
   if (!isResizing.value) return;
   const deltaX = startX.value - e.clientX;
-  currentWidth.value = Math.min(Math.max(startWidth.value + deltaX, 200), 600);
+  currentWidth.value = Math.min(Math.max(startWidth.value + deltaX, 200), 1000);
 }
 
 function stopResize() {
