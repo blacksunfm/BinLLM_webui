@@ -11,7 +11,7 @@ from datetime import datetime
 chat_bp = Blueprint('chat', __name__, url_prefix='/chat')
 
 # 允许的文件类型
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx', 'doc', 'md', 'jpg', 'jpeg', 'png', 'csv', 'xlsx', 'xls'}
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx', 'doc', 'md', 'jpg', 'jpeg', 'png', 'csv', 'xlsx', 'xls', 'exe'}
 
 def allowed_file(filename):
     """检查文件扩展名是否在允许列表中。"""
@@ -26,14 +26,14 @@ def allowed_file(filename):
 # 文件上传路由
 @chat_bp.route('/upload', methods=['POST'])
 def upload_file():
-    """处理文件上传请求。将文件保存到临时位置，然后上传到Dify API。"""
+    """处理文件上传请求。EXE文件将永久保存，其他文件按原有流程处理"""
     if 'file' not in request.files:
         return jsonify({"error": "未找到上传文件"}), 400
 
     file = request.files['file']
     model = request.form.get('model', 'dify1')
-    conversation_id = request.form.get('conversation_id') # 本地日期格式ID
-    user = request.form.get('user', 'default-user') # 从表单获取用户ID，提供默认值
+    conversation_id = request.form.get('conversation_id')
+    user = request.form.get('user', 'default-user')
 
     if file.filename == '':
         return jsonify({"error": "未选择文件"}), 400
@@ -42,6 +42,36 @@ def upload_file():
         return jsonify({"error": "未提供对话ID"}), 400
 
     try:
+        # 获取文件扩展名
+        file_ext = file.filename.rsplit('.', 1)[1].lower() if '.' in file.filename else ''
+        is_exe_file = file_ext == 'exe'
+
+        if not allowed_file(file.filename):
+            return jsonify({"error": f"不支持的文件类型。允许的类型: {', '.join(ALLOWED_EXTENSIONS)}"}), 400
+
+        # 创建上传目录
+        upload_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'uploads')
+        os.makedirs(upload_dir, exist_ok=True)
+        
+        # 安全处理文件名
+        filename = secure_filename(file.filename)
+        file_path = os.path.join(upload_dir, filename)
+        
+        # 保存文件到上传目录
+        file.save(file_path)
+        print(f"文件已保存到: {file_path}")
+
+        # EXE文件特殊处理 - 不转发到Dify，直接返回保存路径
+        if is_exe_file:
+            return jsonify({
+                "success": True,
+                "file_path": file_path,
+                "name": filename,
+                "type": "executable",
+                "message": "EXE文件已保存"
+            })
+
+        # 非EXE文件原有处理逻辑
         current_config = app_config.get_model_config(model)
         api_url = current_config.get('api_url')
         api_key = current_config.get('api_key')
@@ -49,93 +79,57 @@ def upload_file():
         if not api_url or not api_key:
             return jsonify({"error": f"{model} API未配置"}), 400
 
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            temp_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'uploads')
-            os.makedirs(temp_dir, exist_ok=True)
-            file_path = os.path.join(temp_dir, filename)
-            file.save(file_path)
+        base_url = api_url.rstrip('/')
+        dify_files_url = f"{base_url}/files/upload"
 
+        headers = {
+            'Authorization': f'Bearer {api_key}'
+        }
+
+        dify_form_data = {
+            'user': user
+        }
+        
+        with open(file_path, 'rb') as f:
+            dify_response = requests.post(
+                dify_files_url,
+                headers=headers,
+                files={'file': (filename, f, "text/plain")},
+                data=dify_form_data,
+                timeout=60
+            )
+
+        if not dify_response.ok:
+            error_message = "上传到Dify失败"
             try:
-                base_url = api_url.rstrip('/')
-                dify_files_url = f"{base_url}/files/upload"
+                error_data = dify_response.json()
+                error_message = f"Dify错误: {error_data.get('message', error_data.get('error', '未知错误'))}"
+            except Exception:
+                error_message = f"Dify错误: {dify_response.status_code} {dify_response.reason}"
+            return jsonify({"error": error_message}), dify_response.status_code
 
-                headers = {
-                    'Authorization': f'Bearer {api_key}'
-                }
+        dify_result = dify_response.json()
+        dify_conversation_id = dify_service.get_dify_conversation_id(conversation_id, model)
 
-                # 简化的用户数据
-                dify_form_data = {
-                    'user': user
-                }
-                
-                print(f"上传文件到Dify: {filename}")
+        return jsonify({
+            "success": True,
+            "file_id": dify_result.get('id'),
+            "name": filename,
+            "type": "document",
+            "dify_info": dify_result,
+            "dify_conversation_id": dify_conversation_id
+        })
 
-                # 打印请求详情以便调试
-                print(f"Dify请求URL: {dify_files_url}")
-                print(f"Dify请求头: Authorization: Bearer ***{api_key[-5:]}")
-
-                # 将文件转发给Dify - 使用"text/plain"作为通用MIME类型
-                with open(file_path, 'rb') as f:
-                    try:
-                        dify_response = requests.post(
-                            dify_files_url,
-                            headers=headers,
-                            files={'file': (file.filename, f, "text/plain")},
-                            data=dify_form_data,
-                            timeout=60
-                        )
-                    except requests.exceptions.RequestException as req_err:
-                        print(f"Dify文件上传请求异常: {req_err}")
-                        return jsonify({"error": f"上传文件到Dify失败: {str(req_err)}"}), 500
-
-                if not dify_response.ok:
-                    error_message = "上传到Dify失败"
-                    try:
-                        error_data = dify_response.json()
-                        print(f"Dify文件上传错误: {error_data}")
-                        error_message = f"Dify错误: {error_data.get('message', error_data.get('error', '未知错误'))}"
-                    except Exception as parse_error:
-                        print(f"解析Dify错误响应失败: {parse_error}")
-                        try:
-                            print(f"错误响应文本: {dify_response.text[:1000]}")
-                        except:
-                            pass
-                        error_message = f"Dify错误: {dify_response.status_code} {dify_response.reason}"
-                    return jsonify({"error": error_message}), dify_response.status_code
-
-                dify_result = dify_response.json()
-                print(f"Dify文件上传成功: {dify_result}")
-
-                # 尝试获取对应的Dify对话ID（如果存在）
-                dify_conversation_id = dify_service.get_dify_conversation_id(conversation_id, model)
-
-                return jsonify({
-                    "success": True,
-                    "file_id": dify_result.get('id'),
-                    "name": filename,
-                    "type": "document", # 默认文件类型
-                    "dify_info": dify_result,
-                    "dify_conversation_id": dify_conversation_id
-                })
-
-            finally:
-                # 清理临时上传文件
-                if os.path.exists(file_path):
-                    try:
-                        os.remove(file_path)
-                    except Exception as e:
-                        print(f"错误：清理临时文件 '{file_path}' 失败: {e}")
-        else:
-            return jsonify({"error": f"不支持的文件类型。允许的类型: {', '.join(ALLOWED_EXTENSIONS)}"}), 400
-
-    except ValueError as e:
-        return jsonify({"error": str(e)}), 400
-    except requests.exceptions.RequestException as e:
-        return jsonify({"error": f"Dify API通信错误: {str(e)}"}), 500
     except Exception as e:
-        print(f"文件上传处理中发生意外错误: {e}") # 保留此错误日志
-        return jsonify({"error": f"文件上传处理错误"}), 500
+        print(f"文件上传处理中发生错误: {e}")
+        return jsonify({"error": f"文件处理错误: {str(e)}"}), 500
+    finally:
+        # 仅清理非EXE文件的临时文件
+        if not is_exe_file and os.path.exists(file_path):
+            try:
+                os.remove(file_path)
+            except Exception as e:
+                print(f"错误：清理临时文件 '{file_path}' 失败: {e}")
 
 # 聊天主路由，用于向dify请求
 @chat_bp.route('', methods=['POST'])
@@ -156,8 +150,8 @@ def chat_with_dify():
 
     if not query and not file_ids: # 如果没有文本查询也没有文件，则无效
         return jsonify({"error": "缺少query或file_ids参数"}), 400
-    if not query: # 如果只有文件，提供一个默认查询
-        query = "请基于我上传的文件进行分析或回答。"
+    if not query or query == '我上传了 1 个文件。': # 如果只有文件，提供一个默认查询
+        query = "请基于我上传的文件进行漏洞分析，一步步地思考，包括代码功能，明确的漏洞，代码修复意见等。"
 
     try:
         current_config = app_config.get_model_config(model)

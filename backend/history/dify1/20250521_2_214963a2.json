@@ -1,0 +1,20 @@
+[
+  {
+    "creation_time": "2025-05-21T03:26:30.495577Z",
+    "model": "dify1",
+    "conversation_id": "20250521_2_214963a2",
+    "dify_conversation_id": null,
+    "custom_name": "聊天助手"
+  },
+  {
+    "id": "temp-user-1747798169401",
+    "role": "user",
+    "text": "我上传了 1 个文件。 [包含1个文件]",
+    "sender": "user",
+    "timestamp": "2025-05-21T03:29:29.401Z",
+    "fileIds": [
+      null
+    ],
+    "model": "dify1"
+  }
+]

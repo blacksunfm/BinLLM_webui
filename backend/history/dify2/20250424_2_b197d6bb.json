@@ -29,5 +29,21 @@
     "sender": "assistant",
     "timestamp": "2025-05-15T04:01:48.564Z",
     "model": "dify2"
+  },
+  {
+    "id": "temp-user-1747750123214",
+    "role": "user",
+    "text": "你是谁",
+    "sender": "user",
+    "timestamp": "2025-05-20T14:08:43.214Z",
+    "model": "dify2"
+  },
+  {
+    "id": "temp-ai-1747750123214",
+    "role": "assistant",
+    "text": "您好！我是您的人工智能助手，专注于提供网络安全和编程领域的帮助。如果您有任何问题，无论是关于代码分析、漏洞检测还是其他技术难题，我都会尽力为您提供详细解答和解决方案。让我们开始吧，有什么可以帮到您的？",
+    "sender": "assistant",
+    "timestamp": "2025-05-20T14:08:43.214Z",
+    "model": "dify2"
   }
 ]

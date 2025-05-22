@@ -118,7 +118,7 @@ defineExpose({
       ref="fileInputRef"
       @change="handleFileSelect" 
       class="hidden-file-input"
-      accept=".txt,.pdf,.docx,.doc,.md,.jpg,.jpeg,.png,.csv,.xlsx,.xls"
+      accept=".txt,.pdf,.docx,.doc,.md,.jpg,.jpeg,.png,.csv,.xlsx,.xls,.exe"
       :disabled="isInputDisabled"
       multiple
     >
