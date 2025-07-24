@@ -1,136 +1,11 @@
 <script setup>
 import { ref, computed } from 'vue';
 
-defineProps({
-  currentConversationId: {
-    type: String,
-    default: null
-  }
+const props = defineProps({
+  currentConversationId: { type: String, default: null },
+  analysisData: { type: Object, default: () => ({ functions: [] }) }
 });
-
-// 直接内联JSON数据
-const decompilationData = ref({
-  "functions": [
-    {
-      "signature": "undefined8 __fastcall FUN_140001081(void)", 
-      "disassembly": [
-        {
-          "address": "0x140001080", 
-          "code": "LEA RAX,[0x140005e58]"
-        }, 
-        {
-          "address": "0x140001087", 
-          "code": "RET"
-        }
-      ], 
-      "name": "FUN_140001080", 
-      "entry_point": "0x140001080"
-    }, 
-    {
-      "signature": "CWinApp * __fastcall FUN_140001090(CWinApp * param_1, uint param_2)", 
-      "disassembly": [
-        {
-          "address": "0x140001090", 
-          "code": "MOV qword ptr [RSP + 0x8],RBX"
-        }, 
-        {
-          "address": "0x140001095", 
-          "code": "PUSH RDI"
-        }, 
-        {
-          "address": "0x140001096", 
-          "code": "SUB RSP,0x20"
-        }, 
-        {
-          "address": "0x14000109a", 
-          "code": "MOV EDI,EDX"
-        }, 
-        {
-          "address": "0x14000109c", 
-          "code": "MOV RBX,RCX"
-        }, 
-        {
-          "address": "0x14000109f", 
-          "code": "CALL qword ptr [0x140005738]"
-        }, 
-        {
-          "address": "0x1400010a5", 
-          "code": "TEST DIL,0x1"
-        }, 
-        {
-          "address": "0x1400010a9", 
-          "code": "JZ 0x1400010d2"
-        }, 
-        {
-          "address": "0x1400010ab", 
-          "code": "MOV RCX,RBX"
-        }, 
-        {
-          "address": "0x1400010ae", 
-          "code": "TEST DIL,0x4"
-        }, 
-        {
-          "address": "0x1400010b2", 
-          "code": "JNZ 0x1400010c8"
-        }, 
-        {
-          "address": "0x1400010b4", 
-          "code": "CALL qword ptr [0x1400058a0]"
-        }, 
-        {
-          "address": "0x1400010ba", 
-          "code": "MOV RAX,RBX"
-        }, 
-        {
-          "address": "0x1400010bd", 
-          "code": "MOV RBX,qword ptr [RSP + 0x30]"
-        }, 
-        {
-          "address": "0x1400010c2", 
-          "code": "ADD RSP,0x20"
-        }, 
-        {
-          "address": "0x1400010c6", 
-          "code": "POP RDI"
-        }, 
-        {
-          "address": "0x1400010c7", 
-          "code": "RET"
-        }, 
-        {
-          "address": "0x1400010c8", 
-          "code": "MOV EDX,0x178"
-        }, 
-        {
-          "address": "0x1400010cd", 
-          "code": "CALL 0x140001350"
-        }, 
-        {
-          "address": "0x1400010d2", 
-          "code": "MOV RAX,RBX"
-        }, 
-        {
-          "address": "0x1400010d5", 
-          "code": "MOV RBX,qword ptr [RSP + 0x30]"
-        }, 
-        {
-          "address": "0x1400010da", 
-          "code": "ADD RSP,0x20"
-        }, 
-        {
-          "address": "0x1400010de", 
-          "code": "POP RDI"
-        }, 
-        {
-          "address": "0x1400010df", 
-          "code": "RET"
-        }
-      ], 
-      "name": "FUN_140001090", 
-      "entry_point": "0x140001090"
-    }
-  ]
-});
+const decompilationData = computed(() => props.analysisData);
 
 // 函数列表
 const functions = computed(() => {
@@ -163,7 +38,6 @@ function selectFunction(index) {
   <div class="decompiler-content">
     <h5>反编译分析界面</h5>
     <p v-if="currentConversationId">当前会话 ID: {{ currentConversationId }}</p>
-    
     <div class="decompiler-layout">
       <!-- 左侧函数列表 -->
       <div class="function-list">
@@ -202,9 +76,9 @@ function selectFunction(index) {
         </div>
       </div>
 
-      <!-- 右侧反编译代码 (暂时保留但隐藏) -->
-      <div class="decompiled-code" style="display: none;">
-        <!-- 反编译代码区域暂时隐藏 -->
+      <!-- 右侧反编译代码（可选） -->
+      <div class="decompiled-code">
+        <pre>{{ currentFunction.c_code }}</pre>
       </div>
     </div>
   </div>

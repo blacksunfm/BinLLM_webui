@@ -12,6 +12,13 @@ export default defineConfig({
   server: {
     host: '0.0.0.0', // 允许外部访问
     port: 5173,
+    proxy: {
+      '/uploads': {
+        target: 'http://localhost:5004',
+        changeOrigin: true,
+        rewrite: path => path
+      }
+    }
   },
 });
 

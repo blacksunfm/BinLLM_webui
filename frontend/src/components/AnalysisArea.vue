@@ -1,6 +1,7 @@
 <script setup>
 import { defineAsyncComponent } from 'vue';
 import { ref } from 'vue';
+import { analyzeBinary } from '../services/api.js';
 
 defineProps({
   currentConversationId: {
@@ -87,10 +88,29 @@ function stopResize() {
 function toggleCollapse() {
   isCollapsed.value = !isCollapsed.value;
 }
+
+const analysisData = ref({ functions: [] });
+const jsonFileName = ref('example.exe_ghidra.json'); // 默认文件名，可根据实际情况修改
+
+async function handleLoadJson() {
+  try {
+    // 新增API：直接读取json文件内容
+    const res = await fetch(`/uploads/${jsonFileName.value}`);
+    if (!res.ok) throw new Error('无法读取json文件');
+    const data = await res.json();
+    analysisData.value = data;
+  } catch (err) {
+    alert('读取分析json失败: ' + err.message);
+  }
+}
 </script>
 
 <template>
   <div class="analysis-container">
+    <div style="margin-bottom:10px;">
+      <input v-model="jsonFileName" placeholder="输入json文件名" style="width:220px;" />
+      <button @click="handleLoadJson">读取分析json并展示</button>
+    </div>
     <!-- 固定在右侧的展开按钮（折叠时显示） -->
     <div 
       v-if="isCollapsed"
@@ -139,6 +159,7 @@ function toggleCollapse() {
           <component 
             :is="getAnalysisComponent(currentModel)" 
             :currentConversationId="currentConversationId"
+            :analysisData="analysisData"
           />
         </div>
       </div>
