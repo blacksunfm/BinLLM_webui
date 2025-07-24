@@ -34,7 +34,15 @@ const handleSelectConversation = async (conversationId) => {
 // handleSaveConfig removed
 
 const handleSendMessage = async (queryText, fileIds = []) => {
+  const isFirstMessage = store.currentMessages.value.length === 0;
   await store.sendMessage(queryText, fileIds);
+
+  // 如果是第一条消息，自动生成标题
+  if (isFirstMessage) {
+    // 这里以用户问题的前20个字作为标题示例
+    const title = queryText.slice(0, 15) + '...';
+    await store.renameConversation(store.state.currentConversationId, title);
+  }
 };
 
 const handleStopGenerating = () => {
