@@ -1,0 +1,36 @@
+[
+  {
+    "creation_time": "2025-07-24T10:03:20.110831Z",
+    "model": "dify1",
+    "conversation_id": "20250724_1_77f9f195",
+    "dify_conversation_id": "c0beac3c-f195-43d5-a721-ed4ab8cad776",
+    "custom_name": "你是谁..."
+  },
+  {
+    "id": "temp-user-1753351402767",
+    "role": "user",
+    "text": "你是谁",
+    "sender": "user",
+    "timestamp": "2025-07-24T10:03:22.767Z",
+    "model": "dify1"
+  },
+  {
+    "id": "temp-ai-1753351822329",
+    "role": "assistant",
+    "text": "我是一个网络安全专家，专注于网络安全领域的技术咨询、风险评估、漏洞分析、安全防护策略制定等工作。如果你有任何关于网络安全的问题，比如数据保护、恶意软件防御、网络攻击防范、加密技术、合规要求等，都可以向我咨询。我会尽力提供专业、准确且实用的建议来帮助你解决问题。  \n\n你可以告诉我具体的需求或场景，我会更有针对性地为你解答！",
+    "sender": "assistant",
+    "timestamp": "2025-07-24T10:10:22.329Z",
+    "model": "dify1"
+  },
+  {
+    "id": "temp-user-1753351843570",
+    "role": "user",
+    "text": "我上传了 1 个文件。 [包含1个文件]",
+    "sender": "user",
+    "timestamp": "2025-07-24T10:10:43.570Z",
+    "fileIds": [
+      null
+    ],
+    "model": "dify1"
+  }
+]

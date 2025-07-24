@@ -2,6 +2,7 @@
 import { ref, watch, nextTick } from 'vue';
 import ChatMessage from './ChatMessage.vue';
 import MessageInput from './MessageInput.vue';
+import * as api from '../services/api.js';
 
 const props = defineProps({
   messages: {
@@ -19,7 +20,7 @@ const props = defineProps({
   }
 });
 
-const emit = defineEmits(['send-message', 'stop-generating', 'resize']);
+const emit = defineEmits(['send-message', 'stop-generating', 'resize', 'analysis-result']);
 const messagesContainer = ref(null);
 
 //拖拽宽度
@@ -34,6 +35,29 @@ function handleSendMessage(message, fileIds) {
 
 function handleStopGenerating() {
   emit('stop-generating');
+}
+
+async function handleAnalyzeBinary(binaryFiles) {
+  for (const file of binaryFiles) {
+    try {
+      const res = await api.analyzeBinary(file.name);
+      console.log('分析结果:', res);
+      // 自动保存为json
+      const blob = new Blob([JSON.stringify(res, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${file.name}_analysis.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      // 传递分析结果给父组件
+      emit('analysis-result', res.analysis || res);
+    } catch (err) {
+      console.error('分析失败:', err);
+    }
+  }
 }
 
 function startResize(e){
@@ -93,6 +117,7 @@ watch(() => props.messages, async () => {
       :is-generating="isGenerating"
       @send-message="handleSendMessage"
       @stop-generating="handleStopGenerating"
+      @analyze-binary="handleAnalyzeBinary"
     />
   </div>
 </template>

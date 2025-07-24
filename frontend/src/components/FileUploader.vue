@@ -62,9 +62,15 @@ async function handleMultipleFileUploads() {
         store.state.selectedModel,
         'vue-app-user'
       );
-      fileWrapper.status = 'success';
-      fileWrapper.id = result.file_id;
-      return result.file_id;
+      if (result.type === 'binary') {
+        fileWrapper.status = 'success';
+        fileWrapper.id = result.name;
+        return { type: 'binary', name: result.name, file_path: result.file_path };
+      } else {
+        fileWrapper.status = 'success';
+        fileWrapper.id = result.file_id;
+        return { type: 'dify', file_id: result.file_id };
+      }
     } catch (error) {
       console.error(`文件 ${fileWrapper.file.name} 上传失败:`, error);
       fileWrapper.status = 'error';
@@ -75,10 +81,10 @@ async function handleMultipleFileUploads() {
 
   try {
     const results = await Promise.all(uploadPromises);
-    const successfulFileIds = results.filter(id => id !== null);
+    const successfulFiles = results.filter(r => r !== null);
 
-    if (successfulFileIds.length > 0) {
-      emit('upload-complete', successfulFileIds);
+    if (successfulFiles.length > 0) {
+      emit('upload-complete', successfulFiles);
       selectedFiles.value = selectedFiles.value.filter(f => f.status !== 'success');
     } else {
       uploadError.value = "所有文件上传失败，请检查文件或网络后重试。";
@@ -118,7 +124,7 @@ defineExpose({
       ref="fileInputRef"
       @change="handleFileSelect" 
       class="hidden-file-input"
-      accept=".txt,.pdf,.docx,.doc,.md,.jpg,.jpeg,.png,.csv,.xlsx,.xls,.exe"
+      accept=".txt,.pdf,.docx,.doc,.md,.jpg,.jpeg,.png,.csv,.xlsx,.xls,.exe,.bin"
       :disabled="isInputDisabled"
       multiple
     >

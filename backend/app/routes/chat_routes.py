@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify, Response
+from flask import Blueprint, request, jsonify, Response, send_file
 import requests
 import json
 import os
@@ -11,7 +11,7 @@ from datetime import datetime
 chat_bp = Blueprint('chat', __name__, url_prefix='/chat')
 
 # 允许的文件类型
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx', 'doc', 'md', 'jpg', 'jpeg', 'png', 'csv', 'xlsx', 'xls', 'exe'}
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx', 'doc', 'md', 'jpg', 'jpeg', 'png', 'csv', 'xlsx', 'xls', 'exe', 'bin'}
 
 def allowed_file(filename):
     """检查文件扩展名是否在允许列表中。"""
@@ -44,7 +44,7 @@ def upload_file():
     try:
         # 获取文件扩展名
         file_ext = file.filename.rsplit('.', 1)[1].lower() if '.' in file.filename else ''
-        is_exe_file = file_ext == 'exe'
+        is_binary_file = file_ext in ['exe', 'bin']
 
         if not allowed_file(file.filename):
             return jsonify({"error": f"不支持的文件类型。允许的类型: {', '.join(ALLOWED_EXTENSIONS)}"}), 400
@@ -61,14 +61,14 @@ def upload_file():
         file.save(file_path)
         print(f"文件已保存到: {file_path}")
 
-        # EXE文件特殊处理 - 不转发到Dify，直接返回保存路径
-        if is_exe_file:
+        # 二进制文件特殊处理 - 不转发到Dify，直接返回保存路径
+        if is_binary_file:
             return jsonify({
                 "success": True,
                 "file_path": file_path,
                 "name": filename,
-                "type": "executable",
-                "message": "EXE文件已保存"
+                "type": "binary",
+                "message": "二进制文件已保存"
             })
 
         # 非EXE文件原有处理逻辑
@@ -125,7 +125,7 @@ def upload_file():
         return jsonify({"error": f"文件处理错误: {str(e)}"}), 500
     finally:
         # 仅清理非EXE文件的临时文件
-        if not is_exe_file and os.path.exists(file_path):
+        if not is_binary_file and os.path.exists(file_path):
             try:
                 os.remove(file_path)
             except Exception as e:
@@ -258,5 +258,58 @@ def chat_with_dify():
     except Exception as e:
         print(f"聊天处理中发生意外错误: {e}") # 保留此错误日志
         return jsonify({"error": "服务器内部错误"}), 500
+
+
+@chat_bp.route('/analyze/binary', methods=['POST'])
+def analyze_binary():
+    """分析二进制文件，提取函数名、汇编和反编译代码"""
+    data = request.json
+    filename = data.get('filename')
+    if not filename:
+        return jsonify({'error': '缺少文件名参数'}), 400
+    
+    upload_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'uploads')
+    file_path = os.path.join(upload_dir, filename)
+    if not os.path.exists(file_path):
+        return jsonify({'error': '文件不存在'}), 404
+
+    # 生成Ghidra输出路径
+    output_json = os.path.join(upload_dir, f'{filename}_ghidra.json')
+    ghidra_path = '/disk1/users/laiqj/ghidra_11.3.2_PUBLIC/support/analyzeHeadless'
+    project_dir = os.path.join(upload_dir, 'ghidra_proj')
+    script_path = os.path.join(upload_dir, 'analyse', 'combined_export.py')
+
+    # 确保Ghidra项目目录存在
+    os.makedirs(project_dir, exist_ok=True)
+
+    # 调用Ghidra headless分析
+    import subprocess, traceback
+    try:
+        cmd = [
+            ghidra_path,
+            project_dir,
+            'tmp',
+            '-import', file_path,
+            '-postScript', script_path,
+            '-deleteProject'
+        ]
+        env = os.environ.copy()
+        env['OUTPUT_FILE'] = output_json
+        print(f"调用Ghidra命令: {' '.join(cmd)}")
+        print(f"环境变量OUTPUT_FILE: {output_json}")
+        result = subprocess.run(cmd, env=env, capture_output=True, text=True, timeout=600)
+        print(f"Ghidra stdout: {result.stdout}")
+        print(f"Ghidra stderr: {result.stderr}")
+        if result.returncode != 0:
+            return jsonify({'error': 'Ghidra分析失败', 'stderr': result.stderr}), 500
+        if not os.path.exists(output_json):
+            return jsonify({'error': 'Ghidra未生成分析结果'}), 500
+        with open(output_json, 'r', encoding='utf-8') as f:
+            analysis = json.load(f)
+        return jsonify({'success': True, 'analysis': analysis})
+    except Exception as e:
+        print(f"分析异常: {e}")
+        print(traceback.format_exc())
+        return jsonify({'error': f'后端分析异常: {str(e)}'}), 500
 
 

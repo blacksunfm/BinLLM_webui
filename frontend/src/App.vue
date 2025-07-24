@@ -58,6 +58,14 @@ const handleDeleteConversation = async (conversationId) => {
   }
 };
 
+const analysisAreaRef = ref(null);
+
+function handleAnalysisResult(data) {
+  if (analysisAreaRef.value && typeof analysisAreaRef.value.setAnalysisData === 'function') {
+    analysisAreaRef.value.setAnalysisData(data);
+  }
+}
+
 onMounted(async () => {
   // Initialize
   // store.checkBackendConfig(); // No longer needed
@@ -117,11 +125,13 @@ onBeforeUnmount(() => {
       @send-message="handleSendMessage"
       @stop-generating="handleStopGenerating"
       @resize="handleChatResize"
+      @analysis-result="handleAnalysisResult"
       :style="{ width: chatWidth + '%' }"
     />
 
     <!-- Analysis Area -->
     <AnalysisArea 
+      ref="analysisAreaRef"
       :currentConversationId="store.state.currentConversationId"
       :currentModel="store.state.selectedModel"
     />

@@ -4,8 +4,8 @@
 
 // 根据当前主机动态确定后端URL
 export const BACKEND_URL = location.hostname === 'localhost' 
-  ? 'http://localhost:5002' 
-  : `http://${location.hostname}:5002`;
+  ? 'http://localhost:5004' 
+  : `http://${location.hostname}:5004`;
 
 /**
  * 统一处理 API 响应
@@ -309,6 +309,31 @@ export async function uploadFile(file, conversationId, model, user = 'vue-app-us
     return await response.json(); // 返回后端处理后的成功结果
   } catch (error) {
     console.error('文件上传失败:', error);
+    throw error;
+  }
+}
+
+/**
+ * 调用后端分析二进制文件API
+ * @param {string} filename - 二进制文件名
+ * @returns {Promise<Object>} 分析结果
+ */
+export async function analyzeBinary(filename) {
+  try {
+    const response = await fetch(`${BACKEND_URL}/chat/analyze/binary`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ filename })
+    });
+    if (!response.ok) {
+      let errorData = {};
+      try { errorData = await response.json(); } catch(e){}
+      const errorMessage = errorData.error || `分析失败! HTTP状态: ${response.status}`;
+      throw new Error(errorMessage);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('二进制分析API调用失败:', error);
     throw error;
   }
 }

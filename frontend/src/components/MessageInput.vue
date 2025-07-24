@@ -44,9 +44,21 @@ function handleSend() {
   }
 }
 
-function handleUploadComplete(fileIds) {
+function handleUploadComplete(fileObjs) {
+  const difyFiles = fileObjs.filter(f => f.type === 'dify');
+  const binaryFiles = fileObjs.filter(f => f.type === 'binary');
   const messageText = internalUserInput.value.trim();
-  emit('send-message', messageText || `我上传了 ${fileIds.length} 个文件。`, fileIds);
+
+  // 只把dify文件id传给主聊天
+  if (difyFiles.length > 0) {
+    emit('send-message', messageText || `我上传了 ${difyFiles.length} 个文件。`, difyFiles.map(f => f.file_id));
+  }
+  // 二进制文件也发一条消息，并触发分析和弹窗
+  if (binaryFiles.length > 0) {
+    emit('send-message', messageText || `我上传了 ${binaryFiles.length} 个二进制文件。`, []);
+    emit('analyze-binary', binaryFiles);
+    alert(`已上传二进制文件：${binaryFiles.map(f => f.name).join(', ')}`);
+  }
   internalUserInput.value = '';
 }
 
