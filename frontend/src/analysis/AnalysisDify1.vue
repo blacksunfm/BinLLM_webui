@@ -19,7 +19,12 @@ const functions = computed(() => {
 // 当前选中的函数
 const activeFunction = ref(0);
 const currentFunction = computed(() => {
-  return decompilationData.value.functions[activeFunction.value];
+  const funcs = decompilationData.value.functions;
+  if (!funcs || funcs.length === 0) return null;
+  if (activeFunction.value >= funcs.length) {
+    activeFunction.value = 0;
+  }
+  return funcs[activeFunction.value];
 });
 
 // 当前函数的汇编代码
@@ -37,8 +42,16 @@ function selectFunction(index) {
 <template>
   <div class="decompiler-content">
     <h5>反编译分析界面</h5>
-    <p v-if="currentConversationId">当前会话 ID: {{ currentConversationId }}</p>
-    <div class="decompiler-layout">
+    <p v-if="props.currentConversationId">当前会话 ID: {{ props.currentConversationId }}</p>
+    
+    <!-- 如果没有函数数据，显示提示 -->
+    <div v-if="functions.length === 0" style="padding: 20px; text-align: center; color: #a0aec0;">
+      <h4>暂无分析数据</h4>
+      <p>请先上传二进制文件并进行分析，或手动加载分析结果JSON文件。</p>
+    </div>
+    
+    <!-- 有数据时显示分析界面 -->
+    <div v-else class="decompiler-layout">
       <!-- 左侧函数列表 -->
       <div class="function-list">
         <div class="search-box">
@@ -61,8 +74,8 @@ function selectFunction(index) {
       <!-- 中间汇编代码 -->
       <div class="assembly-code">
         <div class="code-header">
-          <h4>汇编代码 - {{ currentFunction.name }}</h4>
-          <span class="signature">{{ currentFunction.signature }}</span>
+          <h4>汇编代码 - {{ currentFunction?.name || '未知函数' }}</h4>
+          <span class="signature">{{ currentFunction?.signature || '' }}</span>
         </div>
         <div class="code-content">
           <div 
@@ -78,7 +91,7 @@ function selectFunction(index) {
 
       <!-- 右侧反编译代码（可选） -->
       <div class="decompiled-code">
-        <pre>{{ currentFunction.c_code }}</pre>
+        <pre>{{ currentFunction?.c_code || '暂无反编译代码' }}</pre>
       </div>
     </div>
   </div>
@@ -151,6 +164,7 @@ function selectFunction(index) {
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-width: 300px; /* 设置最小宽度 */
 }
 
 .code-header {
@@ -193,5 +207,27 @@ function selectFunction(index) {
 
 .code-line .instruction {
   flex: 1;
+}
+
+/* 反编译代码区域样式 */
+.decompiled-code {
+  width: 400px; /* 固定宽度 */
+  min-width: 400px; /* 最小宽度 */
+  max-width: 400px; /* 最大宽度 */
+  height: 100%;
+  overflow: auto;
+  border-left: 1px solid #2d3748;
+  padding: 10px;
+  background-color: #1a1d23;
+}
+
+.decompiled-code pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #e2e8f0;
 }
 </style>

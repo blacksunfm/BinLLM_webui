@@ -2,8 +2,10 @@
 import { defineAsyncComponent } from 'vue';
 import { ref } from 'vue';
 import { analyzeBinary } from '../services/api.js';
+import AnalysisDify1 from '../analysis/AnalysisDify1.vue';
+import { watch } from 'vue';
 
-defineProps({
+const props = defineProps({
   currentConversationId: {
     type: String,
     default: null
@@ -92,25 +94,35 @@ function toggleCollapse() {
 const analysisData = ref({ functions: [] });
 const jsonFileName = ref('example.exe_ghidra.json'); // 默认文件名，可根据实际情况修改
 
+// 调试：监听currentModel变化
+watch(() => props.currentModel, (val) => { 
+  console.log('AnalysisArea - currentModel changed:', val); 
+});
+
 async function handleLoadJson() {
   try {
     // 新增API：直接读取json文件内容
     const res = await fetch(`/uploads/${jsonFileName.value}`);
     if (!res.ok) throw new Error('无法读取json文件');
     const data = await res.json();
+    console.log('handleLoadJson: data =', data);
     analysisData.value = data;
   } catch (err) {
     alert('读取分析json失败: ' + err.message);
   }
 }
+
+// 暴露给父组件的方法
+function setAnalysisData(data) {
+  console.log('setAnalysisData called with:', data);
+  analysisData.value = data;
+}
+
+defineExpose({ setAnalysisData });
 </script>
 
 <template>
   <div class="analysis-container">
-    <div style="margin-bottom:10px;">
-      <input v-model="jsonFileName" placeholder="输入json文件名" style="width:220px;" />
-      <button @click="handleLoadJson">读取分析json并展示</button>
-    </div>
     <!-- 固定在右侧的展开按钮（折叠时显示） -->
     <div 
       v-if="isCollapsed"
@@ -155,12 +167,23 @@ async function handleLoadJson() {
             </svg>
           </button>
           
-          <!-- 动态加载的组件 -->
+          <!-- 输入框和按钮 -->
+          <div style="margin-bottom:10px;">
+            <input v-model="jsonFileName" placeholder="输入json文件名" style="width:220px;" />
+            <button @click="handleLoadJson">读取分析json并展示</button>
+          </div>
+          
+          <!-- 临时强制渲染AnalysisDify1.vue用于调试 -->
+          <AnalysisDify1 :currentConversationId="props.currentConversationId" :analysisData="analysisData" />
+          
+          <!-- 原动态组件渲染保留注释 -->
+          <!--
           <component 
-            :is="getAnalysisComponent(currentModel)" 
-            :currentConversationId="currentConversationId"
+            :is="getAnalysisComponent(props.currentModel)" 
+            :currentConversationId="props.currentConversationId"
             :analysisData="analysisData"
           />
+          -->
         </div>
       </div>
     </div>

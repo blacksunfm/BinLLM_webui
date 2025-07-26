@@ -67,8 +67,8 @@ async function handleMultipleFileUploads() {
         fileWrapper.id = result.name;
         return { type: 'binary', name: result.name, file_path: result.file_path };
       } else {
-        fileWrapper.status = 'success';
-        fileWrapper.id = result.file_id;
+      fileWrapper.status = 'success';
+      fileWrapper.id = result.file_id;
         return { type: 'dify', file_id: result.file_id };
       }
     } catch (error) {
