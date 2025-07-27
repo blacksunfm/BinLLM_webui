@@ -123,11 +123,7 @@ const chatAssistantIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 
          <div class="conv-main-content">
             <!-- 显示模式 -->
             <span v-if="editingConversationId !== conv.id" class="conv-name" :title="conv.name">
-              <span v-if="conv.name !== '聊天助手' && conv.name">{{ conv.name }}</span>
-              <span v-else class="assistant-name">
-                <span class="assistant-icon" v-html="chatAssistantIcon"></span>
-                聊天助手
-              </span>
+              {{ conv.name }}
             </span>
             <!-- 编辑模式 - 移除 ref="inputRef" -->
             <input 

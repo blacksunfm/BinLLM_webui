@@ -1,5 +1,5 @@
 <script setup>
-import { defineAsyncComponent } from 'vue';
+import { defineAsyncComponent, computed } from 'vue';
 import { ref, defineEmits } from 'vue';
 import { analyzeBinary } from '../services/api.js';
 import AnalysisDify1 from '../analysis/AnalysisDify1.vue';
@@ -48,6 +48,28 @@ const getAnalysisComponent = (model) => {
       delay: 200,
       timeout: 3000
     }),
+    dify3: defineAsyncComponent({
+      loader: () => import('../analysis/AnalysisDify3.vue'),
+      loadingComponent: {
+        template: '<p>加载中...</p>'
+      },
+      errorComponent: {
+        template: '<p>加载失败，请稍后重试。</p>'
+      },
+      delay: 200,
+      timeout: 3000
+    }),
+    dify4: defineAsyncComponent({
+      loader: () => import('../analysis/AnalysisDify4.vue'),
+      loadingComponent: {
+        template: '<p>加载中...</p>'
+      },
+      errorComponent: {
+        template: '<p>加载失败，请稍后重试。</p>'
+      },
+      delay: 200,
+      timeout: 3000
+    }),
     default: defineAsyncComponent({
       loader: () => import('../analysis/DefaultAnalysis.vue'),
       loadingComponent: {
@@ -62,6 +84,11 @@ const getAnalysisComponent = (model) => {
   };
   return componentMap[model] || componentMap.default;
 };
+
+// 根据当前模型计算要使用的组件
+const currentAnalysisComponent = computed(() => {
+  return getAnalysisComponent(props.currentModel);
+});
 
 // 拖拽逻辑
 function startResize(e) {
@@ -92,25 +119,11 @@ const emit = defineEmits(['toggle-analysis-area']);
 // 移除 fixed-expand-button、floating-collapse-button、toggleCollapse、isCollapsed 相关内容和样式。
 
 const analysisData = ref({ functions: [] });
-const jsonFileName = ref('example.exe_ghidra.json'); // 默认文件名，可根据实际情况修改
 
 // 调试：监听currentModel变化
 watch(() => props.currentModel, (val) => { 
   console.log('AnalysisArea - currentModel changed:', val); 
 });
-
-async function handleLoadJson() {
-  try {
-    // 新增API：直接读取json文件内容
-    const res = await fetch(`/uploads/${jsonFileName.value}`);
-    if (!res.ok) throw new Error('无法读取json文件');
-    const data = await res.json();
-    console.log('handleLoadJson: data =', data);
-    analysisData.value = data;
-  } catch (err) {
-    alert('读取分析json失败: ' + err.message);
-  }
-}
 
 // 暴露给父组件的方法
 function setAnalysisData(data) {
@@ -132,12 +145,7 @@ defineExpose({ setAnalysisData });
       <div class="content-wrapper">
         <!-- 分析内容区域 -->
         <div class="analysis-content">
-          <!-- 输入框和按钮 -->
-          <div style="margin-bottom:10px;">
-            <input v-model="jsonFileName" placeholder="输入json文件名" style="width:220px;" />
-            <button @click="handleLoadJson">读取分析json并展示</button>
-          </div>
-          <AnalysisDify1 :currentConversationId="props.currentConversationId" :analysisData="analysisData" />
+          <component :is="currentAnalysisComponent" :currentConversationId="props.currentConversationId" :analysisData="analysisData" />
         </div>
       </div>
     </div>

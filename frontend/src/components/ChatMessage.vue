@@ -30,8 +30,8 @@ const avatarInitial = computed(() => {
   return props.message.role === 'user' ? 'U' : 'A';
 });
 
-// 添加助手图标SVG
-const assistantIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2a9.96 9.96 0 0 1 7.383 16.619 9.906 9.906 0 0 1-6.912 3.373 10.152 10.152 0 0 1-7.53-2.895A9.96 9.96 0 0 1 2 12c0-2.653 1.035-5.147 2.903-7.023C6.78 3.08 9.299 2 12 2Zm-.5 4a.5.5 0 0 0-.5.5v.5h-1a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h2v2h-3a.5.5 0 0 0 0 1h3v.5a.5.5 0 0 0 1 0V16h3a.5.5 0 0 0 0-1h-3v-2h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-1v-.5a.5.5 0 0 0-.5-.5ZM9 9h1v1H9V9Zm4 0h1v1h-1V9Z"/></svg>`;
+// dify风格机器人头像SVG
+const assistantIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><rect x="4" y="8" width="16" height="10" rx="4" fill="#90caf9"/><rect x="9" y="2" width="6" height="6" rx="3" fill="#1976d2"/><rect x="7" y="18" width="2" height="2" rx="1" fill="#1976d2"/><rect x="15" y="18" width="2" height="2" rx="1" fill="#1976d2"/><circle cx="8.5" cy="13" r="1" fill="#1976d2"/><circle cx="15.5" cy="13" r="1" fill="#1976d2"/></svg>`;
 </script>
 
 <template>

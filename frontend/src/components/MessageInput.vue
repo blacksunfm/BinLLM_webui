@@ -19,7 +19,8 @@ const internalUserInput = ref('');
 const fileUploaderRef = ref(null);
 
 const sendIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M3 13.0001h11.586l-5.293 5.293a1 1 0 1 0 1.414 1.414l7-7a.999.999 0 0 0 0-1.414l-7-7a1 1 0 1 0-1.414 1.414l5.293 5.293H3a1 1 0 1 0 0 2Z"></path></svg>`;
-const fileIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M14 13.5V8a1 1 0 0 0-2 0v5.5a3.5 3.5 0 1 0 7 0V8a5.5 5.5 0 0 0-11 0v8.5a1 1 0 0 0 2 0V16a.5.5 0 0 1 1 0v.5a1.5 1.5 0 1 1-3 0V8a3.5 3.5 0 0 1 7 0v5.5a1.5 1.5 0 0 1-3 0Z"></path></svg>`;
+// 文件资源管理器风格SVG
+const fileIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><rect x="2" y="6" width="20" height="14" rx="3" fill="#90caf9"/><rect x="2" y="6" width="20" height="4" rx="2" fill="#1976d2"/><rect x="2" y="10" width="20" height="10" rx="2" fill="#fff" opacity="0.7"/></svg>`;
 const stopIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M7 7h10v10H7z"></path></svg>`;
 
 const isSendDisabled = computed(() => {

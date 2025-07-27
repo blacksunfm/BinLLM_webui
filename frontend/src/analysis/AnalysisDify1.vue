@@ -7,7 +7,28 @@ const props = defineProps({
   currentConversationId: { type: String, default: null },
   analysisData: { type: Object, default: () => ({ functions: [] }) }
 });
-const decompilationData = computed(() => props.analysisData);
+
+// JSON文件读取相关状态
+const jsonFileName = ref('example.exe_ghidra.json');
+const localAnalysisData = ref({ functions: [] });
+
+// 使用本地数据或props数据
+const decompilationData = computed(() => {
+  return localAnalysisData.value.functions.length > 0 ? localAnalysisData.value : props.analysisData;
+});
+
+// JSON文件读取函数
+async function handleLoadJson() {
+  try {
+    const res = await fetch(`/uploads/${jsonFileName.value}`);
+    if (!res.ok) throw new Error('无法读取json文件');
+    const data = await res.json();
+    console.log('handleLoadJson: data =', data);
+    localAnalysisData.value = data;
+  } catch (err) {
+    alert('读取分析json失败: ' + err.message);
+  }
+}
 
 // 函数列表
 const functions = computed(() => {
@@ -296,6 +317,24 @@ async function analyzeCodeWithDify() {
 <template>
   <div class="decompiler-content">
     <h5>反编译分析界面</h5>
+    
+    <!-- JSON文件读取区域 -->
+    <div style="margin-bottom: 15px; padding: 10px; background: #1a202c; border-radius: 4px; border: 1px solid #2d3748;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <input 
+          v-model="jsonFileName" 
+          placeholder="输入json文件名" 
+          style="width: 220px; padding: 5px 8px; border: 1px solid #4a5568; border-radius: 4px; background: #2d3748; color: #e2e8f0; font-size: 13px;" 
+        />
+        <button 
+          @click="handleLoadJson" 
+          style="padding: 5px 12px; border: none; border-radius: 4px; background: #2563eb; color: #fff; cursor: pointer; font-size: 13px;"
+        >
+          读取分析json并展示
+        </button>
+      </div>
+    </div>
+    
     <div v-if="functions.length === 0" style="padding: 20px; text-align: center; color: #a0aec0;">
       <h4>暂无分析数据</h4>
       <p>请先上传二进制文件并进行分析，或手动加载分析结果JSON文件。</p>
