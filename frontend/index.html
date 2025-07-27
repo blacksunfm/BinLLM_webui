@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue</title>
+    <style>
+      /* Global styles to ensure full screen layout */
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden; /* Prevent body scrollbars */
+        font-family: sans-serif; /* Optional: Set a base font */
+        background-color: #1e1e1e; /* Match App.vue background */
+      }
+      #app {
+        height: 100%;
+        width: 100%;
+        display: flex; /* Ensure #app is also flex container if needed, or just block */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{
+    "dify1": {
+        "api_url": "http://10.81.0.64/v1",
+        "api_key": "app-G6NztoKPg2L4Uqn5dTRPw2J4"
+    },
+    "dify2": {
+        "api_url": "http://10.81.0.64/v1",
+        "api_key": "app-G6NztoKPg2L4Uqn5dTRPw2J4"
+    },
+    "dify3": {
+      "api_url": "http://10.81.0.64/v1", 
+      "api_key": "app-G6NztoKPg2L4Uqn5dTRPw2J4"
+    },
+    "dify4": {
+      "api_url": "YOUR_DIFY4_API_URL",
+      "api_key": "YOUR_DIFY4_API_KEY"
+    },
+    "dify5": {
+      "api_url": "YOUR_DIFY5_API_URL",
+      "api_key": "YOUR_DIFY5_API_KEY"
+    },
+    "dify6": {
+      "api_url": "YOUR_DIFY6_API_URL",
+      "api_key": "YOUR_DIFY6_API_KEY"
+    },
+    "dify7": {
+      "api_url": "YOUR_DIFY7_API_URL",
+      "api_key": "YOUR_DIFY7_API_KEY"
+    },
+    "dify8": {
+      "api_url": "YOUR_DIFY8_API_URL",
+      "api_key": "YOUR_DIFY8_API_KEY"
+    },
+    "dify9": {
+      "api_url": "YOUR_DIFY9_API_URL",
+      "api_key": "YOUR_DIFY9_API_KEY"
+    },
+    "dify10": {
+      "api_url": "YOUR_DIFY10_API_URL",
+      "api_key": "YOUR_DIFY10_API_KEY"
+    }
+  }

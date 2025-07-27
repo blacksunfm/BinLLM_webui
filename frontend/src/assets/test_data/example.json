@@ -1,0 +1,1660 @@
+{
+  "functions": [
+    {
+      "signature": "undefined8 __fastcall FUN_140001080(void)", 
+      "c_code": "\r\nundefined8 FUN_140001080(void)\r\n\r\n{\r\n  return 0x140005e58;\r\n}\r\n\r\n", 
+      "name": "FUN_140001080", 
+      "entry_point": "0x140001080"
+    }, 
+    {
+      "signature": "CWinApp * __fastcall FUN_140001090(CWinApp * param_1, uint param_2)", 
+      "c_code": "\r\nCWinApp * FUN_140001090(CWinApp *param_1,uint param_2)\r\n\r\n{\r\n  CWinApp::~CWinApp(param_1);\r\n  if ((param_2 & 1) != 0) {\r\n    if ((param_2 & 4) == 0) {\r\n      operator_delete(param_1);\r\n      return param_1;\r\n    }\r\n    _guard_check_icall();\r\n  }\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_140001090", 
+      "entry_point": "0x140001090"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_1400010e0(CWinApp * param_1)", 
+      "c_code": "\r\nvoid FUN_1400010e0(CWinApp *param_1)\r\n\r\n{\r\n  longlong *plVar1;\r\n  CRuntimeClass *pCVar2;\r\n  HINSTANCE__ *hInstance;\r\n  undefined1 auStack_1d8 [32];\r\n  CShellManager *local_1b8;\r\n  INITCOMMONCONTROLSEX local_1b0;\r\n  undefined **local_1a8 [40];\r\n  undefined **local_68 [3];\r\n  CDialogImpl local_50 [24];\r\n  HICON local_38;\r\n  CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> local_30 [8];\r\n  CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> local_28 [16];\r\n  ulonglong local_18;\r\n  \r\n  local_18 = DAT_14000a040 ^ (ulonglong)auStack_1d8;\r\n  local_1b0.dwSize = 8;\r\n  local_1b0.dwICC = 0xff;\r\n  InitCommonControlsEx(&local_1b0);\r\n  CWinApp::InitInstance(param_1);\r\n  AfxEnableControlContainer((COccManager *)0x0);\r\n  local_1b8 = (CShellManager *)operator_new(0x18);\r\n  if (local_1b8 == (CShellManager *)0x0) {\r\n    plVar1 = (longlong *)0x0;\r\n  }\r\n  else {\r\n    *(undefined8 *)local_1b8 = 0;\r\n    *(undefined8 *)(local_1b8 + 8) = 0;\r\n    *(undefined8 *)(local_1b8 + 0x10) = 0;\r\n    plVar1 = (longlong *)CShellManager::CShellManager(local_1b8);\r\n  }\r\n  pCVar2 = CMFCVisualManagerWindows::GetThisClass();\r\n  CMFCVisualManager::SetDefaultManager(pCVar2);\r\n  CWinApp::SetRegistryKey(param_1,L\"\u5e94\u7528\u7a0b\u5e8f\u5411\u5bfc\u751f\u6210\u7684\u672c\u5730\u5e94\u7528\u7a0b\u5e8f\");\r\n  memset(local_1a8,0,0x188);\r\n  CDialogEx::CDialogEx((CDialogEx *)local_1a8,0x66,(CWnd *)0x0);\r\n  local_1a8[0] = CMFCApplication3Dlg::vftable;\r\n  ATL::CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>::\r\n  CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>(local_30,L\"\");\r\n  ATL::CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>::\r\n  CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>(local_28,L\"\");\r\n  AfxGetModuleState();\r\n  hInstance = AfxFindResourceHandle((wchar_t *)0x80,(wchar_t *)0xe);\r\n  local_38 = LoadIconW(hInstance,(LPCWSTR)0x80);\r\n  *(undefined ****)(param_1 + 0x40) = local_1a8;\r\n  CDialog::DoModal((CDialog *)local_1a8);\r\n  if (plVar1 != (longlong *)0x0) {\r\n    (**(code **)(*plVar1 + 8))(plVar1,1);\r\n  }\r\n  ATL::CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>::\r\n  ~CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>(local_28);\r\n  ATL::CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>::\r\n  ~CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>(local_30);\r\n  CDialogImpl::~CDialogImpl(local_50);\r\n  local_68[0] = CBrush::vftable;\r\n  FUN_140001490((CGdiObject *)local_68);\r\n  CDialog::~CDialog((CDialog *)local_1a8);\r\n  FUN_140003550(local_18 ^ (ulonglong)auStack_1d8);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_1400010e0", 
+      "entry_point": "0x1400010e0"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_1400012b0(CDialog * param_1)", 
+      "c_code": "\r\nvoid FUN_1400012b0(CDialog *param_1)\r\n\r\n{\r\n  ATL::CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>::\r\n  ~CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>\r\n            ((CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> *)\r\n             (param_1 + 0x180));\r\n  ATL::CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>::\r\n  ~CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>\r\n            ((CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> *)\r\n             (param_1 + 0x178));\r\n  CDialogImpl::~CDialogImpl((CDialogImpl *)(param_1 + 0x158));\r\n  *(undefined ***)(param_1 + 0x140) = CBrush::vftable;\r\n  FUN_140001490((CGdiObject *)(param_1 + 0x140));\r\n                    /* WARNING: Could not recover jumptable at 0x0001400012fe. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  CDialog::~CDialog(param_1);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_1400012b0", 
+      "entry_point": "0x1400012b0"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140001310(CDialog * param_1)", 
+      "c_code": "\r\nvoid FUN_140001310(CDialog *param_1)\r\n\r\n{\r\n  CDialogImpl::~CDialogImpl((CDialogImpl *)(param_1 + 0x158));\r\n  *(undefined ***)(param_1 + 0x140) = CBrush::vftable;\r\n  FUN_140001490((CGdiObject *)(param_1 + 0x140));\r\n                    /* WARNING: Could not recover jumptable at 0x000140001344. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  CDialog::~CDialog(param_1);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140001310", 
+      "entry_point": "0x140001310"
+    }, 
+    {
+      "signature": "undefined __fastcall _guard_check_icall(void)", 
+      "c_code": "\r\nvoid _guard_check_icall(void)\r\n\r\n{\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_guard_check_icall", 
+      "entry_point": "0x140001350"
+    }, 
+    {
+      "signature": "undefined8 __fastcall FUN_140001360(void)", 
+      "c_code": "\r\nundefined8 FUN_140001360(void)\r\n\r\n{\r\n  return 5000;\r\n}\r\n\r\n", 
+      "name": "FUN_140001360", 
+      "entry_point": "0x140001360"
+    }, 
+    {
+      "signature": "undefined8 __fastcall FUN_140001370(void)", 
+      "c_code": "\r\nundefined8 FUN_140001370(void)\r\n\r\n{\r\n  return 0;\r\n}\r\n\r\n", 
+      "name": "FUN_140001370", 
+      "entry_point": "0x140001370"
+    }, 
+    {
+      "signature": "uint __fastcall FUN_140001380(longlong param_1)", 
+      "c_code": "\r\nuint FUN_140001380(longlong param_1)\r\n\r\n{\r\n  return *(uint *)(param_1 + 0x14c) & 0x20;\r\n}\r\n\r\n", 
+      "name": "FUN_140001380", 
+      "entry_point": "0x140001380"
+    }, 
+    {
+      "signature": "uint __fastcall FUN_140001390(longlong param_1)", 
+      "c_code": "\r\nuint FUN_140001390(longlong param_1)\r\n\r\n{\r\n  return *(uint *)(param_1 + 0x14c) & 0x10;\r\n}\r\n\r\n", 
+      "name": "FUN_140001390", 
+      "entry_point": "0x140001390"
+    }, 
+    {
+      "signature": "uint __fastcall FUN_1400013a0(longlong param_1)", 
+      "c_code": "\r\nuint FUN_1400013a0(longlong param_1)\r\n\r\n{\r\n  return *(uint *)(param_1 + 0x14c) & 8;\r\n}\r\n\r\n", 
+      "name": "FUN_1400013a0", 
+      "entry_point": "0x1400013a0"
+    }, 
+    {
+      "signature": "uint __fastcall FUN_1400013b0(longlong param_1)", 
+      "c_code": "\r\nuint FUN_1400013b0(longlong param_1)\r\n\r\n{\r\n  return *(uint *)(param_1 + 0x14c) & 4;\r\n}\r\n\r\n", 
+      "name": "FUN_1400013b0", 
+      "entry_point": "0x1400013b0"
+    }, 
+    {
+      "signature": "uint __fastcall FUN_1400013c0(longlong param_1)", 
+      "c_code": "\r\nuint FUN_1400013c0(longlong param_1)\r\n\r\n{\r\n  return *(uint *)(param_1 + 0x14c) & 2;\r\n}\r\n\r\n", 
+      "name": "FUN_1400013c0", 
+      "entry_point": "0x1400013c0"
+    }, 
+    {
+      "signature": "uint __fastcall FUN_1400013d0(longlong param_1)", 
+      "c_code": "\r\nuint FUN_1400013d0(longlong param_1)\r\n\r\n{\r\n  return *(uint *)(param_1 + 0x14c) & 1;\r\n}\r\n\r\n", 
+      "name": "FUN_1400013d0", 
+      "entry_point": "0x1400013d0"
+    }, 
+    {
+      "signature": "CGdiObject * __fastcall FUN_1400013e0(CGdiObject * param_1, uint param_2)", 
+      "c_code": "\r\nCGdiObject * FUN_1400013e0(CGdiObject *param_1,uint param_2)\r\n\r\n{\r\n  *(undefined ***)param_1 = CBrush::vftable;\r\n  FUN_140001490(param_1);\r\n  if ((param_2 & 1) != 0) {\r\n    if ((param_2 & 4) == 0) {\r\n      operator_delete(param_1);\r\n      return param_1;\r\n    }\r\n    _guard_check_icall();\r\n  }\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_1400013e0", 
+      "entry_point": "0x1400013e0"
+    }, 
+    {
+      "signature": "CGdiObject * __fastcall FUN_140001440(CGdiObject * param_1, uint param_2)", 
+      "c_code": "\r\nCGdiObject * FUN_140001440(CGdiObject *param_1,uint param_2)\r\n\r\n{\r\n  FUN_140001490(param_1);\r\n  if ((param_2 & 1) != 0) {\r\n    if ((param_2 & 4) == 0) {\r\n      operator_delete(param_1);\r\n      return param_1;\r\n    }\r\n    _guard_check_icall();\r\n  }\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_140001440", 
+      "entry_point": "0x140001440"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140001490(CGdiObject * param_1)", 
+      "c_code": "\r\nvoid FUN_140001490(CGdiObject *param_1)\r\n\r\n{\r\n  undefined1 auStack_458 [1088];\r\n  ulonglong local_18;\r\n  \r\n  local_18 = DAT_14000a040 ^ (ulonglong)auStack_458;\r\n  *(undefined ***)param_1 = CGdiObject::vftable;\r\n  CGdiObject::DeleteObject(param_1);\r\n  FUN_140003550(local_18 ^ (ulonglong)auStack_458);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140001490", 
+      "entry_point": "0x140001490"
+    }, 
+    {
+      "signature": "undefined8 * __fastcall FUN_1400014f0(undefined8 * param_1, longlong param_2)", 
+      "c_code": "\r\nundefined8 * FUN_1400014f0(undefined8 *param_1,longlong param_2)\r\n\r\n{\r\n  *param_1 = std::exception::vftable;\r\n  param_1[1] = 0;\r\n  param_1[2] = 0;\r\n  __std_exception_copy(param_2 + 8);\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_1400014f0", 
+      "entry_point": "0x1400014f0"
+    }, 
+    {
+      "signature": "char * __fastcall FUN_140001530(longlong param_1)", 
+      "c_code": "\r\nchar * FUN_140001530(longlong param_1)\r\n\r\n{\r\n  char *pcVar1;\r\n  \r\n  pcVar1 = \"Unknown exception\";\r\n  if (*(char **)(param_1 + 8) != (char *)0x0) {\r\n    pcVar1 = *(char **)(param_1 + 8);\r\n  }\r\n  return pcVar1;\r\n}\r\n\r\n", 
+      "name": "FUN_140001530", 
+      "entry_point": "0x140001530"
+    }, 
+    {
+      "signature": "undefined8 * __fastcall FUN_140001550(undefined8 * param_1, ulonglong param_2)", 
+      "c_code": "\r\nundefined8 * FUN_140001550(undefined8 *param_1,ulonglong param_2)\r\n\r\n{\r\n  *param_1 = std::exception::vftable;\r\n  __std_exception_destroy(param_1 + 1);\r\n  if ((param_2 & 1) != 0) {\r\n    operator_delete(param_1);\r\n  }\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_140001550", 
+      "entry_point": "0x140001550"
+    }, 
+    {
+      "signature": "undefined8 * __fastcall FUN_1400015a0(undefined8 * param_1)", 
+      "c_code": "\r\nundefined8 * FUN_1400015a0(undefined8 *param_1)\r\n\r\n{\r\n  param_1[2] = 0;\r\n  param_1[1] = \"bad array new length\";\r\n  *param_1 = std::bad_array_new_length::vftable;\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_1400015a0", 
+      "entry_point": "0x1400015a0"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_1400015f0(void)", 
+      "c_code": "\r\nvoid FUN_1400015f0(void)\r\n\r\n{\r\n  undefined8 local_28 [5];\r\n  \r\n  FUN_1400015a0(local_28);\r\n                    /* WARNING: Subroutine does not return */\r\n  _CxxThrowException(local_28,(ThrowInfo *)&DAT_140007f68);\r\n}\r\n\r\n", 
+      "name": "FUN_1400015f0", 
+      "entry_point": "0x1400015f0"
+    }, 
+    {
+      "signature": "undefined8 * __fastcall FUN_140001610(undefined8 * param_1, longlong param_2)", 
+      "c_code": "\r\nundefined8 * FUN_140001610(undefined8 *param_1,longlong param_2)\r\n\r\n{\r\n  *param_1 = std::exception::vftable;\r\n  param_1[1] = 0;\r\n  param_1[2] = 0;\r\n  __std_exception_copy(param_2 + 8);\r\n  *param_1 = std::bad_array_new_length::vftable;\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_140001610", 
+      "entry_point": "0x140001610"
+    }, 
+    {
+      "signature": "undefined8 * __fastcall FUN_140001650(undefined8 * param_1, longlong param_2)", 
+      "c_code": "\r\nundefined8 * FUN_140001650(undefined8 *param_1,longlong param_2)\r\n\r\n{\r\n  *param_1 = std::exception::vftable;\r\n  param_1[1] = 0;\r\n  param_1[2] = 0;\r\n  __std_exception_copy(param_2 + 8);\r\n  *param_1 = std::bad_alloc::vftable;\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_140001650", 
+      "entry_point": "0x140001650"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140001690(void)", 
+      "c_code": "\r\nvoid FUN_140001690(void)\r\n\r\n{\r\n  code *pcVar1;\r\n  \r\n  std::_Xlength_error(\"string too long\");\r\n  pcVar1 = (code *)swi(3);\r\n  (*pcVar1)();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140001690", 
+      "entry_point": "0x140001690"
+    }, 
+    {
+      "signature": "CDialog * __fastcall FUN_1400016d0(CDialog * param_1, uint param_2)", 
+      "c_code": "\r\nCDialog * FUN_1400016d0(CDialog *param_1,uint param_2)\r\n\r\n{\r\n  CDialogImpl::~CDialogImpl((CDialogImpl *)(param_1 + 0x158));\r\n  *(undefined ***)(param_1 + 0x140) = CBrush::vftable;\r\n  FUN_140001490((CGdiObject *)(param_1 + 0x140));\r\n  CDialog::~CDialog(param_1);\r\n  if ((param_2 & 1) != 0) {\r\n    if ((param_2 & 4) == 0) {\r\n      operator_delete(param_1);\r\n      return param_1;\r\n    }\r\n    _guard_check_icall();\r\n  }\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_1400016d0", 
+      "entry_point": "0x1400016d0"
+    }, 
+    {
+      "signature": "undefined8 __fastcall FUN_140001750(void)", 
+      "c_code": "\r\nundefined8 FUN_140001750(void)\r\n\r\n{\r\n  return 0x1400063e8;\r\n}\r\n\r\n", 
+      "name": "FUN_140001750", 
+      "entry_point": "0x140001750"
+    }, 
+    {
+      "signature": "CDialog * __fastcall FUN_140001760(CDialog * param_1, uint param_2)", 
+      "c_code": "\r\nCDialog * FUN_140001760(CDialog *param_1,uint param_2)\r\n\r\n{\r\n  ATL::CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>::\r\n  ~CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>\r\n            ((CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> *)\r\n             (param_1 + 0x180));\r\n  ATL::CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>::\r\n  ~CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>\r\n            ((CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> *)\r\n             (param_1 + 0x178));\r\n  CDialogImpl::~CDialogImpl((CDialogImpl *)(param_1 + 0x158));\r\n  *(undefined ***)(param_1 + 0x140) = CBrush::vftable;\r\n  FUN_140001490((CGdiObject *)(param_1 + 0x140));\r\n  CDialog::~CDialog(param_1);\r\n  if ((param_2 & 1) != 0) {\r\n    if ((param_2 & 4) == 0) {\r\n      operator_delete(param_1);\r\n      return param_1;\r\n    }\r\n    _guard_check_icall();\r\n  }\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_140001760", 
+      "entry_point": "0x140001760"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_1400017f0(longlong param_1, CDataExchange * param_2)", 
+      "c_code": "\r\nvoid FUN_1400017f0(longlong param_1,CDataExchange *param_2)\r\n\r\n{\r\n  DDX_Text(param_2,0x3e9,\r\n           (CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> *)\r\n           (param_1 + 0x178));\r\n                    /* WARNING: Could not recover jumptable at 0x00014000182e. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  DDX_Text(param_2,1000,\r\n           (CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> *)\r\n           (param_1 + 0x180));\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_1400017f0", 
+      "entry_point": "0x1400017f0"
+    }, 
+    {
+      "signature": "undefined8 __fastcall FUN_140001840(void)", 
+      "c_code": "\r\nundefined8 FUN_140001840(void)\r\n\r\n{\r\n  return 0x140006000;\r\n}\r\n\r\n", 
+      "name": "FUN_140001840", 
+      "entry_point": "0x140001840"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140001850(CDialog * param_1)", 
+      "c_code": "\r\nvoid FUN_140001850(CDialog *param_1)\r\n\r\n{\r\n  HMENU pHVar1;\r\n  CMenu *pCVar2;\r\n  undefined1 auStack_38 [32];\r\n  LPCWSTR local_18;\r\n  ulonglong local_10;\r\n  \r\n  local_10 = DAT_14000a040 ^ (ulonglong)auStack_38;\r\n  CDialog::OnInitDialog(param_1);\r\n  pHVar1 = GetSystemMenu(*(HWND *)(param_1 + 0x40),0);\r\n  pCVar2 = CMenu::FromHandle(pHVar1);\r\n  if (pCVar2 != (CMenu *)0x0) {\r\n    ATL::CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>::\r\n    CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>\r\n              ((CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> *\r\n               )&local_18);\r\n    ATL::CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>::\r\n    LoadStringW((CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>\r\n                 *)&local_18,0x65);\r\n    if (*(int *)(local_18 + -8) != 0) {\r\n      AppendMenuW(*(HMENU *)(pCVar2 + 8),0x800,0,(LPCWSTR)0x0);\r\n      AppendMenuW(*(HMENU *)(pCVar2 + 8),0,0x10,local_18);\r\n    }\r\n    ATL::CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>::\r\n    ~CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>\r\n              ((CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> *\r\n               )&local_18);\r\n  }\r\n  SendMessageW(*(HWND *)(param_1 + 0x40),0x80,1,*(LPARAM *)(param_1 + 0x170));\r\n  SendMessageW(*(HWND *)(param_1 + 0x40),0x80,0,*(LPARAM *)(param_1 + 0x170));\r\n  FUN_140003550(local_10 ^ (ulonglong)auStack_38);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140001850", 
+      "entry_point": "0x140001850"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140001b70(CWnd * param_1)", 
+      "c_code": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nvoid FUN_140001b70(CWnd *param_1)\r\n\r\n{\r\n  void *pvVar1;\r\n  bool bVar2;\r\n  undefined8 uVar3;\r\n  BOOL BVar4;\r\n  int iVar5;\r\n  undefined8 *puVar6;\r\n  basic_ostream<char,struct_std::char_traits<char>_> *this;\r\n  undefined8 ****ppppuVar7;\r\n  void *pvVar8;\r\n  BYTE *pbData;\r\n  ulonglong uVar9;\r\n  undefined8 ****ppppuVar10;\r\n  byte *pbVar11;\r\n  bool bVar12;\r\n  uint uVar13;\r\n  undefined1 auStackY_368 [32];\r\n  undefined8 ***local_330;\r\n  undefined8 uStack_328;\r\n  ulonglong local_320;\r\n  ulonglong local_318;\r\n  CWnd *local_310;\r\n  undefined1 local_308 [24];\r\n  DWORD local_2f0 [2];\r\n  HCRYPTHASH local_2e8;\r\n  HCRYPTPROV local_2e0;\r\n  BYTE local_2d8;\r\n  undefined7 uStack_2d7;\r\n  undefined *local_2c8;\r\n  ulonglong uStack_2c0;\r\n  undefined8 ***local_2b8 [2];\r\n  longlong local_2a8;\r\n  ulonglong local_2a0;\r\n  undefined8 *local_298;\r\n  undefined8 uStack_290;\r\n  undefined8 local_288;\r\n  undefined8 local_280;\r\n  int iStack_26c;\r\n  undefined *local_268 [2];\r\n  undefined *local_258;\r\n  undefined **local_250;\r\n  basic_iostream<char,struct_std::char_traits<char>_> local_248 [16];\r\n  undefined8 *local_238;\r\n  undefined8 *local_230;\r\n  longlong *local_218;\r\n  ulonglong *local_210;\r\n  int *local_200;\r\n  ulonglong local_1e8;\r\n  uint local_1e0;\r\n  basic_ios<char,struct_std::char_traits<char>_> local_1d0 [104];\r\n  undefined8 *local_168;\r\n  undefined8 uStack_160;\r\n  undefined8 local_158;\r\n  undefined8 uStack_150;\r\n  undefined8 local_148;\r\n  undefined8 uStack_140;\r\n  undefined8 local_138;\r\n  undefined8 uStack_130;\r\n  undefined8 local_128;\r\n  undefined8 uStack_120;\r\n  undefined8 local_118;\r\n  undefined8 uStack_110;\r\n  undefined8 local_108;\r\n  undefined8 uStack_100;\r\n  undefined8 local_f8;\r\n  undefined8 uStack_f0;\r\n  undefined8 local_e8;\r\n  undefined8 *local_d8;\r\n  undefined8 uStack_d0;\r\n  undefined8 local_c8;\r\n  undefined8 uStack_c0;\r\n  undefined8 local_b8;\r\n  undefined8 uStack_b0;\r\n  undefined8 local_a8;\r\n  undefined8 uStack_a0;\r\n  undefined8 local_98;\r\n  undefined8 uStack_90;\r\n  undefined8 local_88;\r\n  undefined8 uStack_80;\r\n  undefined8 local_78;\r\n  undefined8 uStack_70;\r\n  undefined8 local_68;\r\n  undefined8 uStack_60;\r\n  undefined8 local_58;\r\n  byte local_48 [16];\r\n  ulonglong local_38;\r\n  \r\n  local_38 = DAT_14000a040 ^ (ulonglong)auStackY_368;\r\n  uVar13 = 0;\r\n  local_310 = param_1;\r\n  CWnd::UpdateData(param_1,1);\r\n  uStack_d0 = 0;\r\n  local_c8 = 0;\r\n  uStack_c0 = 0;\r\n  local_b8 = 0;\r\n  uStack_b0 = 0;\r\n  local_a8 = 0;\r\n  uStack_a0 = 0;\r\n  local_98 = 0;\r\n  uStack_90 = 0;\r\n  local_88 = 0;\r\n  uStack_80 = 0;\r\n  local_78 = 0;\r\n  uStack_70 = 0;\r\n  local_68 = 0;\r\n  uStack_60 = 0;\r\n  local_58 = 0;\r\n  local_d8 = &uStack_d0;\r\n  FUN_140002b50(&local_d8,*(LPCWSTR *)(param_1 + 0x180),3);\r\n  FUN_140002940((undefined8 *)&local_2d8,local_d8);\r\n  uStack_160 = 0;\r\n  local_158 = 0;\r\n  uStack_150 = 0;\r\n  local_148 = 0;\r\n  uStack_140 = 0;\r\n  local_138 = 0;\r\n  uStack_130 = 0;\r\n  local_128 = 0;\r\n  uStack_120 = 0;\r\n  local_118 = 0;\r\n  uStack_110 = 0;\r\n  local_108 = 0;\r\n  uStack_100 = 0;\r\n  local_f8 = 0;\r\n  uStack_f0 = 0;\r\n  local_e8 = 0;\r\n  local_168 = &uStack_160;\r\n  FUN_140002b50(&local_168,*(LPCWSTR *)(param_1 + 0x178),3);\r\n  FUN_140002940(local_2b8,local_168);\r\n  local_2e0 = 0;\r\n  local_2e8 = 0;\r\n  local_2f0[0] = 0x10;\r\n  BVar4 = CryptAcquireContextW(&local_2e0,(LPCWSTR)0x0,(LPCWSTR)0x0,1,0xf0000000);\r\n  if (BVar4 == 0) goto LAB_140002104;\r\n  BVar4 = CryptCreateHash(local_2e0,0x8003,0,0,&local_2e8);\r\n  if (BVar4 == 0) {\r\n    CryptReleaseContext(local_2e0,0);\r\n    goto LAB_140002104;\r\n  }\r\n  pbData = &local_2d8;\r\n  if (0xf < uStack_2c0) {\r\n    pbData = (BYTE *)CONCAT71(uStack_2d7,local_2d8);\r\n  }\r\n  BVar4 = CryptHashData(local_2e8,pbData,(DWORD)local_2c8,0);\r\n  if (BVar4 == 0) {\r\n    CryptReleaseContext(local_2e0,0);\r\n    CryptDestroyHash(local_2e8);\r\n    goto LAB_140002104;\r\n  }\r\n  BVar4 = CryptGetHashParam(local_2e8,2,local_48,local_2f0,0);\r\n  if (BVar4 == 0) {\r\n    CryptReleaseContext(local_2e0,0);\r\n    CryptDestroyHash(local_2e8);\r\n    goto LAB_140002104;\r\n  }\r\n  memset((basic_iostream<char,struct_std::char_traits<char>_> *)local_268,0,0xf8);\r\n  local_268[0] = &DAT_140005f68;\r\n  local_258 = &DAT_140005f60;\r\n  std::basic_ios<char,struct_std::char_traits<char>_>::\r\n  basic_ios<char,struct_std::char_traits<char>_>(local_1d0);\r\n  bVar12 = false;\r\n  std::basic_iostream<char,struct_std::char_traits<char>_>::\r\n  basic_iostream<char,struct_std::char_traits<char>_>\r\n            ((basic_iostream<char,struct_std::char_traits<char>_> *)local_268,\r\n             (basic_streambuf<char,struct_std::char_traits<char>_> *)&local_250);\r\n  *(undefined ***)\r\n   ((basic_iostream<char,struct_std::char_traits<char>_> *)local_268 + *(int *)(local_268[0] + 4)) =\r\n       std::basic_stringstream<char,struct_std::char_traits<char>,class_std::allocator<char>_>::\r\n       vftable;\r\n  *(int *)((longlong)&iStack_26c + (longlong)*(int *)(local_268[0] + 4)) =\r\n       *(int *)(local_268[0] + 4) + -0x98;\r\n  std::basic_streambuf<char,struct_std::char_traits<char>_>::\r\n  basic_streambuf<char,struct_std::char_traits<char>_>\r\n            ((basic_streambuf<char,struct_std::char_traits<char>_> *)&local_250);\r\n  local_250 = std::basic_stringbuf<char,struct_std::char_traits<char>,class_std::allocator<char>_>::\r\n              vftable;\r\n  local_1e8 = 0;\r\n  local_1e0 = 0;\r\n  if (local_2f0[0] != 0) {\r\n    pbVar11 = local_48;\r\n    do {\r\n      puVar6 = (undefined8 *)std::setw((__int64)local_308);\r\n      this = std::basic_ostream<char,struct_std::char_traits<char>_>::operator<<\r\n                       ((basic_ostream<char,struct_std::char_traits<char>_> *)&local_258,\r\n                        (_func_ios_base_ptr_ios_base_ptr *)&LAB_1400016b0);\r\n      (*(code *)*puVar6)(this + *(int *)(*(longlong *)this + 4),puVar6[1]);\r\n      this[(longlong)*(int *)(*(longlong *)this + 4) + 0x58] =\r\n           (basic_ostream<char,struct_std::char_traits<char>_>)0x30;\r\n      std::basic_ostream<char,struct_std::char_traits<char>_>::operator<<(this,(uint)*pbVar11);\r\n      uVar13 = uVar13 + 1;\r\n      pbVar11 = pbVar11 + 1;\r\n    } while (uVar13 < local_2f0[0]);\r\n  }\r\n  CryptDestroyHash(local_2e8);\r\n  CryptReleaseContext(local_2e0,0);\r\n  local_298 = (undefined8 *)0x0;\r\n  uStack_290 = 0;\r\n  puVar6 = (undefined8 *)operator_new(0x30);\r\n  uVar3 = _UNK_140005f00;\r\n  local_288 = 0x20;\r\n  local_280 = 0x2f;\r\n  *puVar6 = _DAT_140005ef8;\r\n  puVar6[1] = uVar3;\r\n  uVar3 = s_43894a0e4a801fc3_140005f08._8_8_;\r\n  puVar6[2] = s_43894a0e4a801fc3_140005f08._0_8_;\r\n  puVar6[3] = uVar3;\r\n  *(undefined1 *)(puVar6 + 4) = 0;\r\n  ppppuVar7 = local_2b8;\r\n  if (0xf < local_2a0) {\r\n    ppppuVar7 = (undefined8 ****)local_2b8[0];\r\n  }\r\n  ppppuVar10 = (undefined8 ****)local_330;\r\n  uVar9 = local_318;\r\n  local_298 = puVar6;\r\n  if ((local_2a8 == 5) &&\r\n     (iVar5 = memcmp(ppppuVar7,\"admin\",5), ppppuVar10 = (undefined8 ****)local_330,\r\n     uVar9 = local_318, iVar5 == 0)) {\r\n    uStack_328 = 0;\r\n    local_320 = 0;\r\n    local_318 = 0xf;\r\n    local_330 = (undefined8 ****)0x0;\r\n    if ((((byte)local_1e0 & 0x22) == 2) || (uVar9 = *local_210, uVar9 == 0)) {\r\n      if (((local_1e0 & 4) == 0) && (*local_218 != 0)) {\r\n        pvVar8 = (void *)*local_238;\r\n        uVar9 = (longlong)*local_200 + *local_218;\r\n        goto LAB_140001fab;\r\n      }\r\n    }\r\n    else {\r\n      pvVar8 = (void *)*local_230;\r\n      if (uVar9 < local_1e8) {\r\n        uVar9 = local_1e8;\r\n      }\r\nLAB_140001fab:\r\n      uVar9 = uVar9 - (longlong)pvVar8;\r\n      if (pvVar8 != (void *)0x0) {\r\n        if (uVar9 < 0x10) {\r\n          local_320 = uVar9;\r\n          memmove(&local_330,pvVar8,uVar9);\r\n          *(undefined1 *)((longlong)&local_330 + uVar9) = 0;\r\n        }\r\n        else {\r\n          FUN_140002dc0((longlong *)&local_330,uVar9,local_2a8,pvVar8);\r\n        }\r\n      }\r\n    }\r\n    uVar9 = local_318;\r\n    ppppuVar10 = (undefined8 ****)local_330;\r\n    bVar12 = true;\r\n    ppppuVar7 = &local_330;\r\n    if (0xf < local_318) {\r\n      ppppuVar7 = (undefined8 ****)local_330;\r\n    }\r\n    if ((local_320 != 0x20) || (iVar5 = memcmp(ppppuVar7,puVar6,0x20), iVar5 != 0))\r\n    goto LAB_140002025;\r\n    bVar2 = true;\r\n  }\r\n  else {\r\nLAB_140002025:\r\n    bVar2 = false;\r\n  }\r\n  if ((bVar12) && (0xf < uVar9)) {\r\n    ppppuVar7 = ppppuVar10;\r\n    if ((0xfff < uVar9 + 1) &&\r\n       (ppppuVar7 = (undefined8 ****)ppppuVar10[-1],\r\n       0x1f < (ulonglong)((longlong)ppppuVar10 + (-8 - (longlong)ppppuVar7)))) {\r\n                    /* WARNING: Subroutine does not return */\r\n      _invalid_parameter_noinfo_noreturn();\r\n    }\r\n    operator_delete(ppppuVar7);\r\n  }\r\n  if (bVar2) {\r\n    CWnd::MessageBoxW(local_310,L\"Correct!\",L\"\",0x40);\r\n    CDialog::EndDialog((CDialog *)local_310,0);\r\n  }\r\n  else {\r\n    CWnd::MessageBoxW(local_310,L\"Wrong, try again!\",L\"\",0x10);\r\n  }\r\n  operator_delete(puVar6);\r\n  *(undefined ***)\r\n   ((basic_iostream<char,struct_std::char_traits<char>_> *)local_268 + *(int *)(local_268[0] + 4)) =\r\n       std::basic_stringstream<char,struct_std::char_traits<char>,class_std::allocator<char>_>::\r\n       vftable;\r\n  *(int *)((longlong)&iStack_26c + (longlong)*(int *)(local_268[0] + 4)) =\r\n       *(int *)(local_268[0] + 4) + -0x98;\r\n  FUN_140002800((basic_streambuf<char,struct_std::char_traits<char>_> *)&local_250);\r\n  std::basic_iostream<char,struct_std::char_traits<char>_>::\r\n  ~basic_iostream<char,struct_std::char_traits<char>_>(local_248);\r\n  std::basic_ios<char,struct_std::char_traits<char>_>::\r\n  ~basic_ios<char,struct_std::char_traits<char>_>(local_1d0);\r\nLAB_140002104:\r\n  if (0xf < local_2a0) {\r\n    ppppuVar7 = (undefined8 ****)local_2b8[0];\r\n    if ((0xfff < local_2a0 + 1) &&\r\n       (ppppuVar7 = (undefined8 ****)local_2b8[0][-1],\r\n       0x1f < (ulonglong)((longlong)local_2b8[0] + (-8 - (longlong)ppppuVar7)))) {\r\n                    /* WARNING: Subroutine does not return */\r\n      _invalid_parameter_noinfo_noreturn();\r\n    }\r\n    operator_delete(ppppuVar7);\r\n  }\r\n  if (local_168 != &uStack_160) {\r\n    free(local_168);\r\n  }\r\n  if (0xf < uStack_2c0) {\r\n    pvVar1 = (void *)CONCAT71(uStack_2d7,local_2d8);\r\n    pvVar8 = pvVar1;\r\n    if ((0xfff < uStack_2c0 + 1) &&\r\n       (pvVar8 = *(void **)((longlong)pvVar1 + -8),\r\n       0x1f < (ulonglong)((longlong)pvVar1 + (-8 - (longlong)pvVar8)))) {\r\n                    /* WARNING: Subroutine does not return */\r\n      _invalid_parameter_noinfo_noreturn();\r\n    }\r\n    operator_delete(pvVar8);\r\n  }\r\n  local_2c8 = PTR_1400067c0;\r\n  uStack_2c0 = _UNK_1400067c8;\r\n  local_2d8 = '\\0';\r\n  if (local_d8 != &uStack_d0) {\r\n    free(local_d8);\r\n  }\r\n  FUN_140003550(local_38 ^ (ulonglong)auStackY_368);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140001b70", 
+      "entry_point": "0x140001b70"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140002200(longlong * param_1)", 
+      "c_code": "\r\nvoid FUN_140002200(longlong *param_1)\r\n\r\n{\r\n  basic_ios<char,struct_std::char_traits<char>_> *this;\r\n  \r\n  this = (basic_ios<char,struct_std::char_traits<char>_> *)(param_1 + 0x13);\r\n  *(undefined ***)(this + (longlong)*(int *)(*param_1 + 4) + -0x98) =\r\n       std::basic_stringstream<char,struct_std::char_traits<char>,class_std::allocator<char>_>::\r\n       vftable;\r\n  *(int *)(this + (longlong)*(int *)(*param_1 + 4) + -0x9c) = *(int *)(*param_1 + 4) + -0x98;\r\n  FUN_140002800((basic_streambuf<char,struct_std::char_traits<char>_> *)(param_1 + 3));\r\n  std::basic_iostream<char,struct_std::char_traits<char>_>::\r\n  ~basic_iostream<char,struct_std::char_traits<char>_>\r\n            ((basic_iostream<char,struct_std::char_traits<char>_> *)(param_1 + 4));\r\n                    /* WARNING: Could not recover jumptable at 0x000140002254. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  std::basic_ios<char,struct_std::char_traits<char>_>::\r\n  ~basic_ios<char,struct_std::char_traits<char>_>(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140002200", 
+      "entry_point": "0x140002200"
+    }, 
+    {
+      "signature": "ulonglong * __fastcall FUN_140002260(longlong param_1, ulonglong * param_2, longlong * param_3, byte param_4)", 
+      "c_code": "\r\nulonglong * FUN_140002260(longlong param_1,ulonglong *param_2,longlong *param_3,byte param_4)\r\n\r\n{\r\n  longlong lVar1;\r\n  int iVar2;\r\n  longlong lVar3;\r\n  longlong lVar4;\r\n  longlong lVar5;\r\n  undefined8 uVar6;\r\n  bool bVar7;\r\n  bool bVar8;\r\n  ulonglong uVar9;\r\n  ulonglong uVar10;\r\n  \r\n  if (((param_4 & 1) == 0) || ((*(byte *)(param_1 + 0x70) & 4) == 0)) {\r\n    bVar7 = false;\r\n  }\r\n  else {\r\n    bVar7 = true;\r\n  }\r\n  if (((param_4 & 2) == 0) || ((*(byte *)(param_1 + 0x70) & 2) == 0)) {\r\n    bVar8 = false;\r\n  }\r\n  else {\r\n    bVar8 = true;\r\n  }\r\n  if ((!bVar7) && (!bVar8)) {\r\n    uVar10 = param_3[1] + *param_3;\r\n    lVar3 = **(longlong **)(param_1 + 0x38);\r\n    if ((*(byte *)(param_1 + 0x70) & 2) == 0) {\r\n      uVar9 = **(ulonglong **)(param_1 + 0x40);\r\n      if ((uVar9 != 0) && (*(ulonglong *)(param_1 + 0x68) < uVar9)) {\r\n        *(ulonglong *)(param_1 + 0x68) = uVar9;\r\n      }\r\n    }\r\n    else {\r\n      uVar9 = 0;\r\n    }\r\n    lVar4 = *(longlong *)(param_1 + 0x68);\r\n    lVar5 = **(longlong **)(param_1 + 0x18);\r\n    if ((uVar10 <= (ulonglong)(lVar4 - lVar5)) &&\r\n       ((uVar10 == 0 ||\r\n        ((((param_4 & 1) == 0 || (lVar3 != 0)) && (((param_4 & 2) == 0 || (uVar9 != 0)))))))) {\r\n      lVar1 = lVar5 + uVar10;\r\n      if (((param_4 & 1) != 0) && (lVar3 != 0)) {\r\n        **(longlong **)(param_1 + 0x18) = lVar5;\r\n        **(longlong **)(param_1 + 0x38) = lVar1;\r\n        **(int **)(param_1 + 0x50) = (int)lVar4 - (int)lVar1;\r\n      }\r\n      if (((param_4 & 2) != 0) && (uVar9 != 0)) {\r\n        iVar2 = **(int **)(param_1 + 0x58);\r\n        uVar6 = **(undefined8 **)(param_1 + 0x40);\r\n        **(longlong **)(param_1 + 0x20) = lVar5;\r\n        **(longlong **)(param_1 + 0x40) = lVar1;\r\n        **(int **)(param_1 + 0x58) = (iVar2 + (int)uVar6) - (int)lVar1;\r\n      }\r\n      *param_2 = uVar10;\r\n      goto LAB_14000236a;\r\n    }\r\n  }\r\n  *param_2 = 0xffffffffffffffff;\r\nLAB_14000236a:\r\n  param_2[1] = 0;\r\n  param_2[2] = 0;\r\n  return param_2;\r\n}\r\n\r\n", 
+      "name": "FUN_140002260", 
+      "entry_point": "0x140002260"
+    }, 
+    {
+      "signature": "ulonglong * __fastcall FUN_140002390(longlong param_1, ulonglong * param_2, longlong param_3, int param_4, byte param_5)", 
+      "c_code": "\r\nulonglong *\r\nFUN_140002390(longlong param_1,ulonglong *param_2,longlong param_3,int param_4,byte param_5)\r\n\r\n{\r\n  longlong lVar1;\r\n  int iVar2;\r\n  longlong lVar3;\r\n  longlong lVar4;\r\n  undefined8 uVar5;\r\n  bool bVar6;\r\n  bool bVar7;\r\n  ulonglong uVar8;\r\n  ulonglong uVar9;\r\n  ulonglong uVar10;\r\n  \r\n  if (((param_5 & 1) == 0) || ((*(byte *)(param_1 + 0x70) & 4) == 0)) {\r\n    bVar6 = false;\r\n  }\r\n  else {\r\n    bVar6 = true;\r\n  }\r\n  if (((param_5 & 2) == 0) || ((*(byte *)(param_1 + 0x70) & 2) == 0)) {\r\n    bVar7 = false;\r\n  }\r\n  else {\r\n    bVar7 = true;\r\n  }\r\n  if ((bVar6) || (bVar7)) goto LAB_1400024f4;\r\n  lVar3 = **(longlong **)(param_1 + 0x38);\r\n  if ((*(byte *)(param_1 + 0x70) & 2) == 0) {\r\n    uVar10 = **(ulonglong **)(param_1 + 0x40);\r\n    if ((uVar10 != 0) && (*(ulonglong *)(param_1 + 0x68) < uVar10)) {\r\n      *(ulonglong *)(param_1 + 0x68) = uVar10;\r\n    }\r\n  }\r\n  else {\r\n    uVar10 = 0;\r\n  }\r\n  lVar4 = **(longlong **)(param_1 + 0x18);\r\n  uVar9 = *(longlong *)(param_1 + 0x68) - lVar4;\r\n  if (param_4 == 0) {\r\n    uVar8 = 0;\r\nLAB_140002477:\r\n    uVar8 = uVar8 + param_3;\r\n    if ((uVar8 <= uVar9) &&\r\n       ((uVar8 == 0 ||\r\n        ((((param_5 & 1) == 0 || (lVar3 != 0)) && (((param_5 & 2) == 0 || (uVar10 != 0)))))))) {\r\n      lVar1 = lVar4 + uVar8;\r\n      if (((param_5 & 1) != 0) && (lVar3 != 0)) {\r\n        uVar5 = *(undefined8 *)(param_1 + 0x68);\r\n        **(longlong **)(param_1 + 0x18) = lVar4;\r\n        **(longlong **)(param_1 + 0x38) = lVar1;\r\n        **(int **)(param_1 + 0x50) = (int)uVar5 - (int)lVar1;\r\n      }\r\n      if (((param_5 & 2) != 0) && (uVar10 != 0)) {\r\n        iVar2 = **(int **)(param_1 + 0x58);\r\n        uVar5 = **(undefined8 **)(param_1 + 0x40);\r\n        **(longlong **)(param_1 + 0x20) = lVar4;\r\n        **(longlong **)(param_1 + 0x40) = lVar1;\r\n        **(int **)(param_1 + 0x58) = (iVar2 + (int)uVar5) - (int)lVar1;\r\n      }\r\n      *param_2 = uVar8;\r\n      goto LAB_1400024fb;\r\n    }\r\n  }\r\n  else if (param_4 == 1) {\r\n    if ((param_5 & 3) != 3) {\r\n      if ((param_5 & 1) == 0) {\r\n        if (((param_5 & 2) != 0) && ((uVar10 != 0 || (lVar4 == 0)))) {\r\n          uVar8 = uVar10 - lVar4;\r\n          goto LAB_140002477;\r\n        }\r\n      }\r\n      else if ((lVar3 != 0) || (lVar4 == 0)) {\r\n        uVar8 = lVar3 - lVar4;\r\n        goto LAB_140002477;\r\n      }\r\n    }\r\n  }\r\n  else {\r\n    uVar8 = uVar9;\r\n    if (param_4 == 2) goto LAB_140002477;\r\n  }\r\nLAB_1400024f4:\r\n  *param_2 = 0xffffffffffffffff;\r\nLAB_1400024fb:\r\n  param_2[1] = 0;\r\n  param_2[2] = 0;\r\n  return param_2;\r\n}\r\n\r\n", 
+      "name": "FUN_140002390", 
+      "entry_point": "0x140002390"
+    }, 
+    {
+      "signature": "ulonglong __fastcall FUN_140002520(longlong param_1)", 
+      "c_code": "\r\nulonglong FUN_140002520(longlong param_1)\r\n\r\n{\r\n  undefined8 *puVar1;\r\n  byte *pbVar2;\r\n  byte *pbVar3;\r\n  undefined8 uVar4;\r\n  byte *pbVar5;\r\n  \r\n  puVar1 = *(undefined8 **)(param_1 + 0x38);\r\n  pbVar2 = (byte *)*puVar1;\r\n  if (pbVar2 != (byte *)0x0) {\r\n    if (pbVar2 < pbVar2 + **(int **)(param_1 + 0x50)) {\r\n      return (ulonglong)*pbVar2;\r\n    }\r\n    pbVar3 = (byte *)**(undefined8 **)(param_1 + 0x40);\r\n    if ((pbVar3 != (byte *)0x0) && ((*(byte *)(param_1 + 0x70) & 4) == 0)) {\r\n      pbVar5 = *(byte **)(param_1 + 0x68);\r\n      if (*(byte **)(param_1 + 0x68) < pbVar3) {\r\n        pbVar5 = pbVar3;\r\n      }\r\n      if (pbVar2 < pbVar5) {\r\n        *(byte **)(param_1 + 0x68) = pbVar5;\r\n        uVar4 = *puVar1;\r\n        *puVar1 = uVar4;\r\n        **(int **)(param_1 + 0x50) = (int)pbVar5 - (int)uVar4;\r\n        return (ulonglong)*(byte *)**(undefined8 **)(param_1 + 0x38);\r\n      }\r\n    }\r\n  }\r\n  return 0xffffffff;\r\n}\r\n\r\n", 
+      "name": "FUN_140002520", 
+      "entry_point": "0x140002520"
+    }, 
+    {
+      "signature": "int __fastcall FUN_1400025a0(longlong param_1, int param_2)", 
+      "c_code": "\r\nint FUN_1400025a0(longlong param_1,int param_2)\r\n\r\n{\r\n  ulonglong uVar1;\r\n  \r\n  uVar1 = **(ulonglong **)(param_1 + 0x38);\r\n  if (((uVar1 != 0) && (**(ulonglong **)(param_1 + 0x18) < uVar1)) &&\r\n     ((param_2 == -1 ||\r\n      (((char)param_2 == *(char *)(uVar1 - 1) || ((*(byte *)(param_1 + 0x70) & 2) == 0)))))) {\r\n    **(int **)(param_1 + 0x50) = **(int **)(param_1 + 0x50) + 1;\r\n    **(longlong **)(param_1 + 0x38) = **(longlong **)(param_1 + 0x38) + -1;\r\n    if (param_2 == -1) {\r\n      param_2 = 0;\r\n    }\r\n    else {\r\n      *(char *)**(undefined8 **)(param_1 + 0x38) = (char)param_2;\r\n    }\r\n    return param_2;\r\n  }\r\n  return -1;\r\n}\r\n\r\n", 
+      "name": "FUN_1400025a0", 
+      "entry_point": "0x1400025a0"
+    }, 
+    {
+      "signature": "ulonglong __fastcall FUN_140002600(longlong param_1, uint param_2)", 
+      "c_code": "\r\nulonglong FUN_140002600(longlong param_1,uint param_2)\r\n\r\n{\r\n  int iVar1;\r\n  undefined1 *puVar2;\r\n  undefined8 uVar3;\r\n  code *pcVar4;\r\n  void *pvVar5;\r\n  ulonglong uVar6;\r\n  longlong lVar7;\r\n  ulonglong uVar8;\r\n  void *_Src;\r\n  ulonglong uVar9;\r\n  void *pvVar10;\r\n  \r\n  if ((*(byte *)(param_1 + 0x70) & 2) != 0) {\r\n    return 0xffffffff;\r\n  }\r\n  if (param_2 == 0xffffffff) {\r\n    return 0;\r\n  }\r\n  uVar8 = **(ulonglong **)(param_1 + 0x40);\r\n  iVar1 = **(int **)(param_1 + 0x58);\r\n  uVar9 = uVar8 + (longlong)iVar1;\r\n  if (uVar8 == 0) {\r\n    uVar9 = 0;\r\n    _Src = (void *)**(longlong **)(param_1 + 0x18);\r\nLAB_1400026f3:\r\n    uVar8 = 0x20;\r\nLAB_1400026f8:\r\n    pvVar10 = operator_new(uVar8);\r\n  }\r\n  else {\r\n    if (uVar8 < uVar9) {\r\n      **(int **)(param_1 + 0x58) = iVar1 + -1;\r\n      puVar2 = (undefined1 *)**(longlong **)(param_1 + 0x40);\r\n      **(longlong **)(param_1 + 0x40) = (longlong)(puVar2 + 1);\r\n      *puVar2 = (char)param_2;\r\n      *(ulonglong *)(param_1 + 0x68) = uVar8 + 1;\r\n      return (ulonglong)param_2;\r\n    }\r\n    _Src = (void *)**(longlong **)(param_1 + 0x18);\r\n    uVar9 = uVar9 - (longlong)_Src;\r\n    if (uVar9 < 0x20) goto LAB_1400026f3;\r\n    if (uVar9 < 0x3fffffff) {\r\n      uVar8 = uVar9 * 2;\r\n      if (0xfff < uVar8) {\r\n        uVar6 = uVar8 + 0x27;\r\n        if (uVar6 <= uVar8) {\r\n          FUN_1400015f0();\r\n          pcVar4 = (code *)swi(3);\r\n          uVar9 = (*pcVar4)();\r\n          return uVar9;\r\n        }\r\n        goto LAB_1400026cd;\r\n      }\r\n      if (uVar8 == 0) {\r\n        pvVar10 = (void *)0x0;\r\n        goto LAB_140002704;\r\n      }\r\n      goto LAB_1400026f8;\r\n    }\r\n    uVar8 = 0x7fffffff;\r\n    if (0x7ffffffe < uVar9) {\r\n      return 0xffffffff;\r\n    }\r\n    uVar6 = 0x80000026;\r\nLAB_1400026cd:\r\n    pvVar5 = operator_new(uVar6);\r\n    if (pvVar5 == (void *)0x0) goto LAB_1400027d0;\r\n    pvVar10 = (void *)((longlong)pvVar5 + 0x27U & 0xffffffffffffffe0);\r\n    *(void **)((longlong)pvVar10 - 8) = pvVar5;\r\n  }\r\nLAB_140002704:\r\n  memcpy(pvVar10,_Src,uVar9);\r\n  lVar7 = (longlong)pvVar10 + uVar9;\r\n  *(longlong *)(param_1 + 0x68) = lVar7 + 1;\r\n  **(undefined8 **)(param_1 + 0x20) = pvVar10;\r\n  **(longlong **)(param_1 + 0x40) = lVar7;\r\n  **(int **)(param_1 + 0x58) = ((int)uVar8 - (int)lVar7) + (int)pvVar10;\r\n  if ((*(byte *)(param_1 + 0x70) & 4) == 0) {\r\n    uVar3 = *(undefined8 *)(param_1 + 0x68);\r\n    lVar7 = (**(longlong **)(param_1 + 0x38) - (longlong)_Src) + (longlong)pvVar10;\r\n    **(undefined8 **)(param_1 + 0x18) = pvVar10;\r\n    **(longlong **)(param_1 + 0x38) = lVar7;\r\n    **(int **)(param_1 + 0x50) = (int)uVar3 - (int)lVar7;\r\n  }\r\n  else {\r\n    **(undefined8 **)(param_1 + 0x18) = pvVar10;\r\n    **(undefined8 **)(param_1 + 0x38) = pvVar10;\r\n    **(undefined4 **)(param_1 + 0x50) = 0;\r\n  }\r\n  if ((*(byte *)(param_1 + 0x70) & 1) != 0) {\r\n    pvVar10 = _Src;\r\n    if ((0xfff < uVar9) &&\r\n       (pvVar10 = *(void **)((longlong)_Src + -8),\r\n       0x1f < (ulonglong)((longlong)_Src + (-8 - (longlong)pvVar10)))) {\r\nLAB_1400027d0:\r\n                    /* WARNING: Subroutine does not return */\r\n      _invalid_parameter_noinfo_noreturn();\r\n    }\r\n    operator_delete(pvVar10);\r\n  }\r\n  *(uint *)(param_1 + 0x70) = *(uint *)(param_1 + 0x70) | 1;\r\n  **(int **)(param_1 + 0x58) = **(int **)(param_1 + 0x58) + -1;\r\n  puVar2 = (undefined1 *)**(longlong **)(param_1 + 0x40);\r\n  **(longlong **)(param_1 + 0x40) = (longlong)(puVar2 + 1);\r\n  *puVar2 = (char)param_2;\r\n  return (ulonglong)param_2;\r\n}\r\n\r\n", 
+      "name": "FUN_140002600", 
+      "entry_point": "0x140002600"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140002800(basic_streambuf<char,struct_std::char_traits<char>_> * param_1)", 
+      "c_code": "\r\nvoid FUN_140002800(basic_streambuf<char,struct_std::char_traits<char>_> *param_1)\r\n\r\n{\r\n  void *pvVar1;\r\n  void *pvVar2;\r\n  longlong lVar3;\r\n  \r\n  *(undefined ***)param_1 =\r\n       std::basic_stringbuf<char,struct_std::char_traits<char>,class_std::allocator<char>_>::vftable\r\n  ;\r\n  if (((byte)param_1[0x70] & 1) != 0) {\r\n    if (**(longlong **)(param_1 + 0x40) == 0) {\r\n      lVar3 = (longlong)**(int **)(param_1 + 0x50) + **(longlong **)(param_1 + 0x38);\r\n    }\r\n    else {\r\n      lVar3 = (longlong)**(int **)(param_1 + 0x58) + **(longlong **)(param_1 + 0x40);\r\n    }\r\n    pvVar1 = (void *)**(longlong **)(param_1 + 0x18);\r\n    pvVar2 = pvVar1;\r\n    if ((0xfff < (ulonglong)(lVar3 - (longlong)pvVar1)) &&\r\n       (pvVar2 = *(void **)((longlong)pvVar1 + -8),\r\n       0x1f < (ulonglong)((longlong)pvVar1 + (-8 - (longlong)pvVar2)))) {\r\n                    /* WARNING: Subroutine does not return */\r\n      _invalid_parameter_noinfo_noreturn();\r\n    }\r\n    operator_delete(pvVar2);\r\n  }\r\n  **(undefined8 **)(param_1 + 0x18) = 0;\r\n  **(undefined8 **)(param_1 + 0x38) = 0;\r\n  **(undefined4 **)(param_1 + 0x50) = 0;\r\n  **(undefined8 **)(param_1 + 0x20) = 0;\r\n  **(undefined8 **)(param_1 + 0x40) = 0;\r\n  **(undefined4 **)(param_1 + 0x58) = 0;\r\n  *(uint *)(param_1 + 0x70) = *(uint *)(param_1 + 0x70) & 0xfffffffe;\r\n  *(undefined8 *)(param_1 + 0x68) = 0;\r\n                    /* WARNING: Could not recover jumptable at 0x0001400028a9. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  std::basic_streambuf<char,struct_std::char_traits<char>_>::\r\n  ~basic_streambuf<char,struct_std::char_traits<char>_>(param_1);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140002800", 
+      "entry_point": "0x140002800"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_1400028e0(longlong * param_1)", 
+      "c_code": "\r\nvoid FUN_1400028e0(longlong *param_1)\r\n\r\n{\r\n  void *pvVar1;\r\n  void *pvVar2;\r\n  \r\n  if (0xf < (ulonglong)param_1[3]) {\r\n    pvVar1 = (void *)*param_1;\r\n    pvVar2 = pvVar1;\r\n    if ((0xfff < param_1[3] + 1U) &&\r\n       (pvVar2 = *(void **)((longlong)pvVar1 + -8),\r\n       0x1f < (ulonglong)((longlong)pvVar1 + (-8 - (longlong)pvVar2)))) {\r\n                    /* WARNING: Subroutine does not return */\r\n      _invalid_parameter_noinfo_noreturn();\r\n    }\r\n    operator_delete(pvVar2);\r\n  }\r\n  param_1[2] = 0;\r\n  param_1[3] = 0xf;\r\n  *(undefined1 *)param_1 = 0;\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_1400028e0", 
+      "entry_point": "0x1400028e0"
+    }, 
+    {
+      "signature": "undefined8 * __fastcall FUN_140002940(undefined8 * param_1, void * param_2)", 
+      "c_code": "\r\nundefined8 * FUN_140002940(undefined8 *param_1,void *param_2)\r\n\r\n{\r\n  ulonglong uVar1;\r\n  code *pcVar2;\r\n  ulonglong uVar3;\r\n  ulonglong uVar4;\r\n  void *pvVar5;\r\n  undefined8 *puVar6;\r\n  ulonglong _Size;\r\n  void *_Dst;\r\n  \r\n  _Dst = (void *)0x0;\r\n  *param_1 = 0;\r\n  param_1[1] = 0;\r\n  param_1[2] = 0;\r\n  param_1[3] = 0;\r\n  _Size = 0xffffffffffffffff;\r\n  do {\r\n    _Size = _Size + 1;\r\n  } while (*(char *)(_Size + (longlong)param_2) != '\\0');\r\n  if (0x7fffffffffffffff < _Size) {\r\n    FUN_140001690();\r\n    pcVar2 = (code *)swi(3);\r\n    puVar6 = (undefined8 *)(*pcVar2)();\r\n    return puVar6;\r\n  }\r\n  param_1[3] = 0xf;\r\n  if (_Size < 0x10) {\r\n    param_1[2] = _Size;\r\n    memcpy(param_1,param_2,_Size);\r\n    *(undefined1 *)((longlong)param_1 + _Size) = 0;\r\n    return param_1;\r\n  }\r\n  uVar3 = _Size | 0xf;\r\n  if (uVar3 < 0x8000000000000000) {\r\n    if (uVar3 < 0x16) {\r\n      uVar3 = 0x16;\r\n    }\r\n    uVar1 = uVar3 + 1;\r\n    if (uVar1 < 0x1000) {\r\n      if (uVar1 != 0) {\r\n        _Dst = operator_new(uVar1);\r\n      }\r\n      goto LAB_140002a21;\r\n    }\r\n    uVar4 = uVar3 + 0x28;\r\n    if (uVar4 <= uVar1) {\r\n      FUN_1400015f0();\r\n      pcVar2 = (code *)swi(3);\r\n      puVar6 = (undefined8 *)(*pcVar2)();\r\n      return puVar6;\r\n    }\r\n  }\r\n  else {\r\n    uVar4 = 0x8000000000000027;\r\n    uVar3 = 0x7fffffffffffffff;\r\n  }\r\n  pvVar5 = operator_new(uVar4);\r\n  if (pvVar5 == (void *)0x0) {\r\n                    /* WARNING: Subroutine does not return */\r\n    _invalid_parameter_noinfo_noreturn();\r\n  }\r\n  _Dst = (void *)((longlong)pvVar5 + 0x27U & 0xffffffffffffffe0);\r\n  *(void **)((longlong)_Dst - 8) = pvVar5;\r\nLAB_140002a21:\r\n  *param_1 = _Dst;\r\n  param_1[2] = _Size;\r\n  param_1[3] = uVar3;\r\n  memcpy(_Dst,param_2,_Size);\r\n  *(undefined1 *)((longlong)_Dst + _Size) = 0;\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_140002940", 
+      "entry_point": "0x140002940"
+    }, 
+    {
+      "signature": "basic_streambuf<char,struct_std::char_traits<char>_> * __fastcall FUN_140002a70(basic_streambuf<char,struct_std::char_traits<char>_> * param_1, uint param_2)", 
+      "c_code": "\r\nbasic_streambuf<char,struct_std::char_traits<char>_> *\r\nFUN_140002a70(basic_streambuf<char,struct_std::char_traits<char>_> *param_1,uint param_2)\r\n\r\n{\r\n  FUN_140002800(param_1);\r\n  if ((param_2 & 1) != 0) {\r\n    operator_delete(param_1);\r\n  }\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_140002a70", 
+      "entry_point": "0x140002a70"
+    }, 
+    {
+      "signature": "basic_ios<char,struct_std::char_traits<char>_> * __fastcall FUN_140002ab0(basic_ios<char,struct_std::char_traits<char>_> * param_1, uint param_2)", 
+      "c_code": "\r\nbasic_ios<char,struct_std::char_traits<char>_> *\r\nFUN_140002ab0(basic_ios<char,struct_std::char_traits<char>_> *param_1,uint param_2)\r\n\r\n{\r\n  *(undefined ***)(param_1 + (longlong)*(int *)(*(longlong *)(param_1 + -0x98) + 4) + -0x98) =\r\n       std::basic_stringstream<char,struct_std::char_traits<char>,class_std::allocator<char>_>::\r\n       vftable;\r\n  *(int *)(param_1 + (longlong)*(int *)(*(longlong *)(param_1 + -0x98) + 4) + -0x9c) =\r\n       *(int *)(*(longlong *)(param_1 + -0x98) + 4) + -0x98;\r\n  FUN_140002800((basic_streambuf<char,struct_std::char_traits<char>_> *)(param_1 + -0x80));\r\n  std::basic_iostream<char,struct_std::char_traits<char>_>::\r\n  ~basic_iostream<char,struct_std::char_traits<char>_>\r\n            ((basic_iostream<char,struct_std::char_traits<char>_> *)(param_1 + -0x78));\r\n  std::basic_ios<char,struct_std::char_traits<char>_>::\r\n  ~basic_ios<char,struct_std::char_traits<char>_>(param_1);\r\n  if ((param_2 & 1) != 0) {\r\n    operator_delete(param_1 + -0x98);\r\n  }\r\n  return param_1 + -0x98;\r\n}\r\n\r\n", 
+      "name": "FUN_140002ab0", 
+      "entry_point": "0x140002ab0"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140002b50(undefined8 * param_1, LPCWSTR param_2, UINT param_3)", 
+      "c_code": "\r\nvoid FUN_140002b50(undefined8 *param_1,LPCWSTR param_2,UINT param_3)\r\n\r\n{\r\n  LPSTR pCVar1;\r\n  LPSTR pCVar2;\r\n  code *pcVar3;\r\n  int iVar4;\r\n  DWORD DVar5;\r\n  LPSTR pCVar6;\r\n  int cchWideChar;\r\n  longlong lVar7;\r\n  bool bVar8;\r\n  \r\n  if (param_2 == (LPCWSTR)0x0) {\r\n    *param_1 = 0;\r\n    return;\r\n  }\r\n  lVar7 = -1;\r\n  do {\r\n    lVar7 = lVar7 + 1;\r\n  } while (param_2[lVar7] != L'\\0');\r\n  cchWideChar = (int)lVar7 + 1;\r\n  pCVar1 = (LPSTR)(param_1 + 1);\r\n  iVar4 = cchWideChar * 4;\r\n  if (((param_1 == (undefined8 *)0x0) || (iVar4 < 0)) || (pCVar1 == (LPSTR)0x0)) {\r\n    FUN_140002f50(-0x7ff8ffa9);\r\n    pcVar3 = (code *)swi(3);\r\n    (*pcVar3)();\r\n    return;\r\n  }\r\n  pCVar2 = (LPSTR)*param_1;\r\n  pCVar6 = pCVar1;\r\n  if (pCVar2 == pCVar1) {\r\n    if (iVar4 < 0x81) goto LAB_140002c03;\r\n    pCVar6 = (LPSTR)calloc((longlong)iVar4,1);\r\n    *param_1 = pCVar6;\r\n    if (pCVar6 == (LPSTR)0x0) goto LAB_140002d77;\r\n  }\r\n  else {\r\n    if (iVar4 < 0x81) {\r\n      free(pCVar2);\r\n    }\r\n    else {\r\n      pCVar6 = (LPSTR)_recalloc(pCVar2,(longlong)iVar4,1);\r\n      if (pCVar6 == (LPSTR)0x0) {\r\n        FUN_140002f50(-0x7ff8fff2);\r\n        pcVar3 = (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n    }\r\nLAB_140002c03:\r\n    *param_1 = pCVar6;\r\n  }\r\n  iVar4 = WideCharToMultiByte(param_3,0,param_2,cchWideChar,pCVar6,iVar4,(LPCSTR)0x0,(LPBOOL)0x0);\r\n  bVar8 = iVar4 == 0;\r\n  if ((iVar4 != 0) || (DVar5 = GetLastError(), DVar5 != 0x7a)) goto LAB_140002d16;\r\n  iVar4 = WideCharToMultiByte(param_3,0,param_2,cchWideChar,(LPSTR)0x0,0,(LPCSTR)0x0,(LPBOOL)0x0);\r\n  if (iVar4 < 0) {\r\n    FUN_140002f50(-0x7ff8ffa9);\r\n    pcVar3 = (code *)swi(3);\r\n    (*pcVar3)();\r\n    return;\r\n  }\r\n  pCVar2 = (LPSTR)*param_1;\r\n  pCVar6 = pCVar1;\r\n  if (pCVar2 == pCVar1) {\r\n    if (iVar4 < 0x81) goto LAB_140002ce4;\r\n    pCVar6 = (LPSTR)calloc((longlong)iVar4,1);\r\n    *param_1 = pCVar6;\r\n    if (pCVar6 == (LPSTR)0x0) {\r\n      FUN_140002f50(-0x7ff8fff2);\r\n      pcVar3 = (code *)swi(3);\r\n      (*pcVar3)();\r\n      return;\r\n    }\r\n  }\r\n  else {\r\n    if (iVar4 < 0x81) {\r\n      free(pCVar2);\r\n    }\r\n    else {\r\n      pCVar6 = (LPSTR)_recalloc(pCVar2,(longlong)iVar4,1);\r\n      if (pCVar6 == (LPSTR)0x0) {\r\nLAB_140002d77:\r\n        FUN_140002f50(-0x7ff8fff2);\r\n        pcVar3 = (code *)swi(3);\r\n        (*pcVar3)();\r\n        return;\r\n      }\r\n    }\r\nLAB_140002ce4:\r\n    *param_1 = pCVar6;\r\n  }\r\n  iVar4 = WideCharToMultiByte(param_3,0,param_2,cchWideChar,pCVar6,iVar4,(LPCSTR)0x0,(LPBOOL)0x0);\r\n  bVar8 = iVar4 == 0;\r\nLAB_140002d16:\r\n  if (bVar8) {\r\n    FUN_140002db0((void *)*param_1,pCVar1);\r\n    FUN_140002f30();\r\n    pcVar3 = (code *)swi(3);\r\n    (*pcVar3)();\r\n    return;\r\n  }\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140002b50", 
+      "entry_point": "0x140002b50"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140002db0(void * param_1, void * param_2)", 
+      "c_code": "\r\nvoid FUN_140002db0(void *param_1,void *param_2)\r\n\r\n{\r\n  if (param_1 != param_2) {\r\n                    /* WARNING: Could not recover jumptable at 0x000140002db5. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n    free(param_1);\r\n    return;\r\n  }\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140002db0", 
+      "entry_point": "0x140002db0"
+    }, 
+    {
+      "signature": "longlong * __fastcall FUN_140002dc0(longlong * param_1, ulonglong param_2, undefined8 param_3, void * param_4)", 
+      "c_code": "\r\nlonglong * FUN_140002dc0(longlong *param_1,ulonglong param_2,undefined8 param_3,void *param_4)\r\n\r\n{\r\n  ulonglong uVar1;\r\n  ulonglong uVar2;\r\n  code *pcVar3;\r\n  void *pvVar4;\r\n  longlong *plVar5;\r\n  void *pvVar6;\r\n  ulonglong uVar7;\r\n  ulonglong uVar8;\r\n  void *_Dst;\r\n  \r\n  uVar8 = 0x7fffffffffffffff;\r\n  if (0x7fffffffffffffff < param_2) {\r\n    FUN_140001690();\r\n    pcVar3 = (code *)swi(3);\r\n    plVar5 = (longlong *)(*pcVar3)();\r\n    return plVar5;\r\n  }\r\n  uVar7 = param_2 | 0xf;\r\n  uVar2 = param_1[3];\r\n  if ((uVar7 < 0x8000000000000000) && (uVar2 <= 0x7fffffffffffffff - (uVar2 >> 1))) {\r\n    uVar1 = (uVar2 >> 1) + uVar2;\r\n    uVar8 = uVar7;\r\n    if (uVar7 < uVar1) {\r\n      uVar8 = uVar1;\r\n    }\r\n    uVar1 = uVar8 + 1;\r\n    if (0xfff < uVar1) {\r\n      uVar7 = uVar8 + 0x28;\r\n      if (uVar7 <= uVar1) {\r\n        FUN_1400015f0();\r\n        pcVar3 = (code *)swi(3);\r\n        plVar5 = (longlong *)(*pcVar3)();\r\n        return plVar5;\r\n      }\r\n      goto LAB_140002e46;\r\n    }\r\n    if (uVar1 == 0) {\r\n      _Dst = (void *)0x0;\r\n    }\r\n    else {\r\n      _Dst = operator_new(uVar1);\r\n    }\r\n  }\r\n  else {\r\n    uVar7 = 0x8000000000000027;\r\nLAB_140002e46:\r\n    pvVar4 = operator_new(uVar7);\r\n    if (pvVar4 == (void *)0x0) goto LAB_140002ee1;\r\n    _Dst = (void *)((longlong)pvVar4 + 0x27U & 0xffffffffffffffe0);\r\n    *(void **)((longlong)_Dst - 8) = pvVar4;\r\n  }\r\n  param_1[2] = param_2;\r\n  param_1[3] = uVar8;\r\n  memcpy(_Dst,param_4,param_2);\r\n  *(undefined1 *)((longlong)_Dst + param_2) = 0;\r\n  if (0xf < uVar2) {\r\n    pvVar4 = (void *)*param_1;\r\n    pvVar6 = pvVar4;\r\n    if ((0xfff < uVar2 + 1) &&\r\n       (pvVar6 = *(void **)((longlong)pvVar4 + -8),\r\n       0x1f < (ulonglong)((longlong)pvVar4 + (-8 - (longlong)pvVar6)))) {\r\nLAB_140002ee1:\r\n                    /* WARNING: Subroutine does not return */\r\n      _invalid_parameter_noinfo_noreturn();\r\n    }\r\n    operator_delete(pvVar6);\r\n  }\r\n  *param_1 = (longlong)_Dst;\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_140002dc0", 
+      "entry_point": "0x140002dc0"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140002ef4(longlong param_1, uint param_2)", 
+      "c_code": "\r\nvoid FUN_140002ef4(longlong param_1,uint param_2)\r\n\r\n{\r\n  FUN_140002ab0((basic_ios<char,struct_std::char_traits<char>_> *)(param_1 - *(int *)(param_1 + -4))\r\n                ,param_2);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140002ef4", 
+      "entry_point": "0x140002ef4"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140002f00(CDialog * param_1, ushort param_2, CWnd * param_3)", 
+      "c_code": "\r\nvoid FUN_140002f00(CDialog *param_1,ushort param_2,CWnd *param_3)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140002f03. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  CDialog::Create(param_1,(wchar_t *)(ulonglong)param_2,param_3);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140002f00", 
+      "entry_point": "0x140002f00"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140002f10(longlong param_1)", 
+      "c_code": "\r\nvoid FUN_140002f10(longlong param_1)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140002f19. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  EnableWindow(*(undefined8 *)(param_1 + 0x40),1);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140002f10", 
+      "entry_point": "0x140002f10"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140002f20(longlong param_1)", 
+      "c_code": "\r\nvoid FUN_140002f20(longlong param_1)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140002f26. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  EnableWindow(*(undefined8 *)(param_1 + 0x40),0);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140002f20", 
+      "entry_point": "0x140002f20"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140002f30(void)", 
+      "c_code": "\r\nvoid FUN_140002f30(void)\r\n\r\n{\r\n  code *pcVar1;\r\n  DWORD DVar2;\r\n  \r\n  DVar2 = GetLastError();\r\n  if (0 < (int)DVar2) {\r\n    DVar2 = DVar2 & 0xffff | 0x80070000;\r\n  }\r\n  FUN_140002f50(DVar2);\r\n  pcVar1 = (code *)swi(3);\r\n  (*pcVar1)();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140002f30", 
+      "entry_point": "0x140002f30"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140002f50(int param_1)", 
+      "c_code": "\r\nvoid FUN_140002f50(int param_1)\r\n\r\n{\r\n  code *pcVar1;\r\n  \r\n  if (param_1 == -0x7ff8fff2) {\r\n    AfxThrowMemoryException();\r\n    pcVar1 = (code *)swi(3);\r\n    (*pcVar1)();\r\n    return;\r\n  }\r\n  AfxThrowOleException(param_1);\r\n  pcVar1 = (code *)swi(3);\r\n  (*pcVar1)();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140002f50", 
+      "entry_point": "0x140002f50"
+    }, 
+    {
+      "signature": "BOOL __stdcall InitializeCriticalSectionEx(LPCRITICAL_SECTION lpCriticalSection, DWORD dwSpinCount, DWORD Flags)", 
+      "c_code": "\r\nBOOL __stdcall\r\nInitializeCriticalSectionEx(LPCRITICAL_SECTION lpCriticalSection,DWORD dwSpinCount,DWORD Flags)\r\n\r\n{\r\n  BOOL BVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002f70. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  BVar1 = InitializeCriticalSectionEx(lpCriticalSection,dwSpinCount,Flags);\r\n  return BVar1;\r\n}\r\n\r\n", 
+      "name": "InitializeCriticalSectionEx", 
+      "entry_point": "0x140002f70"
+    }, 
+    {
+      "signature": "void __cdecl operator_delete(void * param_1)", 
+      "c_code": "\r\nvoid __cdecl operator_delete(void *param_1)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140002f77. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  operator_delete(param_1);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "operator_delete", 
+      "entry_point": "0x140002f77"
+    }, 
+    {
+      "signature": "AFX_MSGMAP * __cdecl GetThisMessageMap(void)", 
+      "c_code": "\r\nAFX_MSGMAP * __cdecl CWinApp::GetThisMessageMap(void)\r\n\r\n{\r\n  AFX_MSGMAP *pAVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002f83. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pAVar1 = GetThisMessageMap();\r\n  return pAVar1;\r\n}\r\n\r\n", 
+      "name": "GetThisMessageMap", 
+      "entry_point": "0x140002f83"
+    }, 
+    {
+      "signature": "__int64 __thiscall DoModal(void)", 
+      "c_code": "\r\n__int64 __thiscall CDialog::DoModal(CDialog *this)\r\n\r\n{\r\n  __int64 _Var1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002f89. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _Var1 = DoModal(this);\r\n  return _Var1;\r\n}\r\n\r\n", 
+      "name": "DoModal", 
+      "entry_point": "0x140002f89"
+    }, 
+    {
+      "signature": "CRuntimeClass * __thiscall GetRuntimeClass(void)", 
+      "c_code": "\r\nCRuntimeClass * __thiscall CGdiObject::GetRuntimeClass(CGdiObject *this)\r\n\r\n{\r\n  CRuntimeClass *pCVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002f95. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pCVar1 = GetRuntimeClass(this);\r\n  return pCVar1;\r\n}\r\n\r\n", 
+      "name": "GetRuntimeClass", 
+      "entry_point": "0x140002f95"
+    }, 
+    {
+      "signature": "CRuntimeClass * __thiscall GetRuntimeClass(void)", 
+      "c_code": "\r\nCRuntimeClass * __thiscall CBrush::GetRuntimeClass(CBrush *this)\r\n\r\n{\r\n  CRuntimeClass *pCVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002f9b. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pCVar1 = GetRuntimeClass(this);\r\n  return pCVar1;\r\n}\r\n\r\n", 
+      "name": "GetRuntimeClass", 
+      "entry_point": "0x140002f9b"
+    }, 
+    {
+      "signature": "CRuntimeClass * __thiscall GetRuntimeClass(void)", 
+      "c_code": "\r\nCRuntimeClass * __thiscall CWinApp::GetRuntimeClass(CWinApp *this)\r\n\r\n{\r\n  CRuntimeClass *pCVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fa1. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pCVar1 = GetRuntimeClass(this);\r\n  return pCVar1;\r\n}\r\n\r\n", 
+      "name": "GetRuntimeClass", 
+      "entry_point": "0x140002fa1"
+    }, 
+    {
+      "signature": "int __thiscall OnCmdMsg(uint param_1, int param_2, void * param_3, AFX_CMDHANDLERINFO * param_4)", 
+      "c_code": "\r\nint __thiscall\r\nCCmdTarget::OnCmdMsg\r\n          (CCmdTarget *this,uint param_1,int param_2,void *param_3,AFX_CMDHANDLERINFO *param_4)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fa7. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnCmdMsg(this,param_1,param_2,param_3,param_4);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnCmdMsg", 
+      "entry_point": "0x140002fa7"
+    }, 
+    {
+      "signature": "void __thiscall OnFinalRelease(void)", 
+      "c_code": "\r\nvoid __thiscall CCmdTarget::OnFinalRelease(CCmdTarget *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140002fad. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  OnFinalRelease(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "OnFinalRelease", 
+      "entry_point": "0x140002fad"
+    }, 
+    {
+      "signature": "int __thiscall IsInvokeAllowed(long param_1)", 
+      "c_code": "\r\nint __thiscall CCmdTarget::IsInvokeAllowed(CCmdTarget *this,long param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fb3. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = IsInvokeAllowed(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "IsInvokeAllowed", 
+      "entry_point": "0x140002fb3"
+    }, 
+    {
+      "signature": "int __thiscall GetDispatchIID(_GUID * param_1)", 
+      "c_code": "\r\nint __thiscall CCmdTarget::GetDispatchIID(CCmdTarget *this,_GUID *param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fb9. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = GetDispatchIID(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "GetDispatchIID", 
+      "entry_point": "0x140002fb9"
+    }, 
+    {
+      "signature": "uint __thiscall GetTypeInfoCount(void)", 
+      "c_code": "\r\nuint __thiscall CCmdTarget::GetTypeInfoCount(CCmdTarget *this)\r\n\r\n{\r\n  uint uVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fbf. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  uVar1 = GetTypeInfoCount(this);\r\n  return uVar1;\r\n}\r\n\r\n", 
+      "name": "GetTypeInfoCount", 
+      "entry_point": "0x140002fbf"
+    }, 
+    {
+      "signature": "CTypeLibCache * __thiscall GetTypeLibCache(void)", 
+      "c_code": "\r\nCTypeLibCache * __thiscall CCmdTarget::GetTypeLibCache(CCmdTarget *this)\r\n\r\n{\r\n  CTypeLibCache *pCVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fc5. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pCVar1 = GetTypeLibCache(this);\r\n  return pCVar1;\r\n}\r\n\r\n", 
+      "name": "GetTypeLibCache", 
+      "entry_point": "0x140002fc5"
+    }, 
+    {
+      "signature": "long __thiscall GetTypeLib(ulong param_1, ITypeLib * * param_2)", 
+      "c_code": "\r\nlong __thiscall CCmdTarget::GetTypeLib(CCmdTarget *this,ulong param_1,ITypeLib **param_2)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fcb. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = GetTypeLib(this,param_1,param_2);\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "GetTypeLib", 
+      "entry_point": "0x140002fcb"
+    }, 
+    {
+      "signature": "AFX_OLECMDMAP * __thiscall GetCommandMap(void)", 
+      "c_code": "\r\nAFX_OLECMDMAP * __thiscall CCmdTarget::GetCommandMap(CCmdTarget *this)\r\n\r\n{\r\n  AFX_OLECMDMAP *pAVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fd1. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pAVar1 = GetCommandMap(this);\r\n  return pAVar1;\r\n}\r\n\r\n", 
+      "name": "GetCommandMap", 
+      "entry_point": "0x140002fd1"
+    }, 
+    {
+      "signature": "AFX_DISPMAP * __thiscall GetDispatchMap(void)", 
+      "c_code": "\r\nAFX_DISPMAP * __thiscall CCmdTarget::GetDispatchMap(CCmdTarget *this)\r\n\r\n{\r\n  AFX_DISPMAP *pAVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fd7. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pAVar1 = GetDispatchMap(this);\r\n  return pAVar1;\r\n}\r\n\r\n", 
+      "name": "GetDispatchMap", 
+      "entry_point": "0x140002fd7"
+    }, 
+    {
+      "signature": "AFX_CONNECTIONMAP * __thiscall GetConnectionMap(void)", 
+      "c_code": "\r\nAFX_CONNECTIONMAP * __thiscall CCmdTarget::GetConnectionMap(CCmdTarget *this)\r\n\r\n{\r\n  AFX_CONNECTIONMAP *pAVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fdd. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pAVar1 = GetConnectionMap(this);\r\n  return pAVar1;\r\n}\r\n\r\n", 
+      "name": "GetConnectionMap", 
+      "entry_point": "0x140002fdd"
+    }, 
+    {
+      "signature": "AFX_INTERFACEMAP * __thiscall GetInterfaceMap(void)", 
+      "c_code": "\r\nAFX_INTERFACEMAP * __thiscall CCmdTarget::GetInterfaceMap(CCmdTarget *this)\r\n\r\n{\r\n  AFX_INTERFACEMAP *pAVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fe3. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pAVar1 = GetInterfaceMap(this);\r\n  return pAVar1;\r\n}\r\n\r\n", 
+      "name": "GetInterfaceMap", 
+      "entry_point": "0x140002fe3"
+    }, 
+    {
+      "signature": "AFX_EVENTSINKMAP * __thiscall GetEventSinkMap(void)", 
+      "c_code": "\r\nAFX_EVENTSINKMAP * __thiscall CCmdTarget::GetEventSinkMap(CCmdTarget *this)\r\n\r\n{\r\n  AFX_EVENTSINKMAP *pAVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fe9. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pAVar1 = GetEventSinkMap(this);\r\n  return pAVar1;\r\n}\r\n\r\n", 
+      "name": "GetEventSinkMap", 
+      "entry_point": "0x140002fe9"
+    }, 
+    {
+      "signature": "int __thiscall OnCreateAggregates(void)", 
+      "c_code": "\r\nint __thiscall CCmdTarget::OnCreateAggregates(CCmdTarget *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002fef. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnCreateAggregates(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnCreateAggregates", 
+      "entry_point": "0x140002fef"
+    }, 
+    {
+      "signature": "IUnknown * __thiscall GetInterfaceHook(void * param_1)", 
+      "c_code": "\r\nIUnknown * __thiscall CCmdTarget::GetInterfaceHook(CCmdTarget *this,void *param_1)\r\n\r\n{\r\n  IUnknown *pIVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002ff5. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pIVar1 = GetInterfaceHook(this,param_1);\r\n  return pIVar1;\r\n}\r\n\r\n", 
+      "name": "GetInterfaceHook", 
+      "entry_point": "0x140002ff5"
+    }, 
+    {
+      "signature": "int __thiscall GetExtraConnectionPoints(CPtrArray * param_1)", 
+      "c_code": "\r\nint __thiscall CCmdTarget::GetExtraConnectionPoints(CCmdTarget *this,CPtrArray *param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140002ffb. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = GetExtraConnectionPoints(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "GetExtraConnectionPoints", 
+      "entry_point": "0x140002ffb"
+    }, 
+    {
+      "signature": "IConnectionPoint * __thiscall GetConnectionHook(_GUID * param_1)", 
+      "c_code": "\r\nIConnectionPoint * __thiscall CCmdTarget::GetConnectionHook(CCmdTarget *this,_GUID *param_1)\r\n\r\n{\r\n  IConnectionPoint *pIVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003001. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pIVar1 = GetConnectionHook(this,param_1);\r\n  return pIVar1;\r\n}\r\n\r\n", 
+      "name": "GetConnectionHook", 
+      "entry_point": "0x140003001"
+    }, 
+    {
+      "signature": "int __thiscall Run(void)", 
+      "c_code": "\r\nint __thiscall CWinApp::Run(CWinApp *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003007. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = Run(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "Run", 
+      "entry_point": "0x140003007"
+    }, 
+    {
+      "signature": "int __thiscall PreTranslateMessage(tagMSG * param_1)", 
+      "c_code": "\r\nint __thiscall CWinThread::PreTranslateMessage(CWinThread *this,tagMSG *param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000300d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = PreTranslateMessage(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "PreTranslateMessage", 
+      "entry_point": "0x14000300d"
+    }, 
+    {
+      "signature": "int __thiscall PumpMessage(void)", 
+      "c_code": "\r\nint __thiscall CWinThread::PumpMessage(CWinThread *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003013. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = PumpMessage(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "PumpMessage", 
+      "entry_point": "0x140003013"
+    }, 
+    {
+      "signature": "int __thiscall OnIdle(long param_1)", 
+      "c_code": "\r\nint __thiscall CWinApp::OnIdle(CWinApp *this,long param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003019. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnIdle(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnIdle", 
+      "entry_point": "0x140003019"
+    }, 
+    {
+      "signature": "int __thiscall IsIdleMessage(tagMSG * param_1)", 
+      "c_code": "\r\nint __thiscall CWinThread::IsIdleMessage(CWinThread *this,tagMSG *param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000301f. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = IsIdleMessage(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "IsIdleMessage", 
+      "entry_point": "0x14000301f"
+    }, 
+    {
+      "signature": "int __thiscall ExitInstance(void)", 
+      "c_code": "\r\nint __thiscall CWinApp::ExitInstance(CWinApp *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003025. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = ExitInstance(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "ExitInstance", 
+      "entry_point": "0x140003025"
+    }, 
+    {
+      "signature": "__int64 __thiscall ProcessWndProcException(CException * param_1, tagMSG * param_2)", 
+      "c_code": "\r\n__int64 __thiscall\r\nCWinApp::ProcessWndProcException(CWinApp *this,CException *param_1,tagMSG *param_2)\r\n\r\n{\r\n  __int64 _Var1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000302b. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _Var1 = ProcessWndProcException(this,param_1,param_2);\r\n  return _Var1;\r\n}\r\n\r\n", 
+      "name": "ProcessWndProcException", 
+      "entry_point": "0x14000302b"
+    }, 
+    {
+      "signature": "int __thiscall ProcessMessageFilter(int param_1, tagMSG * param_2)", 
+      "c_code": "\r\nint __thiscall CWinThread::ProcessMessageFilter(CWinThread *this,int param_1,tagMSG *param_2)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003031. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = ProcessMessageFilter(this,param_1,param_2);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "ProcessMessageFilter", 
+      "entry_point": "0x140003031"
+    }, 
+    {
+      "signature": "CWnd * __thiscall GetMainWnd(void)", 
+      "c_code": "\r\nCWnd * __thiscall CWinThread::GetMainWnd(CWinThread *this)\r\n\r\n{\r\n  CWnd *pCVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003037. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pCVar1 = GetMainWnd(this);\r\n  return pCVar1;\r\n}\r\n\r\n", 
+      "name": "GetMainWnd", 
+      "entry_point": "0x140003037"
+    }, 
+    {
+      "signature": "void __thiscall Delete(void)", 
+      "c_code": "\r\nvoid __thiscall CWinThread::Delete(CWinThread *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000303d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  Delete(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "Delete", 
+      "entry_point": "0x14000303d"
+    }, 
+    {
+      "signature": "uint __thiscall GetProfileIntW(wchar_t * param_1, wchar_t * param_2, int param_3)", 
+      "c_code": "\r\nuint __thiscall CWinApp::GetProfileIntW(CWinApp *this,wchar_t *param_1,wchar_t *param_2,int param_3)\r\n\r\n{\r\n  uint uVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003043. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  uVar1 = GetProfileIntW(this,param_1,param_2,param_3);\r\n  return uVar1;\r\n}\r\n\r\n", 
+      "name": "GetProfileIntW", 
+      "entry_point": "0x140003043"
+    }, 
+    {
+      "signature": "int __thiscall WriteProfileInt(wchar_t * param_1, wchar_t * param_2, int param_3)", 
+      "c_code": "\r\nint __thiscall CWinApp::WriteProfileInt(CWinApp *this,wchar_t *param_1,wchar_t *param_2,int param_3)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003049. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = WriteProfileInt(this,param_1,param_2,param_3);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "WriteProfileInt", 
+      "entry_point": "0x140003049"
+    }, 
+    {
+      "signature": "CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> __thiscall GetProfileStringW(wchar_t * param_1, wchar_t * param_2, wchar_t * param_3)", 
+      "c_code": "\r\nvoid __thiscall\r\nCWinApp::GetProfileStringW(CWinApp *this,wchar_t *param_1,wchar_t *param_2,wchar_t *param_3)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000304f. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  GetProfileStringW(this,param_1,param_2,param_3);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "GetProfileStringW", 
+      "entry_point": "0x14000304f"
+    }, 
+    {
+      "signature": "int __thiscall WriteProfileStringW(wchar_t * param_1, wchar_t * param_2, wchar_t * param_3)", 
+      "c_code": "\r\nint __thiscall\r\nCWinApp::WriteProfileStringW(CWinApp *this,wchar_t *param_1,wchar_t *param_2,wchar_t *param_3)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003055. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = WriteProfileStringW(this,param_1,param_2,param_3);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "WriteProfileStringW", 
+      "entry_point": "0x140003055"
+    }, 
+    {
+      "signature": "int __thiscall GetProfileBinary(wchar_t * param_1, wchar_t * param_2, uchar * * param_3, uint * param_4)", 
+      "c_code": "\r\nint __thiscall\r\nCWinApp::GetProfileBinary\r\n          (CWinApp *this,wchar_t *param_1,wchar_t *param_2,uchar **param_3,uint *param_4)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000305b. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = GetProfileBinary(this,param_1,param_2,param_3,param_4);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "GetProfileBinary", 
+      "entry_point": "0x14000305b"
+    }, 
+    {
+      "signature": "int __thiscall WriteProfileBinary(wchar_t * param_1, wchar_t * param_2, uchar * param_3, uint param_4)", 
+      "c_code": "\r\nint __thiscall\r\nCWinApp::WriteProfileBinary\r\n          (CWinApp *this,wchar_t *param_1,wchar_t *param_2,uchar *param_3,uint param_4)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003061. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = WriteProfileBinary(this,param_1,param_2,param_3,param_4);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "WriteProfileBinary", 
+      "entry_point": "0x140003061"
+    }, 
+    {
+      "signature": "void __thiscall InitLibId(void)", 
+      "c_code": "\r\nvoid __thiscall CWinApp::InitLibId(CWinApp *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140003067. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  InitLibId(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "InitLibId", 
+      "entry_point": "0x140003067"
+    }, 
+    {
+      "signature": "int __thiscall Register(void)", 
+      "c_code": "\r\nint __thiscall CWinApp::Register(CWinApp *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000306d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = Register(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "Register", 
+      "entry_point": "0x14000306d"
+    }, 
+    {
+      "signature": "int __thiscall Unregister(void)", 
+      "c_code": "\r\nint __thiscall CWinApp::Unregister(CWinApp *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003073. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = Unregister(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "Unregister", 
+      "entry_point": "0x140003073"
+    }, 
+    {
+      "signature": "CDocument * __thiscall OpenDocumentFile(wchar_t * param_1, int param_2)", 
+      "c_code": "\r\nCDocument * __thiscall CWinApp::OpenDocumentFile(CWinApp *this,wchar_t *param_1,int param_2)\r\n\r\n{\r\n  CDocument *pCVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003079. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pCVar1 = OpenDocumentFile(this,param_1,param_2);\r\n  return pCVar1;\r\n}\r\n\r\n", 
+      "name": "OpenDocumentFile", 
+      "entry_point": "0x140003079"
+    }, 
+    {
+      "signature": "CDocument * __thiscall OpenDocumentFile(wchar_t * param_1)", 
+      "c_code": "\r\nCDocument * __thiscall CWinApp::OpenDocumentFile(CWinApp *this,wchar_t *param_1)\r\n\r\n{\r\n  CDocument *pCVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000307f. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pCVar1 = OpenDocumentFile(this,param_1);\r\n  return pCVar1;\r\n}\r\n\r\n", 
+      "name": "OpenDocumentFile", 
+      "entry_point": "0x14000307f"
+    }, 
+    {
+      "signature": "void __thiscall AddToRecentFileList(wchar_t * param_1)", 
+      "c_code": "\r\nvoid __thiscall CWinApp::AddToRecentFileList(CWinApp *this,wchar_t *param_1)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140003085. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  AddToRecentFileList(this,param_1);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "AddToRecentFileList", 
+      "entry_point": "0x140003085"
+    }, 
+    {
+      "signature": "int __thiscall InitApplication(void)", 
+      "c_code": "\r\nint __thiscall CWinApp::InitApplication(CWinApp *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000308b. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = InitApplication(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "InitApplication", 
+      "entry_point": "0x14000308b"
+    }, 
+    {
+      "signature": "int __thiscall SaveAllModified(void)", 
+      "c_code": "\r\nint __thiscall CWinApp::SaveAllModified(CWinApp *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003091. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = SaveAllModified(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "SaveAllModified", 
+      "entry_point": "0x140003091"
+    }, 
+    {
+      "signature": "int __thiscall DoMessageBox(wchar_t * param_1, uint param_2, uint param_3)", 
+      "c_code": "\r\nint __thiscall CWinApp::DoMessageBox(CWinApp *this,wchar_t *param_1,uint param_2,uint param_3)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003097. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = DoMessageBox(this,param_1,param_2,param_3);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "DoMessageBox", 
+      "entry_point": "0x140003097"
+    }, 
+    {
+      "signature": "void __thiscall DoWaitCursor(int param_1)", 
+      "c_code": "\r\nvoid __thiscall CWinApp::DoWaitCursor(CWinApp *this,int param_1)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000309d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  DoWaitCursor(this,param_1);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "DoWaitCursor", 
+      "entry_point": "0x14000309d"
+    }, 
+    {
+      "signature": "int __thiscall OnDDECommand(wchar_t * param_1)", 
+      "c_code": "\r\nint __thiscall CWinApp::OnDDECommand(CWinApp *this,wchar_t *param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030a3. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnDDECommand(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnDDECommand", 
+      "entry_point": "0x1400030a3"
+    }, 
+    {
+      "signature": "void __thiscall WinHelpW(__uint64 param_1, uint param_2)", 
+      "c_code": "\r\nvoid __thiscall CWinApp::WinHelpW(CWinApp *this,__uint64 param_1,uint param_2)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400030a9. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  WinHelpW(this,param_1,param_2);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "WinHelpW", 
+      "entry_point": "0x1400030a9"
+    }, 
+    {
+      "signature": "void __thiscall HtmlHelpW(__uint64 param_1, uint param_2)", 
+      "c_code": "\r\nvoid __thiscall CWinApp::HtmlHelpW(CWinApp *this,__uint64 param_1,uint param_2)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400030af. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  HtmlHelpW(this,param_1,param_2);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "HtmlHelpW", 
+      "entry_point": "0x1400030af"
+    }, 
+    {
+      "signature": "void __thiscall WinHelpInternal(__uint64 param_1, uint param_2)", 
+      "c_code": "\r\nvoid __thiscall CWinApp::WinHelpInternal(CWinApp *this,__uint64 param_1,uint param_2)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400030b5. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  WinHelpInternal(this,param_1,param_2);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "WinHelpInternal", 
+      "entry_point": "0x1400030b5"
+    }, 
+    {
+      "signature": "long __thiscall RegisterWithRestartManager(wchar_t * param_1, ulong param_2, _func_ulong_void_ptr * param_3, void * param_4, ulong param_5, ulong param_6)", 
+      "c_code": "\r\nlong __thiscall\r\nCWinApp::RegisterWithRestartManager\r\n          (CWinApp *this,wchar_t *param_1,ulong param_2,_func_ulong_void_ptr *param_3,void *param_4,\r\n          ulong param_5,ulong param_6)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030bb. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = RegisterWithRestartManager(this,param_1,param_2,param_3,param_4,param_5,param_6);\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "RegisterWithRestartManager", 
+      "entry_point": "0x1400030bb"
+    }, 
+    {
+      "signature": "long __thiscall RegisterWithRestartManager(int param_1, CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_> * param_2)", 
+      "c_code": "\r\nlong __thiscall\r\nCWinApp::RegisterWithRestartManager\r\n          (CWinApp *this,int param_1,\r\n          CStringT<wchar_t,class_StrTraitMFC_DLL<wchar_t,class_ATL::ChTraitsCRT<wchar_t>_>_>\r\n          *param_2)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030c1. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = RegisterWithRestartManager(this,param_1,param_2);\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "RegisterWithRestartManager", 
+      "entry_point": "0x1400030c1"
+    }, 
+    {
+      "signature": "ulong __thiscall ApplicationRecoveryCallback(void * param_1)", 
+      "c_code": "\r\nulong __thiscall CWinApp::ApplicationRecoveryCallback(CWinApp *this,void *param_1)\r\n\r\n{\r\n  ulong uVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030c7. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  uVar1 = ApplicationRecoveryCallback(this,param_1);\r\n  return uVar1;\r\n}\r\n\r\n", 
+      "name": "ApplicationRecoveryCallback", 
+      "entry_point": "0x1400030c7"
+    }, 
+    {
+      "signature": "CDataRecoveryHandler * __thiscall GetDataRecoveryHandler(void)", 
+      "c_code": "\r\nCDataRecoveryHandler * __thiscall CWinApp::GetDataRecoveryHandler(CWinApp *this)\r\n\r\n{\r\n  CDataRecoveryHandler *pCVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030cd. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pCVar1 = GetDataRecoveryHandler(this);\r\n  return pCVar1;\r\n}\r\n\r\n", 
+      "name": "GetDataRecoveryHandler", 
+      "entry_point": "0x1400030cd"
+    }, 
+    {
+      "signature": "int __thiscall IsTaskbarInteractionEnabled(void)", 
+      "c_code": "\r\nint __thiscall CWinApp::IsTaskbarInteractionEnabled(CWinApp *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030d3. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = IsTaskbarInteractionEnabled(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "IsTaskbarInteractionEnabled", 
+      "entry_point": "0x1400030d3"
+    }, 
+    {
+      "signature": "int __thiscall RestartInstance(void)", 
+      "c_code": "\r\nint __thiscall CWinApp::RestartInstance(CWinApp *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030d9. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = RestartInstance(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "RestartInstance", 
+      "entry_point": "0x1400030d9"
+    }, 
+    {
+      "signature": "HINSTANCE__ * __thiscall LoadAppLangResourceDLL(void)", 
+      "c_code": "\r\nHINSTANCE__ * __thiscall CWinApp::LoadAppLangResourceDLL(CWinApp *this)\r\n\r\n{\r\n  HINSTANCE__ *pHVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030df. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pHVar1 = LoadAppLangResourceDLL(this);\r\n  return pHVar1;\r\n}\r\n\r\n", 
+      "name": "LoadAppLangResourceDLL", 
+      "entry_point": "0x1400030df"
+    }, 
+    {
+      "signature": "int __thiscall LoadSysPolicies(void)", 
+      "c_code": "\r\nint __thiscall CWinApp::LoadSysPolicies(CWinApp *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030e5. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = LoadSysPolicies(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "LoadSysPolicies", 
+      "entry_point": "0x1400030e5"
+    }, 
+    {
+      "signature": "AFX_MSGMAP * __cdecl GetThisMessageMap(void)", 
+      "c_code": "\r\nAFX_MSGMAP * __cdecl CDialogEx::GetThisMessageMap(void)\r\n\r\n{\r\n  AFX_MSGMAP *pAVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030eb. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pAVar1 = GetThisMessageMap();\r\n  return pAVar1;\r\n}\r\n\r\n", 
+      "name": "GetThisMessageMap", 
+      "entry_point": "0x1400030eb"
+    }, 
+    {
+      "signature": "AFX_MODULE_STATE * __cdecl AfxGetModuleState(void)", 
+      "c_code": "\r\nAFX_MODULE_STATE * __cdecl AfxGetModuleState(void)\r\n\r\n{\r\n  AFX_MODULE_STATE *pAVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030f1. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pAVar1 = AfxGetModuleState();\r\n  return pAVar1;\r\n}\r\n\r\n", 
+      "name": "AfxGetModuleState", 
+      "entry_point": "0x1400030f1"
+    }, 
+    {
+      "signature": "int __thiscall OnInitDialog(void)", 
+      "c_code": "\r\nint __thiscall CDialog::OnInitDialog(CDialog *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400030f7. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnInitDialog(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnInitDialog", 
+      "entry_point": "0x1400030f7"
+    }, 
+    {
+      "signature": "void __thiscall OnOK(void)", 
+      "c_code": "\r\nvoid __thiscall CDialog::OnOK(CDialog *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400030fd. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  OnOK(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "OnOK", 
+      "entry_point": "0x1400030fd"
+    }, 
+    {
+      "signature": "CRuntimeClass * __thiscall GetRuntimeClass(void)", 
+      "c_code": "\r\nCRuntimeClass * __thiscall CDialogEx::GetRuntimeClass(CDialogEx *this)\r\n\r\n{\r\n  CRuntimeClass *pCVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003103. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pCVar1 = GetRuntimeClass(this);\r\n  return pCVar1;\r\n}\r\n\r\n", 
+      "name": "GetRuntimeClass", 
+      "entry_point": "0x140003103"
+    }, 
+    {
+      "signature": "int __thiscall OnCmdMsg(uint param_1, int param_2, void * param_3, AFX_CMDHANDLERINFO * param_4)", 
+      "c_code": "\r\nint __thiscall\r\nCDialog::OnCmdMsg(CDialog *this,uint param_1,int param_2,void *param_3,AFX_CMDHANDLERINFO *param_4)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003109. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnCmdMsg(this,param_1,param_2,param_3,param_4);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnCmdMsg", 
+      "entry_point": "0x140003109"
+    }, 
+    {
+      "signature": "void __thiscall OnFinalRelease(void)", 
+      "c_code": "\r\nvoid __thiscall CWnd::OnFinalRelease(CWnd *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000310f. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  OnFinalRelease(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "OnFinalRelease", 
+      "entry_point": "0x14000310f"
+    }, 
+    {
+      "signature": "AFX_INTERFACEMAP * __thiscall GetInterfaceMap(void)", 
+      "c_code": "\r\nAFX_INTERFACEMAP * __thiscall CWnd::GetInterfaceMap(CWnd *this)\r\n\r\n{\r\n  AFX_INTERFACEMAP *pAVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003115. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pAVar1 = GetInterfaceMap(this);\r\n  return pAVar1;\r\n}\r\n\r\n", 
+      "name": "GetInterfaceMap", 
+      "entry_point": "0x140003115"
+    }, 
+    {
+      "signature": "void __thiscall PreSubclassWindow(void)", 
+      "c_code": "\r\nvoid __thiscall CWnd::PreSubclassWindow(CWnd *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000311b. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  PreSubclassWindow(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "PreSubclassWindow", 
+      "entry_point": "0x14000311b"
+    }, 
+    {
+      "signature": "int __thiscall Create(wchar_t * param_1, wchar_t * param_2, ulong param_3, tagRECT * param_4, CWnd * param_5, uint param_6, CCreateContext * param_7)", 
+      "c_code": "\r\nint __thiscall\r\nCWnd::Create(CWnd *this,wchar_t *param_1,wchar_t *param_2,ulong param_3,tagRECT *param_4,\r\n            CWnd *param_5,uint param_6,CCreateContext *param_7)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003121. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = Create(this,param_1,param_2,param_3,param_4,param_5,param_6,param_7);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "Create", 
+      "entry_point": "0x140003121"
+    }, 
+    {
+      "signature": "int __thiscall CreateEx(ulong param_1, wchar_t * param_2, wchar_t * param_3, ulong param_4, tagRECT * param_5, CWnd * param_6, uint param_7, void * param_8)", 
+      "c_code": "\r\nint __thiscall\r\nCWnd::CreateEx(CWnd *this,ulong param_1,wchar_t *param_2,wchar_t *param_3,ulong param_4,\r\n              tagRECT *param_5,CWnd *param_6,uint param_7,void *param_8)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003127. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = CreateEx(this,param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "CreateEx", 
+      "entry_point": "0x140003127"
+    }, 
+    {
+      "signature": "int __thiscall CreateEx(ulong param_1, wchar_t * param_2, wchar_t * param_3, ulong param_4, int param_5, int param_6, int param_7, int param_8, HWND__ * param_9, HMENU__ * param_10, void * param_11)", 
+      "c_code": "\r\nint __thiscall\r\nCWnd::CreateEx(CWnd *this,ulong param_1,wchar_t *param_2,wchar_t *param_3,ulong param_4,int param_5,\r\n              int param_6,int param_7,int param_8,HWND__ *param_9,HMENU__ *param_10,void *param_11)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000312d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = CreateEx(this,param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9,\r\n                   param_10,param_11);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "CreateEx", 
+      "entry_point": "0x14000312d"
+    }, 
+    {
+      "signature": "int __thiscall DestroyWindow(void)", 
+      "c_code": "\r\nint __thiscall CWnd::DestroyWindow(CWnd *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003133. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = DestroyWindow(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "DestroyWindow", 
+      "entry_point": "0x140003133"
+    }, 
+    {
+      "signature": "int __thiscall PreCreateWindow(tagCREATESTRUCTW * param_1)", 
+      "c_code": "\r\nint __thiscall CWnd::PreCreateWindow(CWnd *this,tagCREATESTRUCTW *param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003139. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = PreCreateWindow(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "PreCreateWindow", 
+      "entry_point": "0x140003139"
+    }, 
+    {
+      "signature": "void __thiscall CalcWindowRect(tagRECT * param_1, uint param_2)", 
+      "c_code": "\r\nvoid __thiscall CWnd::CalcWindowRect(CWnd *this,tagRECT *param_1,uint param_2)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000313f. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  CalcWindowRect(this,param_1,param_2);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "CalcWindowRect", 
+      "entry_point": "0x14000313f"
+    }, 
+    {
+      "signature": "CMenu * __thiscall GetMenu(void)", 
+      "c_code": "\r\nCMenu * __thiscall CWnd::GetMenu(CWnd *this)\r\n\r\n{\r\n  CMenu *pCVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003145. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pCVar1 = GetMenu(this);\r\n  return pCVar1;\r\n}\r\n\r\n", 
+      "name": "GetMenu", 
+      "entry_point": "0x140003145"
+    }, 
+    {
+      "signature": "int __thiscall SetMenu(CMenu * param_1)", 
+      "c_code": "\r\nint __thiscall CWnd::SetMenu(CWnd *this,CMenu *param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000314b. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = SetMenu(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "SetMenu", 
+      "entry_point": "0x14000314b"
+    }, 
+    {
+      "signature": "__int64 __thiscall OnToolHitTest(CPoint param_1, tagTOOLINFOW * param_2)", 
+      "c_code": "\r\n__int64 __thiscall CWnd::OnToolHitTest(void)\r\n\r\n{\r\n  __int64 _Var1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003151. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _Var1 = OnToolHitTest();\r\n  return _Var1;\r\n}\r\n\r\n", 
+      "name": "OnToolHitTest", 
+      "entry_point": "0x140003151"
+    }, 
+    {
+      "signature": "CScrollBar * __thiscall GetScrollBarCtrl(int param_1)", 
+      "c_code": "\r\nCScrollBar * __thiscall CWnd::GetScrollBarCtrl(CWnd *this,int param_1)\r\n\r\n{\r\n  CScrollBar *pCVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003157. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pCVar1 = GetScrollBarCtrl(this,param_1);\r\n  return pCVar1;\r\n}\r\n\r\n", 
+      "name": "GetScrollBarCtrl", 
+      "entry_point": "0x140003157"
+    }, 
+    {
+      "signature": "void __thiscall WinHelpW(__uint64 param_1, uint param_2)", 
+      "c_code": "\r\nvoid __thiscall CWnd::WinHelpW(CWnd *this,__uint64 param_1,uint param_2)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000315d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  WinHelpW(this,param_1,param_2);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "WinHelpW", 
+      "entry_point": "0x14000315d"
+    }, 
+    {
+      "signature": "void __thiscall HtmlHelpW(__uint64 param_1, uint param_2)", 
+      "c_code": "\r\nvoid __thiscall CWnd::HtmlHelpW(CWnd *this,__uint64 param_1,uint param_2)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140003163. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  HtmlHelpW(this,param_1,param_2);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "HtmlHelpW", 
+      "entry_point": "0x140003163"
+    }, 
+    {
+      "signature": "void __thiscall WinHelpInternal(__uint64 param_1, uint param_2)", 
+      "c_code": "\r\nvoid __thiscall CWnd::WinHelpInternal(CWnd *this,__uint64 param_1,uint param_2)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140003169. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  WinHelpInternal(this,param_1,param_2);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "WinHelpInternal", 
+      "entry_point": "0x140003169"
+    }, 
+    {
+      "signature": "int __thiscall ContinueModal(void)", 
+      "c_code": "\r\nint __thiscall CWnd::ContinueModal(CWnd *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000316f. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = ContinueModal(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "ContinueModal", 
+      "entry_point": "0x14000316f"
+    }, 
+    {
+      "signature": "void __thiscall EndModalLoop(int param_1)", 
+      "c_code": "\r\nvoid __thiscall CWnd::EndModalLoop(CWnd *this,int param_1)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140003175. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  EndModalLoop(this,param_1);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "EndModalLoop", 
+      "entry_point": "0x140003175"
+    }, 
+    {
+      "signature": "void __thiscall OnDrawIconicThumbnailOrLivePreview(CDC * param_1, CRect param_2, CSize param_3, int param_4, int * param_5)", 
+      "c_code": "\r\nvoid __thiscall CWnd::OnDrawIconicThumbnailOrLivePreview(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000317b. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  OnDrawIconicThumbnailOrLivePreview();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "OnDrawIconicThumbnailOrLivePreview", 
+      "entry_point": "0x14000317b"
+    }, 
+    {
+      "signature": "long __thiscall EnsureStdObj(void)", 
+      "c_code": "\r\nlong __thiscall CWnd::EnsureStdObj(CWnd *this)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003181. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = EnsureStdObj(this);\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "EnsureStdObj", 
+      "entry_point": "0x140003181"
+    }, 
+    {
+      "signature": "long __thiscall get_accParent(IDispatch * * param_1)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accParent(CWnd *this,IDispatch **param_1)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003187. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accParent(this,param_1);\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accParent", 
+      "entry_point": "0x140003187"
+    }, 
+    {
+      "signature": "long __thiscall get_accChildCount(long * param_1)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accChildCount(CWnd *this,long *param_1)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000318d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accChildCount(this,param_1);\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accChildCount", 
+      "entry_point": "0x14000318d"
+    }, 
+    {
+      "signature": "long __thiscall get_accChild(tagVARIANT param_1, IDispatch * * param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accChild(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003193. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accChild();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accChild", 
+      "entry_point": "0x140003193"
+    }, 
+    {
+      "signature": "long __thiscall get_accName(tagVARIANT param_1, wchar_t * * param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accName(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003199. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accName();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accName", 
+      "entry_point": "0x140003199"
+    }, 
+    {
+      "signature": "long __thiscall get_accValue(tagVARIANT param_1, wchar_t * * param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accValue(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000319f. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accValue();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accValue", 
+      "entry_point": "0x14000319f"
+    }, 
+    {
+      "signature": "long __thiscall get_accDescription(tagVARIANT param_1, wchar_t * * param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accDescription(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031a5. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accDescription();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accDescription", 
+      "entry_point": "0x1400031a5"
+    }, 
+    {
+      "signature": "long __thiscall get_accRole(tagVARIANT param_1, tagVARIANT * param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accRole(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031ab. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accRole();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accRole", 
+      "entry_point": "0x1400031ab"
+    }, 
+    {
+      "signature": "long __thiscall get_accState(tagVARIANT param_1, tagVARIANT * param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accState(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031b1. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accState();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accState", 
+      "entry_point": "0x1400031b1"
+    }, 
+    {
+      "signature": "long __thiscall get_accHelp(tagVARIANT param_1, wchar_t * * param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accHelp(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031b7. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accHelp();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accHelp", 
+      "entry_point": "0x1400031b7"
+    }, 
+    {
+      "signature": "long __thiscall get_accHelpTopic(wchar_t * * param_1, tagVARIANT param_2, long * param_3)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accHelpTopic(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031bd. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accHelpTopic();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accHelpTopic", 
+      "entry_point": "0x1400031bd"
+    }, 
+    {
+      "signature": "long __thiscall get_accKeyboardShortcut(tagVARIANT param_1, wchar_t * * param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accKeyboardShortcut(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031c3. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accKeyboardShortcut();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accKeyboardShortcut", 
+      "entry_point": "0x1400031c3"
+    }, 
+    {
+      "signature": "long __thiscall get_accFocus(tagVARIANT * param_1)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accFocus(CWnd *this,tagVARIANT *param_1)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031c9. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accFocus(this,param_1);\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accFocus", 
+      "entry_point": "0x1400031c9"
+    }, 
+    {
+      "signature": "long __thiscall get_accSelection(tagVARIANT * param_1)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accSelection(CWnd *this,tagVARIANT *param_1)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031cf. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accSelection(this,param_1);\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accSelection", 
+      "entry_point": "0x1400031cf"
+    }, 
+    {
+      "signature": "long __thiscall get_accDefaultAction(tagVARIANT param_1, wchar_t * * param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::get_accDefaultAction(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031d5. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = get_accDefaultAction();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "get_accDefaultAction", 
+      "entry_point": "0x1400031d5"
+    }, 
+    {
+      "signature": "long __thiscall accSelect(long param_1, tagVARIANT param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::accSelect(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031db. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = accSelect();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "accSelect", 
+      "entry_point": "0x1400031db"
+    }, 
+    {
+      "signature": "long __thiscall accLocation(long * param_1, long * param_2, long * param_3, long * param_4, tagVARIANT param_5)", 
+      "c_code": "\r\nlong __thiscall CWnd::accLocation(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031e1. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = accLocation();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "accLocation", 
+      "entry_point": "0x1400031e1"
+    }, 
+    {
+      "signature": "long __thiscall accNavigate(long param_1, tagVARIANT param_2, tagVARIANT * param_3)", 
+      "c_code": "\r\nlong __thiscall CWnd::accNavigate(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031e7. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = accNavigate();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "accNavigate", 
+      "entry_point": "0x1400031e7"
+    }, 
+    {
+      "signature": "long __thiscall accHitTest(long param_1, long param_2, tagVARIANT * param_3)", 
+      "c_code": "\r\nlong __thiscall CWnd::accHitTest(CWnd *this,long param_1,long param_2,tagVARIANT *param_3)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031ed. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = accHitTest(this,param_1,param_2,param_3);\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "accHitTest", 
+      "entry_point": "0x1400031ed"
+    }, 
+    {
+      "signature": "long __thiscall accDoDefaultAction(tagVARIANT param_1)", 
+      "c_code": "\r\nlong __thiscall CWnd::accDoDefaultAction(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031f3. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = accDoDefaultAction();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "accDoDefaultAction", 
+      "entry_point": "0x1400031f3"
+    }, 
+    {
+      "signature": "long __thiscall put_accName(tagVARIANT param_1, wchar_t * param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::put_accName(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031f9. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = put_accName();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "put_accName", 
+      "entry_point": "0x1400031f9"
+    }, 
+    {
+      "signature": "long __thiscall put_accValue(tagVARIANT param_1, wchar_t * param_2)", 
+      "c_code": "\r\nlong __thiscall CWnd::put_accValue(void)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400031ff. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = put_accValue();\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "put_accValue", 
+      "entry_point": "0x1400031ff"
+    }, 
+    {
+      "signature": "long __thiscall SetProxy(IAccessibleProxy * param_1)", 
+      "c_code": "\r\nlong __thiscall CWnd::SetProxy(CWnd *this,IAccessibleProxy *param_1)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003205. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = SetProxy(this,param_1);\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "SetProxy", 
+      "entry_point": "0x140003205"
+    }, 
+    {
+      "signature": "long __thiscall CreateAccessibleProxy(__uint64 param_1, __int64 param_2, __int64 * param_3)", 
+      "c_code": "\r\nlong __thiscall\r\nCWnd::CreateAccessibleProxy(CWnd *this,__uint64 param_1,__int64 param_2,__int64 *param_3)\r\n\r\n{\r\n  long lVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000320b. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  lVar1 = CreateAccessibleProxy(this,param_1,param_2,param_3);\r\n  return lVar1;\r\n}\r\n\r\n", 
+      "name": "CreateAccessibleProxy", 
+      "entry_point": "0x14000320b"
+    }, 
+    {
+      "signature": "int __thiscall OnCommand(__uint64 param_1, __int64 param_2)", 
+      "c_code": "\r\nint __thiscall CDialogEx::OnCommand(CDialogEx *this,__uint64 param_1,__int64 param_2)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003211. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnCommand(this,param_1,param_2);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnCommand", 
+      "entry_point": "0x140003211"
+    }, 
+    {
+      "signature": "int __thiscall OnNotify(__uint64 param_1, __int64 param_2, __int64 * param_3)", 
+      "c_code": "\r\nint __thiscall CWnd::OnNotify(CWnd *this,__uint64 param_1,__int64 param_2,__int64 *param_3)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003217. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnNotify(this,param_1,param_2,param_3);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnNotify", 
+      "entry_point": "0x140003217"
+    }, 
+    {
+      "signature": "_func___int64_HWND___ptr_uint___uint64___int64 * * __thiscall GetSuperWndProcAddr(void)", 
+      "c_code": "\r\n_func___int64_HWND___ptr_uint___uint64___int64 ** __thiscall CWnd::GetSuperWndProcAddr(CWnd *this)\r\n\r\n{\r\n  _func___int64_HWND___ptr_uint___uint64___int64 **pp_Var1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000321d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pp_Var1 = GetSuperWndProcAddr(this);\r\n  return pp_Var1;\r\n}\r\n\r\n", 
+      "name": "GetSuperWndProcAddr", 
+      "entry_point": "0x14000321d"
+    }, 
+    {
+      "signature": "int __thiscall PreTranslateMessage(tagMSG * param_1)", 
+      "c_code": "\r\nint __thiscall CDialogEx::PreTranslateMessage(CDialogEx *this,tagMSG *param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003223. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = PreTranslateMessage(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "PreTranslateMessage", 
+      "entry_point": "0x140003223"
+    }, 
+    {
+      "signature": "int __thiscall OnAmbientProperty(COleControlSite * param_1, long param_2, tagVARIANT * param_3)", 
+      "c_code": "\r\nint __thiscall\r\nCWnd::OnAmbientProperty(CWnd *this,COleControlSite *param_1,long param_2,tagVARIANT *param_3)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003229. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnAmbientProperty(this,param_1,param_2,param_3);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnAmbientProperty", 
+      "entry_point": "0x140003229"
+    }, 
+    {
+      "signature": "__int64 __thiscall WindowProc(uint param_1, __uint64 param_2, __int64 param_3)", 
+      "c_code": "\r\n__int64 __thiscall CWnd::WindowProc(CWnd *this,uint param_1,__uint64 param_2,__int64 param_3)\r\n\r\n{\r\n  __int64 _Var1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000322f. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _Var1 = WindowProc(this,param_1,param_2,param_3);\r\n  return _Var1;\r\n}\r\n\r\n", 
+      "name": "WindowProc", 
+      "entry_point": "0x14000322f"
+    }, 
+    {
+      "signature": "int __thiscall OnWndMsg(uint param_1, __uint64 param_2, __int64 param_3, __int64 * param_4)", 
+      "c_code": "\r\nint __thiscall\r\nCWnd::OnWndMsg(CWnd *this,uint param_1,__uint64 param_2,__int64 param_3,__int64 *param_4)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003235. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnWndMsg(this,param_1,param_2,param_3,param_4);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnWndMsg", 
+      "entry_point": "0x140003235"
+    }, 
+    {
+      "signature": "__int64 __thiscall DefWindowProcW(uint param_1, __uint64 param_2, __int64 param_3)", 
+      "c_code": "\r\n__int64 __thiscall CWnd::DefWindowProcW(CWnd *this,uint param_1,__uint64 param_2,__int64 param_3)\r\n\r\n{\r\n  __int64 _Var1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000323b. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _Var1 = DefWindowProcW(this,param_1,param_2,param_3);\r\n  return _Var1;\r\n}\r\n\r\n", 
+      "name": "DefWindowProcW", 
+      "entry_point": "0x14000323b"
+    }, 
+    {
+      "signature": "void __thiscall PostNcDestroy(void)", 
+      "c_code": "\r\nvoid __thiscall CWnd::PostNcDestroy(CWnd *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140003241. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  PostNcDestroy(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "PostNcDestroy", 
+      "entry_point": "0x140003241"
+    }, 
+    {
+      "signature": "int __thiscall OnChildNotify(uint param_1, __uint64 param_2, __int64 param_3, __int64 * param_4)", 
+      "c_code": "\r\nint __thiscall\r\nCWnd::OnChildNotify(CWnd *this,uint param_1,__uint64 param_2,__int64 param_3,__int64 *param_4)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003247. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnChildNotify(this,param_1,param_2,param_3,param_4);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnChildNotify", 
+      "entry_point": "0x140003247"
+    }, 
+    {
+      "signature": "int __thiscall OnTouchInputs(uint param_1, tagTOUCHINPUT * param_2)", 
+      "c_code": "\r\nint __thiscall CWnd::OnTouchInputs(CWnd *this,uint param_1,tagTOUCHINPUT *param_2)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000324d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnTouchInputs(this,param_1,param_2);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnTouchInputs", 
+      "entry_point": "0x14000324d"
+    }, 
+    {
+      "signature": "int __thiscall OnTouchInput(CPoint param_1, int param_2, int param_3, tagTOUCHINPUT * param_4)", 
+      "c_code": "\r\nint __thiscall CWnd::OnTouchInput(void)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003253. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnTouchInput();\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnTouchInput", 
+      "entry_point": "0x140003253"
+    }, 
+    {
+      "signature": "ulong __thiscall GetGestureStatus(CPoint param_1)", 
+      "c_code": "\r\nulong __thiscall CWnd::GetGestureStatus(void)\r\n\r\n{\r\n  ulong uVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003259. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  uVar1 = GetGestureStatus();\r\n  return uVar1;\r\n}\r\n\r\n", 
+      "name": "GetGestureStatus", 
+      "entry_point": "0x140003259"
+    }, 
+    {
+      "signature": "int __thiscall OnGestureZoom(CPoint param_1, long param_2)", 
+      "c_code": "\r\nint __thiscall CWnd::OnGestureZoom(void)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000325f. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnGestureZoom();\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnGestureZoom", 
+      "entry_point": "0x14000325f"
+    }, 
+    {
+      "signature": "int __thiscall OnGesturePan(CPoint param_1, CPoint param_2)", 
+      "c_code": "\r\nint __thiscall CWnd::OnGesturePan(void)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003265. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnGesturePan();\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnGesturePan", 
+      "entry_point": "0x140003265"
+    }, 
+    {
+      "signature": "int __thiscall OnGestureRotate(CPoint param_1, double param_2)", 
+      "c_code": "\r\nint __thiscall CWnd::OnGestureRotate(void)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000326b. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnGestureRotate();\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnGestureRotate", 
+      "entry_point": "0x14000326b"
+    }, 
+    {
+      "signature": "int __thiscall OnGestureTwoFingerTap(CPoint param_1)", 
+      "c_code": "\r\nint __thiscall CWnd::OnGestureTwoFingerTap(void)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003271. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnGestureTwoFingerTap();\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnGestureTwoFingerTap", 
+      "entry_point": "0x140003271"
+    }, 
+    {
+      "signature": "int __thiscall OnGesturePressAndTap(CPoint param_1, long param_2)", 
+      "c_code": "\r\nint __thiscall CWnd::OnGesturePressAndTap(void)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003277. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = OnGesturePressAndTap();\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "OnGesturePressAndTap", 
+      "entry_point": "0x140003277"
+    }, 
+    {
+      "signature": "void __thiscall ResizeDynamicLayout(void)", 
+      "c_code": "\r\nvoid __thiscall CWnd::ResizeDynamicLayout(CWnd *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000327d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  ResizeDynamicLayout(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "ResizeDynamicLayout", 
+      "entry_point": "0x14000327d"
+    }, 
+    {
+      "signature": "int __thiscall CheckAutoCenter(void)", 
+      "c_code": "\r\nint __thiscall CDialog::CheckAutoCenter(CDialog *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003283. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = CheckAutoCenter(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "CheckAutoCenter", 
+      "entry_point": "0x140003283"
+    }, 
+    {
+      "signature": "int __thiscall IsFrameWnd(void)", 
+      "c_code": "\r\nint __thiscall CWnd::IsFrameWnd(CWnd *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003289. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = IsFrameWnd(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "IsFrameWnd", 
+      "entry_point": "0x140003289"
+    }, 
+    {
+      "signature": "int __thiscall CreateControlContainer(COleControlContainer * * param_1)", 
+      "c_code": "\r\nint __thiscall CWnd::CreateControlContainer(CWnd *this,COleControlContainer **param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000328f. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = CreateControlContainer(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "CreateControlContainer", 
+      "entry_point": "0x14000328f"
+    }, 
+    {
+      "signature": "int __thiscall CreateControlSite(COleControlContainer * param_1, COleControlSite * * param_2, uint param_3, _GUID * param_4)", 
+      "c_code": "\r\nint __thiscall\r\nCWnd::CreateControlSite\r\n          (CWnd *this,COleControlContainer *param_1,COleControlSite **param_2,uint param_3,\r\n          _GUID *param_4)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140003295. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = CreateControlSite(this,param_1,param_2,param_3,param_4);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "CreateControlSite", 
+      "entry_point": "0x140003295"
+    }, 
+    {
+      "signature": "int __thiscall SetOccDialogInfo(_AFX_OCC_DIALOG_INFO * param_1)", 
+      "c_code": "\r\nint __thiscall CDialog::SetOccDialogInfo(CDialog *this,_AFX_OCC_DIALOG_INFO *param_1)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000329b. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = SetOccDialogInfo(this,param_1);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "SetOccDialogInfo", 
+      "entry_point": "0x14000329b"
+    }, 
+    {
+      "signature": "_AFX_OCC_DIALOG_INFO * __thiscall GetOccDialogInfo(void)", 
+      "c_code": "\r\n_AFX_OCC_DIALOG_INFO * __thiscall CDialog::GetOccDialogInfo(CDialog *this)\r\n\r\n{\r\n  _AFX_OCC_DIALOG_INFO *p_Var1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400032a1. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  p_Var1 = GetOccDialogInfo(this);\r\n  return p_Var1;\r\n}\r\n\r\n", 
+      "name": "GetOccDialogInfo", 
+      "entry_point": "0x1400032a1"
+    }, 
+    {
+      "signature": "int __thiscall Create(wchar_t * param_1, CWnd * param_2)", 
+      "c_code": "\r\nint __thiscall CDialog::Create(CDialog *this,wchar_t *param_1,CWnd *param_2)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400032a7. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = Create(this,param_1,param_2);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "Create", 
+      "entry_point": "0x1400032a7"
+    }, 
+    {
+      "signature": "int __thiscall CreateIndirect(void * param_1, CWnd * param_2)", 
+      "c_code": "\r\nint __thiscall CDialog::CreateIndirect(CDialog *this,void *param_1,CWnd *param_2)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400032ad. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = CreateIndirect(this,param_1,param_2);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "CreateIndirect", 
+      "entry_point": "0x1400032ad"
+    }, 
+    {
+      "signature": "int __thiscall CreateIndirect(DLGTEMPLATE * param_1, CWnd * param_2, void * param_3)", 
+      "c_code": "\r\nint __thiscall\r\nCDialog::CreateIndirect(CDialog *this,DLGTEMPLATE *param_1,CWnd *param_2,void *param_3)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400032b3. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = CreateIndirect(this,param_1,param_2,param_3);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "CreateIndirect", 
+      "entry_point": "0x1400032b3"
+    }, 
+    {
+      "signature": "void __thiscall OnSetFont(CFont * param_1)", 
+      "c_code": "\r\nvoid __thiscall CDialog::OnSetFont(CDialog *this,CFont *param_1)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400032b9. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  OnSetFont(this,param_1);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "OnSetFont", 
+      "entry_point": "0x1400032b9"
+    }, 
+    {
+      "signature": "void __thiscall OnCancel(void)", 
+      "c_code": "\r\nvoid __thiscall CDialog::OnCancel(CDialog *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400032bf. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  OnCancel(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "OnCancel", 
+      "entry_point": "0x1400032bf"
+    }, 
+    {
+      "signature": "void __thiscall PreInitDialog(void)", 
+      "c_code": "\r\nvoid __thiscall CDialog::PreInitDialog(CDialog *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400032c5. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  PreInitDialog(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "PreInitDialog", 
+      "entry_point": "0x1400032c5"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_1400032cc(void)", 
+      "c_code": "\r\nvoid FUN_1400032cc(void)\r\n\r\n{\r\n  code *pcVar1;\r\n  bool bVar2;\r\n  char cVar3;\r\n  int iVar4;\r\n  undefined8 uVar5;\r\n  undefined4 *puVar6;\r\n  ulonglong uVar7;\r\n  undefined7 extraout_var;\r\n  \r\n  _set_app_type(2);\r\n  uVar5 = FUN_140003898();\r\n  _set_fmode((int)uVar5);\r\n  uVar5 = FUN_140001370();\r\n  puVar6 = (undefined4 *)__p__commode();\r\n  *puVar6 = (int)uVar5;\r\n  uVar5 = __scrt_initialize_onexit_tables(1);\r\n  if ((char)uVar5 != '\\0') {\r\n    FUN_140003b50();\r\n    atexit((_func_5014 *)&LAB_140003b8c);\r\n    uVar7 = FUN_140003890();\r\n    iVar4 = _configure_wide_argv(uVar7 & 0xffffffff);\r\n    if (iVar4 == 0) {\r\n      FUN_1400038a0();\r\n      bVar2 = FUN_1400038e0();\r\n      if ((int)CONCAT71(extraout_var,bVar2) != 0) {\r\n        __setusermatherr(FUN_140001370);\r\n      }\r\n      _guard_check_icall();\r\n      _guard_check_icall();\r\n      uVar5 = FUN_140001370();\r\n      _configthreadlocale((int)uVar5);\r\n      cVar3 = FUN_1400038b0();\r\n      if (cVar3 != '\\0') {\r\n        _initialize_wide_environment();\r\n      }\r\n      FUN_140001370();\r\n      uVar5 = thunk_FUN_140001370();\r\n      if ((int)uVar5 == 0) {\r\n        return;\r\n      }\r\n    }\r\n  }\r\n  FUN_140003904(7);\r\n  pcVar1 = (code *)swi(3);\r\n  (*pcVar1)();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_1400032cc", 
+      "entry_point": "0x1400032cc"
+    }, 
+    {
+      "signature": "undefined8 __fastcall FUN_140003384(void)", 
+      "c_code": "\r\nundefined8 FUN_140003384(void)\r\n\r\n{\r\n  FUN_1400038c4();\r\n  return 0;\r\n}\r\n\r\n", 
+      "name": "FUN_140003384", 
+      "entry_point": "0x140003384"
+    }, 
+    {
+      "signature": "int __fastcall FUN_1400033b0(void)", 
+      "c_code": "\r\nint FUN_1400033b0(void)\r\n\r\n{\r\n  bool bVar1;\r\n  WORD WVar2;\r\n  int iVar3;\r\n  undefined8 uVar4;\r\n  longlong *plVar5;\r\n  ulonglong uVar6;\r\n  wchar_t *pwVar7;\r\n  IMAGE_DOS_HEADER *pIVar8;\r\n  undefined8 unaff_RBX;\r\n  \r\n  iVar3 = (int)unaff_RBX;\r\n  uVar4 = FUN_1400035ac(1);\r\n  if ((char)uVar4 == '\\0') {\r\n    FUN_140003904(7);\r\n  }\r\n  else {\r\n    bVar1 = false;\r\n    uVar4 = __scrt_acquire_startup_lock();\r\n    iVar3 = (int)CONCAT71((int7)((ulonglong)unaff_RBX >> 8),(char)uVar4);\r\n    if (DAT_14000a5d8 != 1) {\r\n      if (DAT_14000a5d8 == 0) {\r\n        DAT_14000a5d8 = 1;\r\n        iVar3 = _initterm_e(&DAT_140005918,&DAT_140005930);\r\n        if (iVar3 != 0) {\r\n          return 0xff;\r\n        }\r\n        _initterm(&DAT_1400058e8);\r\n        DAT_14000a5d8 = 2;\r\n      }\r\n      else {\r\n        bVar1 = true;\r\n      }\r\n      __scrt_release_startup_lock((char)uVar4);\r\n      plVar5 = (longlong *)FUN_1400038ec();\r\n      if ((*plVar5 != 0) && (uVar6 = FUN_140003674((longlong)plVar5), (char)uVar6 != '\\0')) {\r\n        (*(code *)PTR__guard_dispatch_icall_1400058c0)(0);\r\n      }\r\n      plVar5 = (longlong *)FUN_1400038f4();\r\n      if ((*plVar5 != 0) && (uVar6 = FUN_140003674((longlong)plVar5), (char)uVar6 != '\\0')) {\r\n        _register_thread_local_exe_atexit_callback(*plVar5);\r\n      }\r\n      WVar2 = __scrt_get_show_window_mode();\r\n      pwVar7 = (wchar_t *)_get_wide_winmain_command_line();\r\n      pIVar8 = &IMAGE_DOS_HEADER_140000000;\r\n      iVar3 = AfxWinMain((HINSTANCE__ *)&IMAGE_DOS_HEADER_140000000,(HINSTANCE__ *)0x0,pwVar7,\r\n                         (uint)WVar2);\r\n      uVar6 = FUN_140003a90();\r\n      if ((char)uVar6 != '\\0') {\r\n        if (!bVar1) {\r\n          _cexit();\r\n        }\r\n        __scrt_uninitialize_crt(CONCAT71((int7)((ulonglong)pIVar8 >> 8),1),'\\0');\r\n        return iVar3;\r\n      }\r\n      goto LAB_140003511;\r\n    }\r\n  }\r\n  FUN_140003904(7);\r\nLAB_140003511:\r\n                    /* WARNING: Subroutine does not return */\r\n  exit(iVar3);\r\n}\r\n\r\n", 
+      "name": "FUN_1400033b0", 
+      "entry_point": "0x1400033b0"
+    }, 
+    {
+      "signature": "undefined __fastcall entry(void)", 
+      "c_code": "\r\nvoid entry(void)\r\n\r\n{\r\n  __security_init_cookie();\r\n  FUN_1400033b0();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "entry", 
+      "entry_point": "0x140003524"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140003550(longlong param_1)", 
+      "c_code": "\r\nvoid FUN_140003550(longlong param_1)\r\n\r\n{\r\n  if ((param_1 == DAT_14000a040) && ((short)((ulonglong)param_1 >> 0x30) == 0)) {\r\n    return;\r\n  }\r\n  FUN_140003bfc();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140003550", 
+      "entry_point": "0x140003550"
+    }, 
+    {
+      "signature": "undefined8 __fastcall __scrt_acquire_startup_lock(void)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    __scrt_acquire_startup_lock\r\n   \r\n   Libraries: Visual Studio 2015 Release, Visual Studio 2017 Release, Visual Studio 2019 Release */\r\n\r\nulonglong __scrt_acquire_startup_lock(void)\r\n\r\n{\r\n  ulonglong uVar1;\r\n  bool bVar2;\r\n  undefined7 extraout_var;\r\n  ulonglong uVar3;\r\n  \r\n  bVar2 = __scrt_is_ucrt_dll_in_use();\r\n  uVar3 = CONCAT71(extraout_var,bVar2);\r\n  if ((int)uVar3 == 0) {\r\nLAB_14000359e:\r\n    uVar3 = uVar3 & 0xffffffffffffff00;\r\n  }\r\n  else {\r\n    do {\r\n      uVar3 = 0;\r\n      LOCK();\r\n      bVar2 = DAT_14000a5e0 == 0;\r\n      uVar1 = *(ulonglong *)((longlong)Self + 8);\r\n      if (!bVar2) {\r\n        uVar3 = DAT_14000a5e0;\r\n        uVar1 = DAT_14000a5e0;\r\n      }\r\n      DAT_14000a5e0 = uVar1;\r\n      UNLOCK();\r\n      if (bVar2) goto LAB_14000359e;\r\n    } while (*(ulonglong *)((longlong)Self + 8) != uVar3);\r\n    uVar3 = CONCAT71((int7)(uVar3 >> 8),1);\r\n  }\r\n  return uVar3;\r\n}\r\n\r\n", 
+      "name": "__scrt_acquire_startup_lock", 
+      "entry_point": "0x140003570"
+    }, 
+    {
+      "signature": "undefined8 __fastcall FUN_1400035ac(int param_1)", 
+      "c_code": "\r\nlonglong FUN_1400035ac(int param_1)\r\n\r\n{\r\n  char cVar1;\r\n  uint7 extraout_var;\r\n  uint7 uVar2;\r\n  undefined7 extraout_var_00;\r\n  uint7 extraout_var_01;\r\n  \r\n  if (param_1 == 0) {\r\n    DAT_14000a5e8 = 1;\r\n  }\r\n  FUN_140003d44();\r\n  cVar1 = FUN_1400038b0();\r\n  uVar2 = extraout_var;\r\n  if (cVar1 != '\\0') {\r\n    cVar1 = FUN_1400038b0();\r\n    if (cVar1 != '\\0') {\r\n      return CONCAT71(extraout_var_00,1);\r\n    }\r\n    FUN_1400038b0();\r\n    uVar2 = extraout_var_01;\r\n  }\r\n  return (ulonglong)uVar2 << 8;\r\n}\r\n\r\n", 
+      "name": "FUN_1400035ac", 
+      "entry_point": "0x1400035ac"
+    }, 
+    {
+      "signature": "undefined8 __fastcall __scrt_initialize_onexit_tables(uint param_1)", 
+      "c_code": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n/* Library Function - Single Match\r\n    __scrt_initialize_onexit_tables\r\n   \r\n   Library: Visual Studio 2019 Release */\r\n\r\nundefined8 __scrt_initialize_onexit_tables(uint param_1)\r\n\r\n{\r\n  code *pcVar1;\r\n  bool bVar2;\r\n  ulonglong in_RAX;\r\n  undefined7 extraout_var;\r\n  undefined8 uVar3;\r\n  \r\n  if (DAT_14000a5e9 == '\\0') {\r\n    if (1 < param_1) {\r\n      FUN_140003904(5);\r\n      pcVar1 = (code *)swi(3);\r\n      uVar3 = (*pcVar1)();\r\n      return uVar3;\r\n    }\r\n    bVar2 = __scrt_is_ucrt_dll_in_use();\r\n    if (((int)CONCAT71(extraout_var,bVar2) == 0) || (param_1 != 0)) {\r\n      in_RAX = 0xffffffffffffffff;\r\n      DAT_14000a5f0 = _DAT_140005970;\r\n      uRam000000014000a5f8 = _UNK_140005978;\r\n      _DAT_14000a600 = 0xffffffffffffffff;\r\n      _DAT_14000a608 = _DAT_140005970;\r\n      uRam000000014000a610 = _UNK_140005978;\r\n      _DAT_14000a618 = 0xffffffffffffffff;\r\n    }\r\n    else {\r\n      in_RAX = _initialize_onexit_table(&DAT_14000a5f0);\r\n      if (((int)in_RAX != 0) ||\r\n         (in_RAX = _initialize_onexit_table(&DAT_14000a608), (int)in_RAX != 0)) {\r\n        return in_RAX & 0xffffffffffffff00;\r\n      }\r\n    }\r\n    DAT_14000a5e9 = '\\x01';\r\n  }\r\n  return CONCAT71((int7)(in_RAX >> 8),1);\r\n}\r\n\r\n", 
+      "name": "__scrt_initialize_onexit_tables", 
+      "entry_point": "0x1400035e8"
+    }, 
+    {
+      "signature": "ulonglong __fastcall FUN_140003674(longlong param_1)", 
+      "c_code": "\r\nulonglong FUN_140003674(longlong param_1)\r\n\r\n{\r\n  word *pwVar1;\r\n  ulonglong uVar2;\r\n  uint7 uVar3;\r\n  longlong lVar4;\r\n  word *pwVar5;\r\n  \r\n  uVar2 = 0x5a4d;\r\n  if (IMAGE_DOS_HEADER_140000000.e_magic == (char  [2])0x5a4d) {\r\n    lVar4 = (longlong)(int)IMAGE_DOS_HEADER_140000000.e_lfanew;\r\n    if ((*(int *)(IMAGE_DOS_HEADER_140000000.e_magic + lVar4) == 0x4550) &&\r\n       (uVar2 = 0x20b,\r\n       *(short *)((longlong)IMAGE_DOS_HEADER_140000000.e_res_4_ + lVar4 + -4) == 0x20b)) {\r\n      pwVar5 = (word *)(IMAGE_DOS_HEADER_140000000.e_magic + lVar4 +\r\n                       (ulonglong)\r\n                       *(ushort *)((longlong)IMAGE_DOS_HEADER_140000000.e_res_4_ + lVar4 + -8) +\r\n                       0x18);\r\n      uVar2 = (ulonglong)*(ushort *)(IMAGE_DOS_HEADER_140000000.e_magic + lVar4 + 6);\r\n      pwVar1 = pwVar5 + uVar2 * 0x14;\r\n      for (; pwVar5 != pwVar1; pwVar5 = pwVar5 + 0x14) {\r\n        if (((ulonglong)*(uint *)(pwVar5 + 6) <= param_1 - 0x140000000U) &&\r\n           (uVar2 = (ulonglong)(*(int *)(pwVar5 + 4) + *(uint *)(pwVar5 + 6)),\r\n           param_1 - 0x140000000U < uVar2)) goto LAB_1400036ea;\r\n      }\r\n      pwVar5 = (word *)0x0;\r\nLAB_1400036ea:\r\n      if (pwVar5 == (word *)0x0) {\r\n        return uVar2 & 0xffffffffffffff00;\r\n      }\r\n      uVar3 = (uint7)(uVar2 >> 8);\r\n      if (*(int *)(pwVar5 + 0x12) < 0) {\r\n        return (ulonglong)uVar3 << 8;\r\n      }\r\n      return CONCAT71(uVar3,1);\r\n    }\r\n  }\r\n  return uVar2 & 0xffffffffffffff00;\r\n}\r\n\r\n", 
+      "name": "FUN_140003674", 
+      "entry_point": "0x140003674"
+    }, 
+    {
+      "signature": "undefined __fastcall __scrt_release_startup_lock(char param_1)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    __scrt_release_startup_lock\r\n   \r\n   Libraries: Visual Studio 2015 Release, Visual Studio 2017 Release, Visual Studio 2019 Release */\r\n\r\nvoid __scrt_release_startup_lock(char param_1)\r\n\r\n{\r\n  bool bVar1;\r\n  undefined3 extraout_var;\r\n  \r\n  bVar1 = __scrt_is_ucrt_dll_in_use();\r\n  if ((CONCAT31(extraout_var,bVar1) != 0) && (param_1 == '\\0')) {\r\n    LOCK();\r\n    DAT_14000a5e0 = 0;\r\n    UNLOCK();\r\n  }\r\n  return;\r\n}\r\n\r\n", 
+      "name": "__scrt_release_startup_lock", 
+      "entry_point": "0x14000370c"
+    }, 
+    {
+      "signature": "undefined1 __fastcall __scrt_uninitialize_crt(undefined8 param_1, char param_2)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    __scrt_uninitialize_crt\r\n   \r\n   Library: Visual Studio 2019 Release */\r\n\r\nundefined1 __scrt_uninitialize_crt(undefined8 param_1,char param_2)\r\n\r\n{\r\n  if ((DAT_14000a5e8 == '\\0') || (param_2 == '\\0')) {\r\n    FUN_1400038b0();\r\n    FUN_1400038b0();\r\n  }\r\n  return 1;\r\n}\r\n\r\n", 
+      "name": "__scrt_uninitialize_crt", 
+      "entry_point": "0x140003730"
+    }, 
+    {
+      "signature": "_onexit_t __cdecl _onexit(_onexit_t _Func)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    _onexit\r\n   \r\n   Library: Visual Studio 2019 Release */\r\n\r\n_onexit_t __cdecl _onexit(_onexit_t _Func)\r\n\r\n{\r\n  int iVar1;\r\n  _onexit_t p_Var2;\r\n  \r\n  if (DAT_14000a5f0 == -1) {\r\n    iVar1 = _crt_atexit();\r\n  }\r\n  else {\r\n    iVar1 = _register_onexit_function(&DAT_14000a5f0);\r\n  }\r\n  p_Var2 = (_onexit_t)0x0;\r\n  if (iVar1 == 0) {\r\n    p_Var2 = _Func;\r\n  }\r\n  return p_Var2;\r\n}\r\n\r\n", 
+      "name": "_onexit", 
+      "entry_point": "0x14000375c"
+    }, 
+    {
+      "signature": "int __cdecl atexit(_func_5014 * param_1)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    atexit\r\n   \r\n   Library: Visual Studio 2019 Release */\r\n\r\nint __cdecl atexit(_func_5014 *param_1)\r\n\r\n{\r\n  _onexit_t p_Var1;\r\n  \r\n  p_Var1 = _onexit((_onexit_t)param_1);\r\n  return (p_Var1 != (_onexit_t)0x0) - 1;\r\n}\r\n\r\n", 
+      "name": "atexit", 
+      "entry_point": "0x140003798"
+    }, 
+    {
+      "signature": "undefined8 * __fastcall FUN_1400037b0(undefined8 * param_1, ulonglong param_2)", 
+      "c_code": "\r\nundefined8 * FUN_1400037b0(undefined8 *param_1,ulonglong param_2)\r\n\r\n{\r\n  *param_1 = type_info::vftable;\r\n  if ((param_2 & 1) != 0) {\r\n    operator_delete(param_1);\r\n  }\r\n  return param_1;\r\n}\r\n\r\n", 
+      "name": "FUN_1400037b0", 
+      "entry_point": "0x1400037b0"
+    }, 
+    {
+      "signature": "void __cdecl operator_delete(void * param_1)", 
+      "c_code": "\r\nvoid __cdecl operator_delete(void *param_1)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140002f77. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  operator_delete(param_1);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "operator_delete", 
+      "entry_point": "0x1400037dc"
+    }, 
+    {
+      "signature": "void __cdecl __security_init_cookie(void)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    __security_init_cookie\r\n   \r\n   Libraries: Visual Studio 2017 Release, Visual Studio 2019 Release */\r\n\r\nvoid __cdecl __security_init_cookie(void)\r\n\r\n{\r\n  DWORD DVar1;\r\n  _FILETIME local_res8;\r\n  LARGE_INTEGER local_res10;\r\n  _FILETIME local_18 [2];\r\n  \r\n  if (DAT_14000a040 == 0x2b992ddfa232) {\r\n    local_res8.dwLowDateTime = 0;\r\n    local_res8.dwHighDateTime = 0;\r\n    GetSystemTimeAsFileTime(&local_res8);\r\n    local_18[0] = local_res8;\r\n    DVar1 = GetCurrentThreadId();\r\n    local_18[0] = (_FILETIME)((ulonglong)local_18[0] ^ (ulonglong)DVar1);\r\n    DVar1 = GetCurrentProcessId();\r\n    local_18[0] = (_FILETIME)((ulonglong)local_18[0] ^ (ulonglong)DVar1);\r\n    QueryPerformanceCounter(&local_res10);\r\n    DAT_14000a040 =\r\n         ((ulonglong)local_res10.s.LowPart << 0x20 ^\r\n          CONCAT44(local_res10.s.HighPart,local_res10.s.LowPart) ^ (ulonglong)local_18[0] ^\r\n         (ulonglong)local_18) & 0xffffffffffff;\r\n    if (DAT_14000a040 == 0x2b992ddfa232) {\r\n      DAT_14000a040 = 0x2b992ddfa233;\r\n    }\r\n  }\r\n  DAT_14000a080 = ~DAT_14000a040;\r\n  return;\r\n}\r\n\r\n", 
+      "name": "__security_init_cookie", 
+      "entry_point": "0x1400037e4"
+    }, 
+    {
+      "signature": "undefined8 __fastcall FUN_140003890(void)", 
+      "c_code": "\r\nundefined8 FUN_140003890(void)\r\n\r\n{\r\n  return 1;\r\n}\r\n\r\n", 
+      "name": "FUN_140003890", 
+      "entry_point": "0x140003890"
+    }, 
+    {
+      "signature": "undefined8 __fastcall FUN_140003898(void)", 
+      "c_code": "\r\nundefined8 FUN_140003898(void)\r\n\r\n{\r\n  return 0x4000;\r\n}\r\n\r\n", 
+      "name": "FUN_140003898", 
+      "entry_point": "0x140003898"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_1400038a0(void)", 
+      "c_code": "\r\nvoid FUN_1400038a0(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400038a7. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  InitializeSListHead(&DAT_14000a630);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_1400038a0", 
+      "entry_point": "0x1400038a0"
+    }, 
+    {
+      "signature": "undefined1 __fastcall FUN_1400038b0(void)", 
+      "c_code": "\r\nundefined1 FUN_1400038b0(void)\r\n\r\n{\r\n  return 1;\r\n}\r\n\r\n", 
+      "name": "FUN_1400038b0", 
+      "entry_point": "0x1400038b0"
+    }, 
+    {
+      "signature": "undefined * __fastcall FUN_1400038b4(void)", 
+      "c_code": "\r\nundefined * FUN_1400038b4(void)\r\n\r\n{\r\n  return &DAT_14000a640;\r\n}\r\n\r\n", 
+      "name": "FUN_1400038b4", 
+      "entry_point": "0x1400038b4"
+    }, 
+    {
+      "signature": "undefined * __fastcall FUN_1400038bc(void)", 
+      "c_code": "\r\nundefined * FUN_1400038bc(void)\r\n\r\n{\r\n  return &DAT_14000a648;\r\n}\r\n\r\n", 
+      "name": "FUN_1400038bc", 
+      "entry_point": "0x1400038bc"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_1400038c4(void)", 
+      "c_code": "\r\nvoid FUN_1400038c4(void)\r\n\r\n{\r\n  ulonglong *puVar1;\r\n  \r\n  puVar1 = (ulonglong *)FUN_1400038b4();\r\n  *puVar1 = *puVar1 | 0x24;\r\n  puVar1 = (ulonglong *)FUN_1400038bc();\r\n  *puVar1 = *puVar1 | 2;\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_1400038c4", 
+      "entry_point": "0x1400038c4"
+    }, 
+    {
+      "signature": "bool __fastcall FUN_1400038e0(void)", 
+      "c_code": "\r\nbool FUN_1400038e0(void)\r\n\r\n{\r\n  return DAT_14000a088 == 0;\r\n}\r\n\r\n", 
+      "name": "FUN_1400038e0", 
+      "entry_point": "0x1400038e0"
+    }, 
+    {
+      "signature": "undefined * __fastcall FUN_1400038ec(void)", 
+      "c_code": "\r\nundefined * FUN_1400038ec(void)\r\n\r\n{\r\n  return &DAT_14000add0;\r\n}\r\n\r\n", 
+      "name": "FUN_1400038ec", 
+      "entry_point": "0x1400038ec"
+    }, 
+    {
+      "signature": "undefined * __fastcall FUN_1400038f4(void)", 
+      "c_code": "\r\nundefined * FUN_1400038f4(void)\r\n\r\n{\r\n  return &DAT_14000adc8;\r\n}\r\n\r\n", 
+      "name": "FUN_1400038f4", 
+      "entry_point": "0x1400038f4"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_1400038fc(void)", 
+      "c_code": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nvoid FUN_1400038fc(void)\r\n\r\n{\r\n  _DAT_14000a650 = 0;\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_1400038fc", 
+      "entry_point": "0x1400038fc"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140003904(undefined4 param_1)", 
+      "c_code": "\r\nvoid FUN_140003904(undefined4 param_1)\r\n\r\n{\r\n  code *pcVar1;\r\n  BOOL BVar2;\r\n  LONG LVar3;\r\n  PRUNTIME_FUNCTION FunctionEntry;\r\n  undefined1 *puVar4;\r\n  undefined8 unaff_retaddr;\r\n  DWORD64 local_res10;\r\n  undefined1 local_res18 [8];\r\n  undefined1 local_res20 [8];\r\n  undefined1 auStack_5c8 [8];\r\n  undefined1 auStack_5c0 [232];\r\n  undefined1 local_4d8 [152];\r\n  undefined1 *local_440;\r\n  DWORD64 local_3e0;\r\n  \r\n  puVar4 = auStack_5c8;\r\n  BVar2 = IsProcessorFeaturePresent(0x17);\r\n  if (BVar2 != 0) {\r\n    pcVar1 = (code *)swi(0x29);\r\n    (*pcVar1)(param_1);\r\n    puVar4 = auStack_5c0;\r\n  }\r\n  *(undefined8 *)(puVar4 + -8) = 0x140003938;\r\n  FUN_1400038fc();\r\n  *(undefined8 *)(puVar4 + -8) = 0x140003949;\r\n  memset(local_4d8,0,0x4d0);\r\n  *(undefined8 *)(puVar4 + -8) = 0x140003953;\r\n  RtlCaptureContext(local_4d8);\r\n  *(undefined8 *)(puVar4 + -8) = 0x14000396d;\r\n  FunctionEntry = RtlLookupFunctionEntry(local_3e0,&local_res10,(PUNWIND_HISTORY_TABLE)0x0);\r\n  if (FunctionEntry != (PRUNTIME_FUNCTION)0x0) {\r\n    *(undefined8 *)(puVar4 + 0x38) = 0;\r\n    *(undefined1 **)(puVar4 + 0x30) = local_res18;\r\n    *(undefined1 **)(puVar4 + 0x28) = local_res20;\r\n    *(undefined1 **)(puVar4 + 0x20) = local_4d8;\r\n    *(undefined8 *)(puVar4 + -8) = 0x1400039ae;\r\n    RtlVirtualUnwind(0,local_res10,local_3e0,FunctionEntry,*(PCONTEXT *)(puVar4 + 0x20),\r\n                     *(PVOID **)(puVar4 + 0x28),*(PDWORD64 *)(puVar4 + 0x30),\r\n                     *(PKNONVOLATILE_CONTEXT_POINTERS *)(puVar4 + 0x38));\r\n  }\r\n  local_440 = &stack0x00000008;\r\n  *(undefined8 *)(puVar4 + -8) = 0x1400039e0;\r\n  memset(puVar4 + 0x50,0,0x98);\r\n  *(undefined8 *)(puVar4 + 0x60) = unaff_retaddr;\r\n  *(undefined4 *)(puVar4 + 0x50) = 0x40000015;\r\n  *(undefined4 *)(puVar4 + 0x54) = 1;\r\n  *(undefined8 *)(puVar4 + -8) = 0x140003a02;\r\n  BVar2 = IsDebuggerPresent();\r\n  *(undefined1 **)(puVar4 + 0x40) = puVar4 + 0x50;\r\n  *(undefined1 **)(puVar4 + 0x48) = local_4d8;\r\n  *(undefined8 *)(puVar4 + -8) = 0x140003a1f;\r\n  SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)0x0);\r\n  *(undefined8 *)(puVar4 + -8) = 0x140003a2a;\r\n  LVar3 = UnhandledExceptionFilter((_EXCEPTION_POINTERS *)(puVar4 + 0x40));\r\n  if ((LVar3 == 0) && (BVar2 != 1)) {\r\n    *(undefined8 *)(puVar4 + -8) = 0x140003a3b;\r\n    FUN_1400038fc();\r\n  }\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140003904", 
+      "entry_point": "0x140003904"
+    }, 
+    {
+      "signature": "WORD __fastcall __scrt_get_show_window_mode(void)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    __scrt_get_show_window_mode\r\n   \r\n   Libraries: Visual Studio 2017 Release, Visual Studio 2019 Release */\r\n\r\nWORD __scrt_get_show_window_mode(void)\r\n\r\n{\r\n  WORD WVar1;\r\n  _STARTUPINFOW local_78;\r\n  \r\n  memset(&local_78,0,0x68);\r\n  GetStartupInfoW(&local_78);\r\n  WVar1 = 10;\r\n  if (((byte)local_78.dwFlags & 1) != 0) {\r\n    WVar1 = local_78.wShowWindow;\r\n  }\r\n  return WVar1;\r\n}\r\n\r\n", 
+      "name": "__scrt_get_show_window_mode", 
+      "entry_point": "0x140003a4c"
+    }, 
+    {
+      "signature": "undefined8 __fastcall thunk_FUN_140001370(void)", 
+      "c_code": "\r\nundefined8 thunk_FUN_140001370(void)\r\n\r\n{\r\n  return 0;\r\n}\r\n\r\n", 
+      "name": "thunk_FUN_140001370", 
+      "entry_point": "0x140003a88"
+    }, 
+    {
+      "signature": "ulonglong __fastcall FUN_140003a90(void)", 
+      "c_code": "\r\nulonglong FUN_140003a90(void)\r\n\r\n{\r\n  HMODULE pHVar1;\r\n  ulonglong uVar2;\r\n  int *piVar3;\r\n  \r\n  pHVar1 = GetModuleHandleW((LPCWSTR)0x0);\r\n  if ((((pHVar1 == (HMODULE)0x0) || ((short)pHVar1->unused != 0x5a4d)) ||\r\n      (piVar3 = (int *)((longlong)&pHVar1->unused + (longlong)pHVar1[0xf].unused), *piVar3 != 0x4550\r\n      )) || ((pHVar1 = (HMODULE)0x20b, (short)piVar3[6] != 0x20b || ((uint)piVar3[0x21] < 0xf)))) {\r\n    uVar2 = (ulonglong)pHVar1 & 0xffffffffffffff00;\r\n  }\r\n  else {\r\n    uVar2 = CONCAT71(2,piVar3[0x3e] != 0);\r\n  }\r\n  return uVar2;\r\n}\r\n\r\n", 
+      "name": "FUN_140003a90", 
+      "entry_point": "0x140003a90"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140003ae4(void)", 
+      "c_code": "\r\nvoid FUN_140003ae4(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140003aeb. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)&LAB_140003af4);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140003ae4", 
+      "entry_point": "0x140003ae4"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140003b50(void)", 
+      "c_code": "\r\nvoid FUN_140003b50(void)\r\n\r\n{\r\n  longlong *plVar1;\r\n  \r\n  for (plVar1 = &DAT_140007a88; plVar1 < &DAT_140007a88; plVar1 = plVar1 + 1) {\r\n    if (*plVar1 != 0) {\r\n      (*(code *)PTR__guard_dispatch_icall_1400058c0)();\r\n    }\r\n  }\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140003b50", 
+      "entry_point": "0x140003b50"
+    }, 
+    {
+      "signature": "undefined __fastcall __raise_securityfailure(_EXCEPTION_POINTERS * param_1)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    __raise_securityfailure\r\n   \r\n   Libraries: Visual Studio 2015 Release, Visual Studio 2017 Release, Visual Studio 2019 Release */\r\n\r\nvoid __raise_securityfailure(_EXCEPTION_POINTERS *param_1)\r\n\r\n{\r\n  HANDLE pvVar1;\r\n  \r\n  SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)0x0);\r\n  UnhandledExceptionFilter(param_1);\r\n  pvVar1 = GetCurrentProcess();\r\n                    /* WARNING: Could not recover jumptable at 0x000140003bf5. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  TerminateProcess(pvVar1,0xc0000409);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "__raise_securityfailure", 
+      "entry_point": "0x140003bc8"
+    }, 
+    {
+      "signature": "undefined __fastcall FUN_140003bfc(void)", 
+      "c_code": "\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nvoid FUN_140003bfc(void)\r\n\r\n{\r\n  code *pcVar1;\r\n  BOOL BVar2;\r\n  undefined1 *puVar3;\r\n  undefined1 auStack_38 [8];\r\n  undefined1 auStack_30 [48];\r\n  \r\n  puVar3 = auStack_38;\r\n  BVar2 = IsProcessorFeaturePresent(0x17);\r\n  if (BVar2 != 0) {\r\n    pcVar1 = (code *)swi(0x29);\r\n    (*pcVar1)(2);\r\n    puVar3 = auStack_30;\r\n  }\r\n  *(undefined8 *)(puVar3 + -8) = 0x140003c27;\r\n  capture_previous_context((PCONTEXT)&DAT_14000a700);\r\n  _DAT_14000a670 = *(undefined8 *)(puVar3 + 0x38);\r\n  _DAT_14000a798 = puVar3 + 0x40;\r\n  _DAT_14000a780 = *(undefined8 *)(puVar3 + 0x40);\r\n  _DAT_14000a660 = 0xc0000409;\r\n  _DAT_14000a664 = 1;\r\n  _DAT_14000a678 = 1;\r\n  DAT_14000a680 = 2;\r\n  *(undefined8 *)(puVar3 + 0x20) = DAT_14000a040;\r\n  *(undefined8 *)(puVar3 + 0x28) = DAT_14000a080;\r\n  *(undefined8 *)(puVar3 + -8) = 0x140003cc9;\r\n  DAT_14000a7f8 = _DAT_14000a670;\r\n  __raise_securityfailure((_EXCEPTION_POINTERS *)&PTR_DAT_140005990);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "FUN_140003bfc", 
+      "entry_point": "0x140003bfc"
+    }, 
+    {
+      "signature": "undefined __fastcall capture_previous_context(PCONTEXT param_1)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    capture_previous_context\r\n   \r\n   Libraries: Visual Studio 2015 Release, Visual Studio 2017 Release, Visual Studio 2019 Release */\r\n\r\nvoid capture_previous_context(PCONTEXT param_1)\r\n\r\n{\r\n  DWORD64 ControlPc;\r\n  PRUNTIME_FUNCTION FunctionEntry;\r\n  int iVar1;\r\n  DWORD64 local_res8;\r\n  ulonglong local_res10;\r\n  PVOID local_res18 [2];\r\n  \r\n  RtlCaptureContext();\r\n  ControlPc = param_1->Rip;\r\n  iVar1 = 0;\r\n  do {\r\n    FunctionEntry = RtlLookupFunctionEntry(ControlPc,&local_res8,(PUNWIND_HISTORY_TABLE)0x0);\r\n    if (FunctionEntry == (PRUNTIME_FUNCTION)0x0) {\r\n      return;\r\n    }\r\n    RtlVirtualUnwind(0,local_res8,ControlPc,FunctionEntry,param_1,local_res18,&local_res10,\r\n                     (PKNONVOLATILE_CONTEXT_POINTERS)0x0);\r\n    iVar1 = iVar1 + 1;\r\n  } while (iVar1 < 2);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "capture_previous_context", 
+      "entry_point": "0x140003cd0"
+    }, 
+    {
+      "signature": "undefined8 __fastcall FUN_140003d44(void)", 
+      "c_code": "\r\n/* WARNING: Removing unreachable block (ram,0x000140003e0e) */\r\n/* WARNING: Removing unreachable block (ram,0x000140003d7e) */\r\n/* WARNING: Removing unreachable block (ram,0x000140003d57) */\r\n/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\r\n\r\nundefined8 FUN_140003d44(void)\r\n\r\n{\r\n  int *piVar1;\r\n  uint *puVar2;\r\n  longlong lVar3;\r\n  uint uVar4;\r\n  uint uVar5;\r\n  uint uVar6;\r\n  byte in_XCR0;\r\n  \r\n  piVar1 = (int *)cpuid_basic_info(0);\r\n  uVar6 = 0;\r\n  puVar2 = (uint *)cpuid_Version_info(1);\r\n  uVar4 = puVar2[3];\r\n  if ((piVar1[2] == 0x49656e69 && piVar1[3] == 0x6c65746e) && piVar1[1] == 0x756e6547) {\r\n    _DAT_14000a0a0 = 0xffffffffffffffff;\r\n    uVar5 = *puVar2 & 0xfff3ff0;\r\n    _DAT_14000a098 = 0x8000;\r\n    if ((((uVar5 == 0x106c0) || (uVar5 == 0x20660)) || (uVar5 == 0x20670)) ||\r\n       ((uVar5 - 0x30650 < 0x21 &&\r\n        ((0x100010001U >> ((ulonglong)(uVar5 - 0x30650) & 0x3f) & 1) != 0)))) {\r\n      DAT_14000abd0 = DAT_14000abd0 | 1;\r\n    }\r\n  }\r\n  if (6 < *piVar1) {\r\n    lVar3 = cpuid_Extended_Feature_Enumeration_info(7);\r\n    uVar6 = *(uint *)(lVar3 + 4);\r\n    if ((uVar6 >> 9 & 1) != 0) {\r\n      DAT_14000abd0 = DAT_14000abd0 | 2;\r\n    }\r\n  }\r\n  _DAT_14000a090 = 1;\r\n  DAT_14000a094 = 2;\r\n  if ((uVar4 >> 0x14 & 1) != 0) {\r\n    _DAT_14000a090 = 2;\r\n    DAT_14000a094 = 6;\r\n    if ((((uVar4 >> 0x1b & 1) != 0) && ((uVar4 >> 0x1c & 1) != 0)) && ((in_XCR0 & 6) == 6)) {\r\n      DAT_14000a094 = 0xe;\r\n      _DAT_14000a090 = 3;\r\n      if ((uVar6 & 0x20) != 0) {\r\n        _DAT_14000a090 = 5;\r\n        DAT_14000a094 = 0x2e;\r\n        if (((uVar6 & 0xd0030000) == 0xd0030000) && ((in_XCR0 & 0xe0) == 0xe0)) {\r\n          DAT_14000a094 = 0x6e;\r\n          _DAT_14000a090 = 6;\r\n        }\r\n      }\r\n    }\r\n  }\r\n  return 0;\r\n}\r\n\r\n", 
+      "name": "FUN_140003d44", 
+      "entry_point": "0x140003d44"
+    }, 
+    {
+      "signature": "bool __fastcall __scrt_is_ucrt_dll_in_use(void)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    __scrt_is_ucrt_dll_in_use\r\n   \r\n   Library: Visual Studio 2019 Release */\r\n\r\nbool __scrt_is_ucrt_dll_in_use(void)\r\n\r\n{\r\n  return DAT_14000a0b0 != 0;\r\n}\r\n\r\n", 
+      "name": "__scrt_is_ucrt_dll_in_use", 
+      "entry_point": "0x140003ef0"
+    }, 
+    {
+      "signature": "undefined __fastcall __GSHandlerCheckCommon(ulonglong param_1, longlong param_2, uint * param_3)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    __GSHandlerCheckCommon\r\n   \r\n   Libraries: Visual Studio 2017 Release, Visual Studio 2019 Release */\r\n\r\nvoid __GSHandlerCheckCommon(ulonglong param_1,longlong param_2,uint *param_3)\r\n\r\n{\r\n  ulonglong uVar1;\r\n  ulonglong uVar2;\r\n  \r\n  uVar2 = param_1;\r\n  if ((*param_3 & 4) != 0) {\r\n    uVar2 = (longlong)(int)param_3[1] + param_1 & (longlong)(int)-param_3[2];\r\n  }\r\n  uVar1 = (ulonglong)*(uint *)(*(longlong *)(param_2 + 0x10) + 8);\r\n  if ((*(byte *)(uVar1 + 3 + *(longlong *)(param_2 + 8)) & 0xf) != 0) {\r\n    param_1 = param_1 + (*(byte *)(uVar1 + 3 + *(longlong *)(param_2 + 8)) & 0xfffffff0);\r\n  }\r\n  FUN_140003550(param_1 ^ *(ulonglong *)((longlong)(int)(*param_3 & 0xfffffff8) + uVar2));\r\n  return;\r\n}\r\n\r\n", 
+      "name": "__GSHandlerCheckCommon", 
+      "entry_point": "0x140003f1c"
+    }, 
+    {
+      "signature": "undefined __thiscall CAtlBaseModule(void)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    public: __cdecl ATL::CAtlBaseModule::CAtlBaseModule(void) __ptr64\r\n   \r\n   Libraries: Visual Studio 2017 Release, Visual Studio 2019 Release */\r\n\r\nCAtlBaseModule * __thiscall ATL::CAtlBaseModule::CAtlBaseModule(CAtlBaseModule *this)\r\n\r\n{\r\n  DWORD DVar1;\r\n  BOOL BVar2;\r\n  DWORD DVar3;\r\n  \r\n  memset(this + 0x28,0,0x28);\r\n  *(undefined8 *)(this + 0x50) = 0;\r\n  *(undefined4 *)(this + 0x58) = 0;\r\n  *(undefined4 *)(this + 0x5c) = 0;\r\n  *(IMAGE_DOS_HEADER **)(this + 0x10) = &IMAGE_DOS_HEADER_140000000;\r\n  *(IMAGE_DOS_HEADER **)(this + 8) = &IMAGE_DOS_HEADER_140000000;\r\n  *(undefined **)(this + 0x20) = &DAT_1400059a0;\r\n  *(undefined4 *)this = 0x60;\r\n  *(undefined4 *)(this + 0x18) = 0xe00;\r\n  BVar2 = InitializeCriticalSectionEx((LPCRITICAL_SECTION)(this + 0x28),0,0);\r\n  if (BVar2 == 0) {\r\n    DVar3 = GetLastError();\r\n    DVar1 = DVar3 & 0xffff | 0x80070000;\r\n    if ((int)DVar3 < 1) {\r\n      DVar1 = DVar3;\r\n    }\r\n    if ((int)DVar1 < 0) {\r\n      BVar2 = IsDebuggerPresent();\r\n      if (BVar2 != 0) {\r\n        OutputDebugStringW(L\"ERROR : Unable to initialize critical section in CAtlBaseModule\\n\");\r\n      }\r\n      DAT_14000ac4c = 1;\r\n    }\r\n  }\r\n  return this;\r\n}\r\n\r\n", 
+      "name": "CAtlBaseModule", 
+      "entry_point": "0x140003f80"
+    }, 
+    {
+      "signature": "void __thiscall ~CAtlBaseModule(void)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    public: __cdecl ATL::CAtlBaseModule::~CAtlBaseModule(void) __ptr64\r\n   \r\n   Library: Visual Studio */\r\n\r\nvoid __thiscall ATL::CAtlBaseModule::~CAtlBaseModule(CAtlBaseModule *this)\r\n\r\n{\r\n  DeleteCriticalSection((LPCRITICAL_SECTION)(this + 0x28));\r\n  if (*(void **)(this + 0x50) != (void *)0x0) {\r\n    free(*(void **)(this + 0x50));\r\n    *(undefined8 *)(this + 0x50) = 0;\r\n  }\r\n  *(undefined4 *)(this + 0x58) = 0;\r\n  *(undefined4 *)(this + 0x5c) = 0;\r\n  return;\r\n}\r\n\r\n", 
+      "name": "~CAtlBaseModule", 
+      "entry_point": "0x140004028"
+    }, 
+    {
+      "signature": "void __thiscall _Lock(void)", 
+      "c_code": "\r\nvoid __thiscall\r\nstd::basic_streambuf<char,struct_std::char_traits<char>_>::_Lock\r\n          (basic_streambuf<char,struct_std::char_traits<char>_> *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000405c. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _Lock(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_Lock", 
+      "entry_point": "0x14000405c"
+    }, 
+    {
+      "signature": "void __thiscall _Unlock(void)", 
+      "c_code": "\r\nvoid __thiscall\r\nstd::basic_streambuf<char,struct_std::char_traits<char>_>::_Unlock\r\n          (basic_streambuf<char,struct_std::char_traits<char>_> *this)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140004062. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _Unlock(this);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_Unlock", 
+      "entry_point": "0x140004062"
+    }, 
+    {
+      "signature": "__int64 __thiscall showmanyc(void)", 
+      "c_code": "\r\n__int64 __thiscall\r\nstd::basic_streambuf<char,struct_std::char_traits<char>_>::showmanyc\r\n          (basic_streambuf<char,struct_std::char_traits<char>_> *this)\r\n\r\n{\r\n  __int64 _Var1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140004068. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _Var1 = showmanyc(this);\r\n  return _Var1;\r\n}\r\n\r\n", 
+      "name": "showmanyc", 
+      "entry_point": "0x140004068"
+    }, 
+    {
+      "signature": "int __thiscall uflow(void)", 
+      "c_code": "\r\nint __thiscall\r\nstd::basic_streambuf<char,struct_std::char_traits<char>_>::uflow\r\n          (basic_streambuf<char,struct_std::char_traits<char>_> *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000406e. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = uflow(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "uflow", 
+      "entry_point": "0x14000406e"
+    }, 
+    {
+      "signature": "__int64 __thiscall xsgetn(char * param_1, __int64 param_2)", 
+      "c_code": "\r\n__int64 __thiscall\r\nstd::basic_streambuf<char,struct_std::char_traits<char>_>::xsgetn\r\n          (basic_streambuf<char,struct_std::char_traits<char>_> *this,char *param_1,__int64 param_2)\r\n\r\n{\r\n  __int64 _Var1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140004074. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _Var1 = xsgetn(this,param_1,param_2);\r\n  return _Var1;\r\n}\r\n\r\n", 
+      "name": "xsgetn", 
+      "entry_point": "0x140004074"
+    }, 
+    {
+      "signature": "__int64 __thiscall xsputn(char * param_1, __int64 param_2)", 
+      "c_code": "\r\n__int64 __thiscall\r\nstd::basic_streambuf<char,struct_std::char_traits<char>_>::xsputn\r\n          (basic_streambuf<char,struct_std::char_traits<char>_> *this,char *param_1,__int64 param_2)\r\n\r\n{\r\n  __int64 _Var1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000407a. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _Var1 = xsputn(this,param_1,param_2);\r\n  return _Var1;\r\n}\r\n\r\n", 
+      "name": "xsputn", 
+      "entry_point": "0x14000407a"
+    }, 
+    {
+      "signature": "basic_streambuf<char,struct_std::char_traits<char>_> * __thiscall setbuf(char * param_1, __int64 param_2)", 
+      "c_code": "\r\nbasic_streambuf<char,struct_std::char_traits<char>_> * __thiscall\r\nstd::basic_streambuf<char,struct_std::char_traits<char>_>::setbuf\r\n          (basic_streambuf<char,struct_std::char_traits<char>_> *this,char *param_1,__int64 param_2)\r\n\r\n{\r\n  basic_streambuf<char,struct_std::char_traits<char>_> *pbVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140004080. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pbVar1 = setbuf(this,param_1,param_2);\r\n  return pbVar1;\r\n}\r\n\r\n", 
+      "name": "setbuf", 
+      "entry_point": "0x140004080"
+    }, 
+    {
+      "signature": "int __thiscall sync(void)", 
+      "c_code": "\r\nint __thiscall\r\nstd::basic_streambuf<char,struct_std::char_traits<char>_>::sync\r\n          (basic_streambuf<char,struct_std::char_traits<char>_> *this)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140004086. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = sync(this);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "sync", 
+      "entry_point": "0x140004086"
+    }, 
+    {
+      "signature": "void __thiscall imbue(locale * param_1)", 
+      "c_code": "\r\nvoid __thiscall\r\nstd::basic_streambuf<char,struct_std::char_traits<char>_>::imbue\r\n          (basic_streambuf<char,struct_std::char_traits<char>_> *this,locale *param_1)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000408c. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  imbue(this,param_1);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "imbue", 
+      "entry_point": "0x14000408c"
+    }, 
+    {
+      "signature": "undefined __CxxFrameHandler4(void)", 
+      "c_code": "\r\nvoid __CxxFrameHandler4(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140004092. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  __CxxFrameHandler4();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "__CxxFrameHandler4", 
+      "entry_point": "0x140004092"
+    }, 
+    {
+      "signature": "void * __cdecl memset(void * _Dst, int _Val, size_t _Size)", 
+      "c_code": "\r\nvoid * __cdecl memset(void *_Dst,int _Val,size_t _Size)\r\n\r\n{\r\n  void *pvVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140004098. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pvVar1 = memset(_Dst,_Val,_Size);\r\n  return pvVar1;\r\n}\r\n\r\n", 
+      "name": "memset", 
+      "entry_point": "0x140004098"
+    }, 
+    {
+      "signature": "undefined __current_exception(void)", 
+      "c_code": "\r\nvoid __current_exception(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040a4. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  __current_exception();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "__current_exception", 
+      "entry_point": "0x1400040a4"
+    }, 
+    {
+      "signature": "undefined __current_exception_context(void)", 
+      "c_code": "\r\nvoid __current_exception_context(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040aa. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  __current_exception_context();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "__current_exception_context", 
+      "entry_point": "0x1400040aa"
+    }, 
+    {
+      "signature": "void * __cdecl memmove(void * _Dst, void * _Src, size_t _Size)", 
+      "c_code": "\r\nvoid * __cdecl memmove(void *_Dst,void *_Src,size_t _Size)\r\n\r\n{\r\n  void *pvVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400040b0. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pvVar1 = memmove(_Dst,_Src,_Size);\r\n  return pvVar1;\r\n}\r\n\r\n", 
+      "name": "memmove", 
+      "entry_point": "0x1400040b0"
+    }, 
+    {
+      "signature": "void __cdecl free(void * _Memory)", 
+      "c_code": "\r\nvoid __cdecl free(void *_Memory)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040b6. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  free(_Memory);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "free", 
+      "entry_point": "0x1400040b6"
+    }, 
+    {
+      "signature": "undefined _seh_filter_exe(void)", 
+      "c_code": "\r\nvoid _seh_filter_exe(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040bc. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _seh_filter_exe();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_seh_filter_exe", 
+      "entry_point": "0x1400040bc"
+    }, 
+    {
+      "signature": "undefined _set_app_type(void)", 
+      "c_code": "\r\nvoid _set_app_type(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040c2. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _set_app_type();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_set_app_type", 
+      "entry_point": "0x1400040c2"
+    }, 
+    {
+      "signature": "undefined __setusermatherr(void)", 
+      "c_code": "\r\nvoid __setusermatherr(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040c8. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  __setusermatherr();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "__setusermatherr", 
+      "entry_point": "0x1400040c8"
+    }, 
+    {
+      "signature": "undefined _configure_wide_argv(void)", 
+      "c_code": "\r\nvoid _configure_wide_argv(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040ce. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _configure_wide_argv();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_configure_wide_argv", 
+      "entry_point": "0x1400040ce"
+    }, 
+    {
+      "signature": "undefined _initialize_wide_environment(void)", 
+      "c_code": "\r\nvoid _initialize_wide_environment(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040d4. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _initialize_wide_environment();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_initialize_wide_environment", 
+      "entry_point": "0x1400040d4"
+    }, 
+    {
+      "signature": "undefined _get_wide_winmain_command_line(void)", 
+      "c_code": "\r\nvoid _get_wide_winmain_command_line(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040da. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _get_wide_winmain_command_line();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_get_wide_winmain_command_line", 
+      "entry_point": "0x1400040da"
+    }, 
+    {
+      "signature": "undefined _initterm(void)", 
+      "c_code": "\r\nvoid _initterm(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040e0. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _initterm();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_initterm", 
+      "entry_point": "0x1400040e0"
+    }, 
+    {
+      "signature": "undefined _initterm_e(void)", 
+      "c_code": "\r\nvoid _initterm_e(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040e6. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _initterm_e();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_initterm_e", 
+      "entry_point": "0x1400040e6"
+    }, 
+    {
+      "signature": "noreturn void __cdecl exit(int _Code)", 
+      "c_code": "\r\nvoid __cdecl exit(int _Code)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040ec. Too many branches */\r\n                    /* WARNING: Subroutine does not return */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  exit(_Code);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "exit", 
+      "entry_point": "0x1400040ec"
+    }, 
+    {
+      "signature": "noreturn void __cdecl _exit(int _Code)", 
+      "c_code": "\r\nvoid __cdecl _exit(int _Code)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040f2. Too many branches */\r\n                    /* WARNING: Subroutine does not return */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _exit(_Code);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_exit", 
+      "entry_point": "0x1400040f2"
+    }, 
+    {
+      "signature": "errno_t __cdecl _set_fmode(int _Mode)", 
+      "c_code": "\r\nerrno_t __cdecl _set_fmode(int _Mode)\r\n\r\n{\r\n  errno_t eVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400040f8. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  eVar1 = _set_fmode(_Mode);\r\n  return eVar1;\r\n}\r\n\r\n", 
+      "name": "_set_fmode", 
+      "entry_point": "0x1400040f8"
+    }, 
+    {
+      "signature": "void __cdecl _cexit(void)", 
+      "c_code": "\r\nvoid __cdecl _cexit(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400040fe. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _cexit();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_cexit", 
+      "entry_point": "0x1400040fe"
+    }, 
+    {
+      "signature": "undefined _register_thread_local_exe_atexit_callback(void)", 
+      "c_code": "\r\nvoid _register_thread_local_exe_atexit_callback(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000410a. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _register_thread_local_exe_atexit_callback();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_register_thread_local_exe_atexit_callback", 
+      "entry_point": "0x14000410a"
+    }, 
+    {
+      "signature": "int __cdecl _configthreadlocale(int _Flag)", 
+      "c_code": "\r\nint __cdecl _configthreadlocale(int _Flag)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140004110. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = _configthreadlocale(_Flag);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "_configthreadlocale", 
+      "entry_point": "0x140004110"
+    }, 
+    {
+      "signature": "undefined __p__commode(void)", 
+      "c_code": "\r\nvoid __p__commode(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000411c. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  __p__commode();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "__p__commode", 
+      "entry_point": "0x14000411c"
+    }, 
+    {
+      "signature": "undefined _initialize_onexit_table(void)", 
+      "c_code": "\r\nvoid _initialize_onexit_table(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140004122. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _initialize_onexit_table();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_initialize_onexit_table", 
+      "entry_point": "0x140004122"
+    }, 
+    {
+      "signature": "undefined _register_onexit_function(void)", 
+      "c_code": "\r\nvoid _register_onexit_function(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140004128. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _register_onexit_function();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_register_onexit_function", 
+      "entry_point": "0x140004128"
+    }, 
+    {
+      "signature": "undefined _crt_atexit(void)", 
+      "c_code": "\r\nvoid _crt_atexit(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x00014000412e. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _crt_atexit();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_crt_atexit", 
+      "entry_point": "0x14000412e"
+    }, 
+    {
+      "signature": "noreturn undefined terminate(void)", 
+      "c_code": "\r\nvoid terminate(void)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x000140004134. Too many branches */\r\n                    /* WARNING: Subroutine does not return */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  terminate();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "terminate", 
+      "entry_point": "0x140004134"
+    }, 
+    {
+      "signature": "int __cdecl AfxInitialize(int param_1, ulong param_2)", 
+      "c_code": "\r\n/* Library Function - Single Match\r\n    int __cdecl AfxInitialize(int,unsigned long)\r\n   \r\n   Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2012 Release,\r\n   Visual Studio 2015 Release */\r\n\r\nint __cdecl AfxInitialize(int param_1,ulong param_2)\r\n\r\n{\r\n  AFX_MODULE_STATE *pAVar1;\r\n  \r\n  pAVar1 = AfxGetModuleState();\r\n  pAVar1[0x28] = SUB41(param_1,0);\r\n  *(ulong *)(pAVar1 + 0x78) = param_2;\r\n  return 1;\r\n}\r\n\r\n", 
+      "name": "AfxInitialize", 
+      "entry_point": "0x14000413c"
+    }, 
+    {
+      "signature": "int __cdecl AfxWinMain(HINSTANCE__ * param_1, HINSTANCE__ * param_2, wchar_t * param_3, int param_4)", 
+      "c_code": "\r\nint __cdecl AfxWinMain(HINSTANCE__ *param_1,HINSTANCE__ *param_2,wchar_t *param_3,int param_4)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000416d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = AfxWinMain(param_1,param_2,param_3,param_4);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "AfxWinMain", 
+      "entry_point": "0x140004168"
+    }, 
+    {
+      "signature": "int __cdecl AfxWinMain(HINSTANCE__ * param_1, HINSTANCE__ * param_2, wchar_t * param_3, int param_4)", 
+      "c_code": "\r\nint __cdecl AfxWinMain(HINSTANCE__ *param_1,HINSTANCE__ *param_2,wchar_t *param_3,int param_4)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x00014000416d. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = AfxWinMain(param_1,param_2,param_3,param_4);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "AfxWinMain", 
+      "entry_point": "0x14000416d"
+    }, 
+    {
+      "signature": "noreturn void __stdcall _CxxThrowException(void * pExceptionObject, ThrowInfo * pThrowInfo)", 
+      "c_code": "\r\nvoid __stdcall _CxxThrowException(void *pExceptionObject,ThrowInfo *pThrowInfo)\r\n\r\n{\r\n                    /* WARNING: Could not recover jumptable at 0x0001400041f3. Too many branches */\r\n                    /* WARNING: Subroutine does not return */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  _CxxThrowException(pExceptionObject,pThrowInfo);\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_CxxThrowException", 
+      "entry_point": "0x1400041f3"
+    }, 
+    {
+      "signature": "int __cdecl memcmp(void * _Buf1, void * _Buf2, size_t _Size)", 
+      "c_code": "\r\nint __cdecl memcmp(void *_Buf1,void *_Buf2,size_t _Size)\r\n\r\n{\r\n  int iVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400041f9. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  iVar1 = memcmp(_Buf1,_Buf2,_Size);\r\n  return iVar1;\r\n}\r\n\r\n", 
+      "name": "memcmp", 
+      "entry_point": "0x1400041f9"
+    }, 
+    {
+      "signature": "void * __cdecl memcpy(void * _Dst, void * _Src, size_t _Size)", 
+      "c_code": "\r\nvoid * __cdecl memcpy(void *_Dst,void *_Src,size_t _Size)\r\n\r\n{\r\n  void *pvVar1;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x0001400041ff. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  pvVar1 = memcpy(_Dst,_Src,_Size);\r\n  return pvVar1;\r\n}\r\n\r\n", 
+      "name": "memcpy", 
+      "entry_point": "0x1400041ff"
+    }, 
+    {
+      "signature": "undefined __fastcall _guard_dispatch_icall(void)", 
+      "c_code": "\r\n/* WARNING: This is an inlined function */\r\n\r\nvoid _guard_dispatch_icall(void)\r\n\r\n{\r\n  code *UNRECOVERED_JUMPTABLE;\r\n  \r\n                    /* WARNING: Could not recover jumptable at 0x000140004220. Too many branches */\r\n                    /* WARNING: Treating indirect jump as call */\r\n  (*UNRECOVERED_JUMPTABLE)();\r\n  return;\r\n}\r\n\r\n", 
+      "name": "_guard_dispatch_icall", 
+      "entry_point": "0x140004220"
+    }
+  ], 
+  "program_info": {
+    "executable_format": "Portable Executable (PE)", 
+    "language_id": "x86:LE:64:default", 
+    "compiler_spec_id": "windows", 
+    "name": "example.exe"
+  }
+}
