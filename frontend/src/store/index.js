@@ -5,7 +5,7 @@ import { reactive, computed, readonly } from 'vue';
 import * as api from '../services/api.js';
 
 // 生成模型 ID 列表 (dify1 到 dify10)
-const model_ids = Array.from({ length: 10 }, (_, i) => `dify${i + 1}`);
+const model_ids = Array.from({ length: 11 }, (_, i) => `dify${i + 1}`);
 
 // 用于存储当前消息发送的 AbortController
 let currentAbortController = null;

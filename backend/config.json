@@ -5,38 +5,42 @@
     },
     "dify2": {
         "api_url": "http://10.81.0.64/v1",
-        "api_key": "app-G6NztoKPg2L4Uqn5dTRPw2J4"
+        "api_key": "app-YEq8uDsrsWGrm0H4i5JWpLh7"
     },
     "dify3": {
       "api_url": "http://10.81.0.64/v1", 
-      "api_key": "app-G6NztoKPg2L4Uqn5dTRPw2J4"
+      "api_key": "app-undLwJKk5oKxMa14UblwRHvK"
     },
     "dify4": {
-      "api_url": "YOUR_DIFY4_API_URL",
-      "api_key": "YOUR_DIFY4_API_KEY"
+      "api_url": "http://10.81.0.64/v1",
+      "api_key": "app-1fggxTaRW7EoDd7SgrD3vGFe"
     },
     "dify5": {
-      "api_url": "YOUR_DIFY5_API_URL",
-      "api_key": "YOUR_DIFY5_API_KEY"
+      "api_url": "http://10.81.0.64/v1",
+      "api_key": "app-Se2FtES9t5NFj8o5oPlZpNiw"
     },
     "dify6": {
-      "api_url": "YOUR_DIFY6_API_URL",
-      "api_key": "YOUR_DIFY6_API_KEY"
+      "api_url": "http://10.81.0.64/v1",
+      "api_key": "app-UeDy9EMjnnSlA1QKz1XD5Qzr"
     },
     "dify7": {
-      "api_url": "YOUR_DIFY7_API_URL",
-      "api_key": "YOUR_DIFY7_API_KEY"
+      "api_url": "http://10.81.0.64/v1",
+      "api_key": "app-uCm3bex1XjNlWtN0BZ2kkTS5"
     },
     "dify8": {
-      "api_url": "YOUR_DIFY8_API_URL",
-      "api_key": "YOUR_DIFY8_API_KEY"
+      "api_url": "http://10.81.0.64/v1",
+      "api_key": "app-Q3B4ZhMww4C04dMc7t6XOoiL"
     },
     "dify9": {
-      "api_url": "YOUR_DIFY9_API_URL",
-      "api_key": "YOUR_DIFY9_API_KEY"
+      "api_url": "http://10.81.0.64/v1",
+      "api_key": "app-dc611i42CScHhpxdJ8OcnZLS"
     },
     "dify10": {
-      "api_url": "YOUR_DIFY10_API_URL",
-      "api_key": "YOUR_DIFY10_API_KEY"
+      "api_url": "http://10.81.0.64/v1",
+      "api_key": "app-Qjy5Y91jaSGgGA6JaLO4p9ib"
+    },
+    "dify11": {
+      "api_url": "http://10.81.0.64/v1",
+      "api_key": "app-G6NztoKPg2L4Uqn5dTRPw2J4"
     }
-  }
+}

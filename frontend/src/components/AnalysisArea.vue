@@ -37,8 +37,8 @@ const getAnalysisComponent = (model) => {
       delay: 200,
       timeout: 3000
     }),
-    dify2: defineAsyncComponent({
-      loader: () => import('../analysis/AnalysisDify2.vue'),
+    dify11: defineAsyncComponent({
+      loader: () => import('../analysis/AnalysisDify11.vue'),
       loadingComponent: {
         template: '<p>加载中...</p>'
       },
