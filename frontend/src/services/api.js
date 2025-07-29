@@ -119,8 +119,8 @@ export async function sendChatMessage(params) {
     signal
   } = params;
   
-  // 如果是前端临时ID (以'temp-'开头)，则发送 null 给后端，让后端处理新对话创建
-  const effectiveConversationId = (conversationId && conversationId.startsWith('temp-')) ? null : conversationId;
+  // 保持conversationId不变，让后端处理会话管理
+  const effectiveConversationId = conversationId;
   
   try {
     // 构造完整的文件引用对象
