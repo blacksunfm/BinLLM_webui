@@ -4,7 +4,7 @@
     "model": "dify1",
     "conversation_id": "20250727_1_b6b22bb5",
     "dify_conversation_id": "a809a269-366b-4b3b-89b8-ff40a2645a30",
-    "custom_name": "聊天助手"
+    "custom_name": "你是谁..."
   },
   {
     "id": "temp-user-1753554828772",
@@ -84,6 +84,22 @@
     "text": "不太理解单独的“2”这个输入与之前的问题或者代码有什么关联呢？你是想补充关于之前所说代码的内容，还是有新的想法想要表达？如果能给我一些更详细的提示，我会更好作答。",
     "sender": "assistant",
     "timestamp": "2025-07-28T19:27:31.522Z",
+    "model": "dify1"
+  },
+  {
+    "id": "temp-user-1753800916983",
+    "role": "user",
+    "text": "你是谁",
+    "sender": "user",
+    "timestamp": "2025-07-29T14:55:16.983Z",
+    "model": "dify1"
+  },
+  {
+    "id": "temp-ai-1753800916983",
+    "role": "assistant",
+    "text": "我是由NWPU开发的反编译人工智能助手，可以根据你提供的代码内容，分析代码的功能、结构等，也可以回答关于代码相关的问题。你可以给我一段代码或者关于代码的疑问，我会尽力为你解答。",
+    "sender": "assistant",
+    "timestamp": "2025-07-29T14:55:16.983Z",
     "model": "dify1"
   }
 ]

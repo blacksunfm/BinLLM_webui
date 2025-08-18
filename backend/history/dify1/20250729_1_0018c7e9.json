@@ -1,0 +1,25 @@
+[
+  {
+    "creation_time": "2025-07-29T14:55:41.039185Z",
+    "model": "dify1",
+    "conversation_id": "20250729_1_0018c7e9",
+    "dify_conversation_id": "a8caa4dd-f289-4614-9324-001dbe51ce0f",
+    "custom_name": "你是谁..."
+  },
+  {
+    "id": "temp-user-1753800945905",
+    "role": "user",
+    "text": "你是谁",
+    "sender": "user",
+    "timestamp": "2025-07-29T14:55:45.905Z",
+    "model": "dify1"
+  },
+  {
+    "id": "temp-ai-1753800945905",
+    "role": "assistant",
+    "text": "我是由NWPU开发的反编译人工智能助手，可以回答多种类型的问题哦。",
+    "sender": "assistant",
+    "timestamp": "2025-07-29T14:55:45.905Z",
+    "model": "dify1"
+  }
+]

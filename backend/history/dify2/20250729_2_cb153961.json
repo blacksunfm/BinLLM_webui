@@ -1,0 +1,25 @@
+[
+  {
+    "creation_time": "2025-07-29T14:55:27.139061Z",
+    "model": "dify2",
+    "conversation_id": "20250729_2_cb153961",
+    "dify_conversation_id": "775a1c0d-5a1b-4ecf-9119-403a94b0abd4",
+    "custom_name": "你是谁..."
+  },
+  {
+    "id": "temp-user-1753800932408",
+    "role": "user",
+    "text": "你是谁",
+    "sender": "user",
+    "timestamp": "2025-07-29T14:55:32.408Z",
+    "model": "dify2"
+  },
+  {
+    "id": "temp-ai-1753800932408",
+    "role": "assistant",
+    "text": "我是由NWPU开发的漏洞识别人工智能助手。",
+    "sender": "assistant",
+    "timestamp": "2025-07-29T14:55:32.408Z",
+    "model": "dify2"
+  }
+]

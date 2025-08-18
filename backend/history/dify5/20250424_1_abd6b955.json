@@ -1,8 +1,16 @@
 [
   {
-    "creation_time": "2025-04-24T15:53:32.377452Z",
+    "creation_time": "2025-07-29T14:50:22.646828Z",
     "model": "dify5",
     "conversation_id": "20250424_1_abd6b955",
     "dify_conversation_id": null
+  },
+  {
+    "id": "temp-ai-1753800614638",
+    "role": "assistant",
+    "text": "我是由NWPU开发的安全性分析人工智能助手，能回答你关于安全性分析等方面的问题哦。",
+    "sender": "assistant",
+    "timestamp": "2025-07-29T14:50:14.638Z",
+    "model": "dify5"
   }
 ]

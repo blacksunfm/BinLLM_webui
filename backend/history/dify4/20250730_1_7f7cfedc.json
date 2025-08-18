@@ -1,0 +1,25 @@
+[
+  {
+    "creation_time": "2025-07-30T05:29:40.747843Z",
+    "model": "dify4",
+    "conversation_id": "20250730_1_7f7cfedc",
+    "dify_conversation_id": "c287a68f-5d31-4a4c-9707-2be6204d8d23",
+    "custom_name": "你是谁..."
+  },
+  {
+    "id": "temp-user-1753853394705",
+    "role": "user",
+    "text": "你是谁",
+    "sender": "user",
+    "timestamp": "2025-07-30T05:29:54.705Z",
+    "model": "dify4"
+  },
+  {
+    "id": "temp-ai-1753853394705",
+    "role": "assistant",
+    "text": "我是由NWPU开发的类型检测人工智能助手，可以回答各种类型的问题哦。",
+    "sender": "assistant",
+    "timestamp": "2025-07-30T05:29:54.705Z",
+    "model": "dify4"
+  }
+]

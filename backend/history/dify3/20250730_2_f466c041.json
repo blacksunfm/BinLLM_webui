@@ -1,0 +1,25 @@
+[
+  {
+    "creation_time": "2025-07-30T05:44:50.207491Z",
+    "model": "dify3",
+    "conversation_id": "20250730_2_f466c041",
+    "dify_conversation_id": "fc3eebbb-3546-4011-aafa-862f39454c46",
+    "custom_name": "code1: \nprivate..."
+  },
+  {
+    "id": "temp-user-1753854298627",
+    "role": "user",
+    "text": "code1: \nprivate void copy(File source, File destinationDirectory) throws IOException {\nif (source.isDirectory()) {\nFile newDir = new File(destinationDirectory, source.getName());\nnewDir.mkdir();\nFile[] children = source.listFiles();\nfor (int i = 0; i < children.length; i++) {\nif (children[i].getName().equals(\".svn\")) {\ncontinue;\n}\ncopy(children[i], newDir);\n}\n} else {\nFile newFile = new File(destinationDirectory, source.getName());\nif (newFile.exists() && source.lastModified() == newFile.lastModified()) {\nreturn;\n}\nFileOutputStream output = new FileOutputStream(newFile);\nFileInputStream input = new FileInputStream(source);\nbyte[] buff = new byte[2048];\nint read = 0;\nwhile ((read = input.read(buff)) > 0) {\noutput.write(buff, 0, read);\n}\noutput.flush();\noutput.close();\ninput.close();\n}\n}\ncode2:\npublic static void main(String[] args) {\ntry {\nURL url = new URL(args[0]);\nHttpURLConnection httpCon = (HttpURLConnection) url.openConnection();\nhttpCon.setDoOutput(true);\nhttpCon.setRequestMethod(\"PUT\");\nOutputStreamWriter out = new OutputStreamWriter(httpCon.getOutputStream());\nout.write(\"fatal error\");\nout.close();\nSystem.out.println(\"end\");\n} catch (Exception e) {\ne.printStackTrace();\n}\n}\nQuestion: Given two codes as the input, the task is to do binary classification (0/1), where 1 stands for semantic equivalence and 0 for others, you should answer 1 or 0.",
+    "sender": "user",
+    "timestamp": "2025-07-30T05:44:58.627Z",
+    "model": "dify3"
+  },
+  {
+    "id": "temp-ai-1753854298627",
+    "role": "assistant",
+    "text": "0",
+    "sender": "assistant",
+    "timestamp": "2025-07-30T05:44:58.627Z",
+    "model": "dify3"
+  }
+]

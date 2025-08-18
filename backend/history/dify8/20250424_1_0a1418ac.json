@@ -3,6 +3,23 @@
     "creation_time": "2025-04-24T15:53:34.350680Z",
     "model": "dify8",
     "conversation_id": "20250424_1_0a1418ac",
-    "dify_conversation_id": null
+    "dify_conversation_id": "89447839-e1f1-4d57-a21c-759f53b56b08",
+    "custom_name": "你是谁..."
+  },
+  {
+    "id": "temp-user-1753800869161",
+    "role": "user",
+    "text": "你是谁",
+    "sender": "user",
+    "timestamp": "2025-07-29T14:54:29.161Z",
+    "model": "dify8"
+  },
+  {
+    "id": "temp-ai-1753800869161",
+    "role": "assistant",
+    "text": "我是由NWPU开发的数据流分析人工智能助手，可以回答各种问题并进行数据分析等相关工作哦。",
+    "sender": "assistant",
+    "timestamp": "2025-07-29T14:54:29.161Z",
+    "model": "dify8"
   }
 ]

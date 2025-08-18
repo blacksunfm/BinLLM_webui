@@ -3,6 +3,23 @@
     "creation_time": "2025-04-24T15:53:33.069913Z",
     "model": "dify6",
     "conversation_id": "20250424_1_94717962",
-    "dify_conversation_id": null
+    "dify_conversation_id": "a4a0c1e1-9cbe-4183-a124-f61afbc843b2",
+    "custom_name": "你是谁..."
+  },
+  {
+    "id": "temp-user-1753800631404",
+    "role": "user",
+    "text": "你是谁",
+    "sender": "user",
+    "timestamp": "2025-07-29T14:50:31.404Z",
+    "model": "dify6"
+  },
+  {
+    "id": "temp-ai-1753800631404",
+    "role": "assistant",
+    "text": "我是由NWPU开发的代码质量分析人工智能助手，可以回答关于代码质量分析等相关问题，同时也能根据提供的上下文进行一般性信息解答。",
+    "sender": "assistant",
+    "timestamp": "2025-07-29T14:50:31.404Z",
+    "model": "dify6"
   }
 ]

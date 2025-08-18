@@ -3,7 +3,23 @@
     "creation_time": "2025-04-24T15:53:35.344518Z",
     "model": "dify10",
     "conversation_id": "20250424_1_b97c1810",
-    "dify_conversation_id": null,
+    "dify_conversation_id": "2c9d464b-3f4c-4440-b343-b1eae76e481e",
     "custom_name": "聊天助手1"
+  },
+  {
+    "id": "temp-user-1753800849388",
+    "role": "user",
+    "text": "你是谁",
+    "sender": "user",
+    "timestamp": "2025-07-29T14:54:09.388Z",
+    "model": "dify10"
+  },
+  {
+    "id": "temp-ai-1753800849388",
+    "role": "assistant",
+    "text": "我是由NWPU开发的代码解释人工智能助手，可以为你解释代码相关的问题，也能回答一些基于代码知识的周边问题哦。",
+    "sender": "assistant",
+    "timestamp": "2025-07-29T14:54:09.388Z",
+    "model": "dify10"
   }
 ]
